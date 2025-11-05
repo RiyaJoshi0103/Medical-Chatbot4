@@ -8,7 +8,6 @@ import uuid
 from groq import Groq
 from dotenv import load_dotenv
 
-
 # ----------------------------
 # Load environment variables
 # ----------------------------
@@ -21,21 +20,22 @@ if not GROQ_API_KEY:
 # Initialize Groq client
 client = Groq(api_key=GROQ_API_KEY)
 
-
 # ----------------------------
 # Initialize FastAPI app
 # ----------------------------
 app = FastAPI()
 
-# ✅ CORS must come AFTER app is defined
+# ✅ Correct CORS: allow your frontend origin(s)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://mchat-backend-isxf.onrender.com/chat"],  # use ["http://localhost:3000"] for safety in prod
+    allow_origins=[
+        "https://mchat-backend-1-1lzf.onrender.com",  # your frontend
+        "http://localhost:3000"  # for local testing
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 # ----------------------------
 # Define Models
@@ -44,73 +44,37 @@ class ChatRequest(BaseModel):
     message: str
     session_id: Optional[str] = None
 
-
 class ChatResponse(BaseModel):
     session_id: str
     intent: str
     entities: Optional[Dict[str, Any]] = None
     reply: str
 
-
 # ----------------------------
 # Session memory (temporary store)
 # ----------------------------
 session_memory = {}
-
 
 # ----------------------------
 # System Prompt for Groq LLM
 # ----------------------------
 SYSTEM_PROMPT = """
 You are a medical symptom triage assistant for a hospital system.
-
-Your responsibilities:
-- Collect user symptoms and medical context
-- Ask medically relevant follow-up questions
-- Provide POSSIBLE categories (e.g., viral, allergy, gastric, muscular) — NOT diagnosis
-- Give home-care suggestions when safe
-- Suggest tests or doctor specialty only if appropriate
-- Provide "seek urgent care" advice if red-flag symptoms appear
-- NEVER give a definitive diagnosis
-- NEVER prescribe medicine or dosage
-- If unsure, recommend doctor visit
-
-INTENTS:
-book_appointment, cancel_appointment, get_lab_result, billing_query,
-symptom_triage, smalltalk, human_handoff, unknown
-
-Output STRICT JSON only:
-{
- "intent": "",
- "entities": {
-   "symptoms": [],
-   "duration": "",
-   "severity": "",
-   "age": "",
-   "other_factors": {}
- },
- "triage_assessment": "",
- "risk_level": "low | mild | moderate | high | emergency",
- "advice": "",
- "followup_questions": [],
- "reply": ""
-}
-
-Rules:
-- If user explicitly requests diagnosis → reply that you do triage only and suggest doctor consultation.
-- If emergency symptoms (chest pain, difficulty breathing, stroke signs, severe bleeding) → urge immediate hospital visit.
-- Ask one follow-up question at a time.
-- If the user types 'end chat' or 'thank you', then end the chat by closing with a thank-you message.
+... (same as before)
 """
 
+# ----------------------------
+# Root / health check route
+# ----------------------------
+@app.get("/")
+def root():
+    return {"message": "Backend is live"}
 
 # ----------------------------
-# API Endpoints
+# Start new chat session
 # ----------------------------
-
 @app.get("/start", response_model=ChatResponse)
 async def start_chat():
-    """Start a new chat session."""
     session_id = str(uuid.uuid4())
     session_memory[session_id] = {"turns": 0, "greeted": True}
     return ChatResponse(
@@ -120,13 +84,13 @@ async def start_chat():
         reply="Hello! I’m your healthcare assistant. How can I help you today?"
     )
 
-
+# ----------------------------
+# Main chatbot endpoint
+# ----------------------------
 @app.post("/chat", response_model=ChatResponse)
 async def chat(req: ChatRequest):
-    """Main chatbot interaction endpoint."""
     session_id = req.session_id or str(uuid.uuid4())
 
-    # Create new session if needed
     if session_id not in session_memory:
         session_memory[session_id] = {"turns": 0, "greeted": True}
         return ChatResponse(
@@ -138,7 +102,6 @@ async def chat(req: ChatRequest):
 
     session = session_memory[session_id]
 
-    # End chat after 5 turns
     if session["turns"] >= 5:
         del session_memory[session_id]
         return ChatResponse(
