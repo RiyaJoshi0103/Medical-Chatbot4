@@ -8,6 +8,13 @@ interface Message {
   text: string;
 }
 
+// Minimal fix to satisfy TypeScript for process.env
+declare var process: {
+  env: {
+    NEXT_PUBLIC_BACKEND_URL: string;
+  };
+};
+
 export default function ChatPage() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -15,9 +22,8 @@ export default function ChatPage() {
   const [loading, setLoading] = useState(false);
   const chatEndRef = useRef<HTMLDivElement | null>(null);
 
-  // Use backend URL from environment variable
-  const BACKEND_URL =
-    process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000";
+  // Use live backend URL directly
+  const BACKEND_URL = "https://mchat-backend-isxf.onrender.com";
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
