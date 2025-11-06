@@ -28,14 +28,12 @@ app = FastAPI()
 # ✅ Correct CORS: allow your frontend origin(s)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://mchat-backend-1-1lzf.onrender.com",  # your frontend
-        "http://localhost:3000"  # for local testing
-    ],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 # ----------------------------
 # Define Models
