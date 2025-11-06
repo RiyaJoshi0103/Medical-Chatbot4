@@ -60,7 +60,8 @@ session_memory = {}
 # ----------------------------
 SYSTEM_PROMPT = """
 You are a medical symptom triage assistant for a hospital system.
-... (same as before)
+You help users understand their symptoms, suggest possible causes,
+and provide guidance on whether they should see a doctor.
 """
 
 # ----------------------------
@@ -91,6 +92,7 @@ async def start_chat():
 async def chat(req: ChatRequest):
     session_id = req.session_id or str(uuid.uuid4())
 
+    # Initialize session if new
     if session_id not in session_memory:
         session_memory[session_id] = {"turns": 0, "greeted": True}
         return ChatResponse(
@@ -102,6 +104,7 @@ async def chat(req: ChatRequest):
 
     session = session_memory[session_id]
 
+    # Limit number of turns per session
     if session["turns"] >= 5:
         del session_memory[session_id]
         return ChatResponse(
@@ -113,16 +116,28 @@ async def chat(req: ChatRequest):
 
     session["turns"] += 1
 
-    # Call Groq API for model response
+    # ----------------------------
+    # Prepare user message with JSON instruction
+    # ----------------------------
+    user_prompt = (
+        f"Respond ONLY in JSON format. "
+        f"Use keys 'reply', 'intent', and 'entities'. "
+        f"My message: {req.message}"
+    )
+
+    # ----------------------------
+    # Call Groq API
+    # ----------------------------
     groq_reply = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": req.message},
+            {"role": "user", "content": user_prompt},
         ],
         response_format={"type": "json_object"}
     )
 
+    # Parse model JSON response safely
     data = json.loads(groq_reply.choices[0].message.content)
 
     return ChatResponse(
