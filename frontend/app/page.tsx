@@ -23,7 +23,7 @@ export default function ChatAssistantPage() {
   useEffect(() => {
     const greeting =
       "👋 Hello! I'm your healthcare assistant. How can I help you today?";
-    setMessages([{ sender: "bot", text: greeting }]);
+    setMessages([{ sender: "bot", text: greeting } as const]);
   }, []);
 
   useEffect(() => {
@@ -36,15 +36,18 @@ export default function ChatAssistantPage() {
   const handleSend = async () => {
     if (!input.trim()) return;
 
-    const userMessage = { sender: "user", text: input.trim() };
+    // Use 'as const' for literal type safety
+    const userMessage = { sender: "user", text: input.trim() } as const;
     setMessages((prev) => [...prev, userMessage]);
+
     const userInput = input.trim();
     setInput("");
     setLoading(true);
 
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+
     try {
-      const res = await fetch("http://localhost:8000/chat", {
-        // your FastAPI backend
+      const res = await fetch(`${backendUrl}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -59,7 +62,7 @@ export default function ChatAssistantPage() {
       const data = await res.json();
 
       const botReply = {
-        sender: "bot",
+        sender: "bot" as const,
         text: data.reply || "⚠ Something went wrong. Please try again later.",
       };
 
@@ -69,7 +72,7 @@ export default function ChatAssistantPage() {
       setMessages((prev) => [
         ...prev,
         {
-          sender: "bot",
+          sender: "bot" as const,
           text: "⚠ Something went wrong. Please try again later.",
         },
       ]);
