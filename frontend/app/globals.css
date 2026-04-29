@@ -24,3 +24,52 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ── PRINT STYLES ── */
+@media print {
+
+  /* Force white background everywhere */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Hide everything on the page first */
+  body > * {
+    display: none !important;
+  }
+
+  /* Then show only the report section */
+  section {
+    display: block !important;
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Hide toolbar buttons */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Clean up the report card itself */
+  .print-root {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Make sure colors print — tailwind bg colors need this */
+  [class*="bg-emerald"],
+  [class*="bg-red"],
+  [class*="bg-orange"],
+  [class*="bg-purple"],
+  [class*="bg-amber"],
+  [class*="bg-gray"] {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

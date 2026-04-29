@@ -36,7 +36,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
-  ],
+, "lib/createTables.mjs"  ],
   "exclude": [
     "node_modules"
   ]
