@@ -1,6 +1,6 @@
 from datasets import load_dataset
 from pinecone import Pinecone
-from sentence_transformers import SentenceTransformer
+from fastembed import TextEmbedding
 from tqdm import tqdm
 import os
 from dotenv import load_dotenv
@@ -12,7 +12,18 @@ PINECONE_INDEX   = os.getenv("PINECONE_INDEX_NAME")
 
 pc       = Pinecone(api_key=PINECONE_API_KEY)
 index    = pc.Index(PINECONE_INDEX)
-embedder = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+class FastEmbedWrapper:
+    def __init__(self, model_name="sentence-transformers/all-MiniLM-L6-v2"):
+        self.model = TextEmbedding(model_name=model_name)
+    
+    def encode(self, text_or_list):
+        if isinstance(text_or_list, str):
+            return list(self.model.embed([text_or_list]))[0]
+        else:
+            import numpy as np
+            return np.array(list(self.model.embed(text_or_list)))
+
+embedder = FastEmbedWrapper()
 
 print("⏳ Loading HealthCareMagic dataset...")
 ds = load_dataset("lavita/ChatDoctor-HealthCareMagic-100k", split="train")

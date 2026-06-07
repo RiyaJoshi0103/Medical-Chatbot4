@@ -3,6 +3,6 @@ uvicorn
 groq
 python-dotenv
 pinecone 
-sentence-transformers
+fastembed
 google-generativeai
 spacy

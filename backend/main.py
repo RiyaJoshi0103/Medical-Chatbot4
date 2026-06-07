@@ -8,7 +8,7 @@ import uuid
 from groq import Groq
 from dotenv import load_dotenv
 from pinecone import Pinecone
-from sentence_transformers import SentenceTransformer
+from fastembed import TextEmbedding
 from pahadi_converter import convert_to_pahadi
 from safety_layer import check_input_safety, check_output_safety
 from ner_extractor import extract_medical_terms  
@@ -33,7 +33,18 @@ client   = Groq(api_key=GROQ_API_KEY)
 pc       = Pinecone(api_key=PINECONE_API_KEY)
 index    = pc.Index(PINECONE_INDEX)
 import re
-embedder = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+class FastEmbedWrapper:
+    def __init__(self, model_name="sentence-transformers/all-MiniLM-L6-v2"):
+        self.model = TextEmbedding(model_name=model_name)
+    
+    def encode(self, text_or_list):
+        if isinstance(text_or_list, str):
+            return list(self.model.embed([text_or_list]))[0]
+        else:
+            import numpy as np
+            return np.array(list(self.model.embed(text_or_list)))
+
+embedder = FastEmbedWrapper()
 
 # Load Drug-Drug Interactions (DDI) dataset
 DDI_FILE_PATH = os.path.join(os.path.dirname(__file__), "data", "ddi_interactions.json")
