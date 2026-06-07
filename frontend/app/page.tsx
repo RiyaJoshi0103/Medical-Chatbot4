@@ -57,6 +57,8 @@ const LANG_LABELS: Record<string, string> = {
 };
 
 // ── Outside component — plain JS variable, no closure issues ──
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL?.replace(/\/$/, "") || "";
+
 let globalLanguage = "en";
 
 const DRUG_TRANSLITERATIONS: Record<string, string[]> = {
@@ -204,7 +206,7 @@ function ChatAssistantPage() {
   const loadUserProfile = async (email: string) => {
     if (!email) return;
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/profile?email=${encodeURIComponent(email)}`);
+      const res = await fetch(`${BACKEND_URL}/profile?email=${encodeURIComponent(email)}`);
       if (res.ok) {
         const data = await res.json();
         if (data.chronic_conditions) {
@@ -380,7 +382,7 @@ function ChatAssistantPage() {
 
         try {
           const res = await fetch(
-            `${process.env.NEXT_PUBLIC_BACKEND_URL}/transcribe?language=${capturedLang}`,
+            `${BACKEND_URL}/transcribe?language=${capturedLang}`,
             { method: "POST", body: formData, signal: controller.signal },
           );
           clearTimeout(timeoutId);
@@ -491,7 +493,7 @@ function ChatAssistantPage() {
     await saveMessage("user", userInput, globalLanguage);
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/chat`, {
+      const res = await fetch(`${BACKEND_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
