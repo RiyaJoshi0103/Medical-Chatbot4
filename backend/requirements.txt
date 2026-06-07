@@ -6,3 +6,4 @@ pinecone
 fastembed
 google-generativeai
 spacy
+python-multipart
