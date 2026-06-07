@@ -8,7 +8,8 @@ import { ArrowLeft, Printer, ShieldAlert } from "lucide-react";
 const LANG_LABELS: Record<string, string> = {
   en: "English",
   hi: "Hindi",
-  pahadi: "Pahadi / Garhwali",
+  pahadi: "Pahadi",
+  garhwali: "Garhwali",
 };
 
 type Message = { sender: "user" | "bot"; text: string };
@@ -67,6 +68,8 @@ const SYMPTOM_KEYWORDS = [
   "बुखार",
   "दर्द",
   "दुखाण",
+  "दुखणू",
+  "खुजली",
   "खांसी",
   "कासणु",
   "उल्टी",

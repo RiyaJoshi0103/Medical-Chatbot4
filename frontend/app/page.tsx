@@ -21,7 +21,13 @@ import {
 } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 
-type Message = { sender: "user" | "bot"; text: string };
+type Message = {
+  sender: "user" | "bot";
+  text: string;
+  ddiAlerts?: Array<{ drug_a: string; drug_b: string; severity: string }>;
+  contraindicationAlerts?: Array<{ medicine: string; chronic_condition: string; contraindication: string }>;
+  suggestedMedicines?: string[];
+};
 type Session = {
   id: string;
   started_at: string;
@@ -33,35 +39,155 @@ const GREETINGS: Record<string, string> = {
   en: "Hello! I'm your personal health assistant. Describe your symptoms or ask any health question — I'm here to help.",
   hi: "नमस्ते! मैं आपका स्वास्थ्य सहायक हूँ। अपने लक्षण बताएं — मैं आपकी मदद के लिए यहाँ हूँ।",
   pahadi: "राम राम! म तुम्हर स्वास्थ्य सहायक छु। अपणि तकलीफ बताओ।",
+  garhwali: "राम राम! म तुमर स्वास्थ्य सहायक छौं। अपणि तकलीफ बताओ।"
 };
 
 const PLACEHOLDERS: Record<string, string> = {
   en: "Describe your symptoms...",
   hi: "अपने लक्षण बताएं...",
   pahadi: "अपणि तकलीफ बताओ...",
+  garhwali: "अपणि तकलीफ बताओ...",
 };
 
 const LANG_LABELS: Record<string, string> = {
   en: "English",
   hi: "Hindi",
   pahadi: "Pahadi",
+  garhwali: "Garhwali",
 };
 
 // ── Outside component — plain JS variable, no closure issues ──
 let globalLanguage = "en";
 
+const DRUG_TRANSLITERATIONS: Record<string, string[]> = {
+  "paracetamol": ["पैरासिटामोल", "पैरसिटामोल", "पैरासिटामॉल", "पैरसिटामॉल", "paracetamol"],
+  "ibuprofen": ["आइबूप्रोफेन", "आइबुप्रोफेन", "इबुप्रोफेन", "इबूप्रोफेन", "इबुप्रोफ़ेन", "आइबुप्रोफ़ेन", "ibuprofen"],
+  "aspirin": ["एस्पिरिन", "ऐस्पिरिन", "aspirin"],
+  "cetirizine": ["सिट्रीजीन", "सेट्रीजीन", "सिट्रिजिन", "cetirizine"],
+  "amoxicillin": ["अमोक्सिसिलिन", "एमोक्सिसिलिन", "amoxicillin"],
+  "ors": ["ओआरएस", "ओ.आर.एस.", "ors"],
+  "diclofenac": ["डाइक्लोफेनाक", "डिक्लोफेनेक", "diclofenac"],
+  "ranitidine": ["रैनिटिडीन", "ranitidine"],
+  "pantoprazole": ["पेंटाप्रोजोल", "पेन्टोप्राजोल", "pantoprazole"]
+};
+
+const CONDITION_TRANSLATIONS: Record<string, string> = {
+  "kidney disease": "किडनी की बीमारी",
+  "renal failure": "किडनी फेलियर",
+  "diabetes": "मधुमेह (शुगर)",
+  "asthma": "दमा (अस्थमा)",
+  "liver disease": "लिवर की बीमारी",
+  "heart disease": "दिल की बीमारी",
+  "anemia": "खून की कमी (एनीमिया)",
+  "hypertension": "हाई बीपी (उच्च रक्तचाप)",
+};
+
+const SUGGESTED_TAGS: Record<string, string> = {
+  en: "Suggested Option",
+  hi: "सुझाव",
+  pahadi: "सलाह",
+  garhwali: "सलाह",
+};
+
+const SUGGESTED_TEXTS: Record<string, string> = {
+  en: "is a suitable option to consider.",
+  hi: "एक उपयुक्त विकल्प है।",
+  pahadi: "एक ठीक विकल्प छ।",
+  garhwali: "एक ठीक विकल्प छ।",
+};
+
+const renderMessageText = (msg: Message) => {
+  if (msg.sender === "user" || !msg.suggestedMedicines || msg.suggestedMedicines.length === 0) {
+    return <span>{msg.text}</span>;
+  }
+
+  // Gather all variants of detected drugs (Devanagari + English)
+  const variants: string[] = [];
+  msg.suggestedMedicines.forEach(med => {
+    const medLower = med.toLowerCase();
+    const list = DRUG_TRANSLITERATIONS[medLower] || [medLower];
+    list.forEach(v => {
+      if (!variants.includes(v)) variants.push(v);
+    });
+  });
+
+  // Sort by length descending to match longest matches first
+  variants.sort((a, b) => b.length - a.length);
+
+  // Escape regex special chars
+  const escapedVariants = variants.map(v => v.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  const pattern = new RegExp(`\\b(${escapedVariants.join('|')})\\b|(${escapedVariants.join('|')})`, 'gi');
+
+  const parts = msg.text.split(pattern);
+  // Filter out undefined and empty string parts from splitting groups
+  const cleanParts = parts.filter(p => p !== undefined && p !== "");
+
+  if (cleanParts.length === 1) return <span>{msg.text}</span>;
+
+  return (
+    <span>
+      {cleanParts.map((part, idx) => {
+        const isMed = variants.some(v => v.toLowerCase() === part.toLowerCase());
+        if (isMed) {
+          return (
+            <span key={idx} className="font-bold text-emerald-600 dark:text-emerald-400 capitalize">
+              {part}
+            </span>
+          );
+        }
+        return part;
+      })}
+    </span>
+  );
+};
+
+
 function ChatAssistantPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const userName = searchParams.get("name") || "";
-  const userEmail = searchParams.get("email") || "";
-  const isLoggedIn = !!userEmail;
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const isLogout = searchParams.get("logout") === "true";
+    
+    if (isLogout) {
+      localStorage.removeItem("chatbot_user_name");
+      localStorage.removeItem("chatbot_user_email");
+      setUserName("");
+      setUserEmail("");
+      setIsLoggedIn(false);
+      return;
+    }
+
+    const paramName = searchParams.get("name");
+    const paramEmail = searchParams.get("email");
+
+    let finalName = "";
+    let finalEmail = "";
+
+    if (paramEmail) {
+      finalName = paramName || "";
+      finalEmail = paramEmail;
+      localStorage.setItem("chatbot_user_name", finalName);
+      localStorage.setItem("chatbot_user_email", finalEmail);
+    } else {
+      finalName = localStorage.getItem("chatbot_user_name") || "";
+      finalEmail = localStorage.getItem("chatbot_user_email") || "";
+    }
+
+    setUserName(finalName);
+    setUserEmail(finalEmail);
+    setIsLoggedIn(!!finalEmail);
+  }, [searchParams]);
 
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [listening, setListening] = useState(false);
+  const [transcribing, setTranscribing] = useState(false);
   const [language, setLanguage] = useState("en");
   const [lastInputWasVoice, setLastInputWasVoice] = useState(false);
   const [muted, setMuted] = useState(false);
@@ -72,19 +198,47 @@ function ChatAssistantPage() {
   );
   const [sessionMessages, setSessionMessages] = useState<Message[]>([]);
   const [loadingSessions, setLoadingSessions] = useState(false);
+  const [chronicConditions, setChronicConditions] = useState<string[]>([]);
+  const [consultingFor, setConsultingFor] = useState<"myself" | "family">("myself");
+
+  const loadUserProfile = async (email: string) => {
+    if (!email) return;
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/profile?email=${encodeURIComponent(email)}`);
+      if (res.ok) {
+        const data = await res.json();
+        if (data.chronic_conditions) {
+          setChronicConditions(data.chronic_conditions);
+        }
+      }
+    } catch (e) {
+      console.error("Failed to load user profile:", e);
+    }
+  };
+
+  useEffect(() => {
+    if (userEmail) {
+      loadUserProfile(userEmail);
+    } else {
+      setChronicConditions([]);
+    }
+  }, [userEmail]);
 
   const sessionIdRef = useRef<string>(crypto.randomUUID());
   const dbSessionIdRef = useRef<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  // ── Set initial greeting ──
   useEffect(() => {
     setMessages([{ sender: "bot", text: GREETINGS["en"] }]);
   }, []);
 
+  // ── Auto-scroll ──
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  // ── Load sessions when sidebar opens ──
   useEffect(() => {
     if (!sidebarOpen || !isLoggedIn) return;
     setLoadingSessions(true);
@@ -93,24 +247,31 @@ function ChatAssistantPage() {
       .then((d) => {
         setSessions(d.sessions || []);
         setLoadingSessions(false);
-      });
+      })
+      .catch(() => setLoadingSessions(false));
   }, [sidebarOpen]);
 
+  // ── Load messages for a past session ──
   const loadSessionMessages = async (sessionId: string) => {
     setSelectedSessionId(sessionId);
-    const res = await fetch(`/api/chat-history?sessionId=${sessionId}`);
-    const data = await res.json();
-    setSessionMessages(
-      (data.messages || []).map((m: any) => ({
-        sender: m.sender,
-        text: m.message,
-      })),
-    );
+    try {
+      const res = await fetch(`/api/chat-history?sessionId=${sessionId}`);
+      const data = await res.json();
+      setSessionMessages(
+        (data.messages || []).map((m: any) => ({
+          sender: m.sender,
+          text: m.message,
+        })),
+      );
+    } catch (e) {
+      console.error("Failed to load session messages:", e);
+    }
   };
 
+  // ── Language change ──
   const handleLanguageChange = (newLang: string) => {
     setLanguage(newLang);
-    globalLanguage = newLang; // ← update global immediately
+    globalLanguage = newLang;
     setMessages((prev) => {
       const conversationStarted = prev.some((m) => m.sender === "user");
       if (conversationStarted) return prev;
@@ -118,6 +279,7 @@ function ChatAssistantPage() {
     });
   };
 
+  // ── Text-to-speech ──
   const speakResponse = (text: string) => {
     if (muted || !lastInputWasVoice || typeof window === "undefined") return;
     const utterance = new SpeechSynthesisUtterance(text);
@@ -131,33 +293,41 @@ function ChatAssistantPage() {
     setMuted((prev) => !prev);
   };
 
-  const saveMessage = async (sender: "user" | "bot", message: string) => {
+  // ── Save message to DB (creates session on first message) ──
+  const saveMessage = async (
+    sender: "user" | "bot",
+    message: string,
+    currentLang: string = language,
+  ) => {
     if (!isLoggedIn) return;
-    if (!dbSessionIdRef.current) {
-      try {
+    try {
+      // Create DB session lazily on first message
+      if (!dbSessionIdRef.current) {
         const res = await fetch("/api/chat-session", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ userEmail, userName, language }),
+          body: JSON.stringify({ userEmail, userName, language: currentLang }),
         });
         const d = await res.json();
+        if (!d.sessionId) throw new Error("No sessionId returned");
         dbSessionIdRef.current = d.sessionId;
-      } catch (e) {
-        console.error("Session create error:", e);
-        return;
       }
+
+      await fetch("/api/chat-messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          sessionId: dbSessionIdRef.current,
+          sender,
+          message,
+        }),
+      });
+    } catch (e) {
+      console.error("saveMessage error:", e);
     }
-    await fetch("/api/chat-messages", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        sessionId: dbSessionIdRef.current,
-        sender,
-        message,
-      }),
-    }).catch(console.error);
   };
 
+  // ── Voice input ──
   const startListening = async () => {
     if (typeof window === "undefined") return;
 
@@ -170,7 +340,8 @@ function ChatAssistantPage() {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       const mediaRecorder = new MediaRecorder(stream);
       const audioChunks: BlobPart[] = [];
-      const capturedLang = globalLanguage; // ← always correct, no closure issue
+      const capturedLang = globalLanguage;
+      const recordingStartTime = Date.now();
 
       console.log("🎤 Mic started, language =", capturedLang);
 
@@ -178,52 +349,146 @@ function ChatAssistantPage() {
       setListening(true);
 
       mediaRecorder.ondataavailable = (event) => {
-        audioChunks.push(event.data);
+        if (event.data.size > 0) audioChunks.push(event.data);
       };
 
       mediaRecorder.onstop = async () => {
+        // ✅ Immediately stop the red listening state — don't wait for the API
+        setListening(false);
         stream.getTracks().forEach((track) => track.stop());
 
         const audioBlob = new Blob(audioChunks, { type: "audio/webm" });
+
+        // ✅ Guard: skip if audio blob is too small (empty/no speech recorded)
+        if (audioBlob.size < 3000) {
+          console.warn("⚠️ Audio blob too small, skipping transcription:", audioBlob.size, "bytes");
+          return;
+        }
+
         const formData = new FormData();
         formData.append("file", audioBlob, "audio.webm");
-        // removed: formData.append("language", ...) — FastAPI ignores form fields for query params
 
-        console.log("🎤 Sending to /transcribe with language:", capturedLang);
+        console.log("🎤 Sending to /transcribe:", capturedLang, `${(audioBlob.size / 1024).toFixed(1)} KB`);
+        setTranscribing(true);
+
+        // ✅ AbortController: cancel the fetch if it takes more than 20 seconds
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => {
+          controller.abort();
+          console.error("❌ Transcription timed out after 20s");
+        }, 20000);
 
         try {
           const res = await fetch(
             `${process.env.NEXT_PUBLIC_BACKEND_URL}/transcribe?language=${capturedLang}`,
-            { method: "POST", body: formData },
+            { method: "POST", body: formData, signal: controller.signal },
           );
+          clearTimeout(timeoutId);
           const data = await res.json();
           console.log("✅ Transcription received:", data.text);
           if (data.text) {
             setInput(data.text);
             setLastInputWasVoice(true);
           }
-        } catch (err) {
-          console.error("Transcription error:", err);
+        } catch (err: any) {
+          clearTimeout(timeoutId);
+          if (err?.name === "AbortError") {
+            console.error("❌ Transcription request timed out.");
+          } else {
+            console.error("Transcription error:", err);
+          }
         } finally {
-          setListening(false);
+          setTranscribing(false);
         }
       };
 
-      mediaRecorder.start();
+      // ✅ Collect audio every 250ms so chunks are always available
+      mediaRecorder.start(250);
+
+      // ── Silence Detection ──
+      try {
+        const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+        if (AudioContextClass) {
+          const audioContext = new AudioContextClass();
+          const analyser = audioContext.createAnalyser();
+          const source = audioContext.createMediaStreamSource(stream);
+          source.connect(analyser);
+
+          analyser.fftSize = 512;
+          const bufferLength = analyser.frequencyBinCount;
+          const dataArray = new Uint8Array(bufferLength);
+
+          const silenceThreshold = 12; // Audio volume threshold (0-255)
+          const silenceDelay = 2000;   // Auto-stop after 2 seconds of silence
+          const minRecordingMs = 800;  // ✅ Always record at least 800ms before auto-stopping
+          let silenceStart = Date.now();
+          let speechDetected = false;
+
+          const checkSilence = () => {
+            if (mediaRecorder.state !== "recording") {
+              source.disconnect();
+              analyser.disconnect();
+              audioContext.close().catch(() => {});
+              return;
+            }
+
+            analyser.getByteFrequencyData(dataArray);
+            let sum = 0;
+            for (let i = 0; i < bufferLength; i++) {
+              sum += dataArray[i];
+            }
+            const averageVolume = sum / bufferLength;
+
+            const now = Date.now();
+            const elapsed = now - recordingStartTime;
+
+            if (averageVolume > silenceThreshold) {
+              speechDetected = true;
+              silenceStart = now;
+            }
+
+            // ✅ Only auto-stop after minimum recording time has passed
+            if (elapsed > minRecordingMs) {
+              const maxSilenceDuration = speechDetected ? silenceDelay : 6000;
+              if (now - silenceStart > maxSilenceDuration) {
+                console.log(
+                  speechDetected
+                    ? "🎤 Silence detected. Auto-stopping microphone..."
+                    : "🎤 No speech detected. Auto-stopping microphone..."
+                );
+                if (mediaRecorder.state === "recording") {
+                  mediaRecorder.stop();
+                }
+                return;
+              }
+            }
+
+            requestAnimationFrame(checkSilence);
+          };
+
+          requestAnimationFrame(checkSilence);
+        }
+      } catch (audioErr) {
+        console.warn("Silence detection failed to initialize:", audioErr);
+      }
     } catch (err) {
       alert("Microphone access denied. Please allow mic access and try again.");
       setListening(false);
     }
   };
 
+  // ── Send message ──
   const handleSend = async () => {
     if (!input.trim()) return;
+
     const userMessage: Message = { sender: "user", text: input.trim() };
     setMessages((prev) => [...prev, userMessage]);
     const userInput = input.trim();
     setInput("");
     setLoading(true);
-    await saveMessage("user", userInput);
+
+    // Save user message with current language
+    await saveMessage("user", userInput, globalLanguage);
 
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/chat`, {
@@ -232,18 +497,32 @@ function ChatAssistantPage() {
         body: JSON.stringify({
           session_id: sessionIdRef.current,
           message: userInput,
-          language: globalLanguage, // ← use global here too
+          language: globalLanguage,
+          for_family: consultingFor === "family",
+          user_email: userEmail || null,
         }),
       });
+
       if (!res.ok) throw new Error(`Server error ${res.status}`);
+
       const data = await res.json();
       const botReply: Message = {
         sender: "bot",
         text: data.reply || "Something went wrong. Please try again.",
+        ddiAlerts: data.entities?.ddi_alerts || [],
+        contraindicationAlerts: data.entities?.contraindication_alerts || [],
+        suggestedMedicines: data.entities?.suggested_medicines || [],
       };
+
+      if (data.entities?.chronic_conditions) {
+        setChronicConditions(data.entities.chronic_conditions);
+      }
+
       setMessages((prev) => [...prev, botReply]);
       speakResponse(botReply.text);
-      await saveMessage("bot", botReply.text);
+
+      // Save bot reply with same language
+      await saveMessage("bot", botReply.text, globalLanguage);
     } catch {
       setMessages((prev) => [
         ...prev,
@@ -265,6 +544,7 @@ function ChatAssistantPage() {
     }
   };
 
+  // ── Generate report ──
   const handleOpenReport = () => {
     const reportData = {
       messages,
@@ -276,10 +556,20 @@ function ChatAssistantPage() {
     router.push("/report");
   };
 
+  // ── FIX: Start new chat — reset ALL session refs ──
   const startNewChat = () => {
     setSelectedSessionId(null);
     setSessionMessages([]);
     setSidebarOpen(false);
+    sessionIdRef.current = crypto.randomUUID(); // reset FastAPI session
+    dbSessionIdRef.current = null; // reset DB session so new one is created
+    if (!isLoggedIn) {
+      setChronicConditions([]);
+    } else {
+      loadUserProfile(userEmail);
+    }
+    setConsultingFor("myself"); // Reset toggle mode
+    setMessages([{ sender: "bot", text: GREETINGS[language] }]); // fresh greeting
   };
 
   const displayMessages = selectedSessionId ? sessionMessages : messages;
@@ -354,6 +644,7 @@ function ChatAssistantPage() {
                     </div>
                   </div>
                   <button
+                    suppressHydrationWarning
                     onClick={() => setSidebarOpen(false)}
                     className="p-2 rounded-xl bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-all">
                     <X className="w-4 h-4" />
@@ -363,6 +654,7 @@ function ChatAssistantPage() {
 
               <div className="px-4 pb-3">
                 <button
+                  suppressHydrationWarning
                   onClick={startNewChat}
                   className="w-full flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-white/15 border border-white/20 text-white text-sm font-medium hover:bg-white/25 transition-all group">
                   <div className="w-6 h-6 rounded-lg bg-emerald-400/30 flex items-center justify-center group-hover:bg-emerald-400/50 transition-all">
@@ -404,12 +696,17 @@ function ChatAssistantPage() {
                     </p>
                     {sessions.map((s) => (
                       <button
+                        suppressHydrationWarning
                         key={s.id}
                         onClick={() => {
                           loadSessionMessages(s.id);
                           setSidebarOpen(false);
                         }}
-                        className={`w-full text-left px-3 py-3 rounded-2xl transition-all group ${selectedSessionId === s.id ? "bg-white/20 border border-white/25" : "hover:bg-white/10 border border-transparent"}`}>
+                        className={`w-full text-left px-3 py-3 rounded-2xl transition-all group ${
+                          selectedSessionId === s.id
+                            ? "bg-white/20 border border-white/25"
+                            : "hover:bg-white/10 border border-transparent"
+                        }`}>
                         <div className="flex items-center gap-2 mb-1">
                           <MessageSquare className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
                           <span className="text-xs font-medium text-white/80 truncate">
@@ -503,6 +800,7 @@ function ChatAssistantPage() {
           }}>
           <div className="flex items-center gap-3">
             <button
+              suppressHydrationWarning
               onClick={() => setSidebarOpen(true)}
               className="w-9 h-9 rounded-xl border border-emerald-200/70 flex items-center justify-center hover:bg-emerald-50 transition-all text-emerald-600"
               style={{ background: "rgba(236,253,245,0.8)" }}
@@ -540,6 +838,7 @@ function ChatAssistantPage() {
           <div className="flex items-center gap-2">
             {selectedSessionId && (
               <button
+                suppressHydrationWarning
                 onClick={startNewChat}
                 className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-white transition-all hover:opacity-90"
                 style={{
@@ -555,19 +854,26 @@ function ChatAssistantPage() {
                 style={{ background: "rgba(236,253,245,0.7)" }}>
                 <Globe className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
                 <select
+                  suppressHydrationWarning
                   value={language}
                   onChange={(e) => handleLanguageChange(e.target.value)}
                   className="bg-transparent text-gray-600 text-xs font-medium outline-none cursor-pointer">
                   <option value="en">English</option>
                   <option value="hi">हिंदी</option>
                   <option value="pahadi">पहाड़ी</option>
+                  <option value="garhwali">गढ़वाली</option>
                 </select>
               </div>
             )}
             <button
+              suppressHydrationWarning
               onClick={toggleMute}
               title={muted ? "Unmute" : "Mute"}
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium border transition-all ${muted ? "bg-red-50 border-red-200 text-red-500" : "border-emerald-200/60 text-gray-500 hover:border-emerald-400 hover:text-emerald-700"}`}
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium border transition-all ${
+                muted
+                  ? "bg-red-50 border-red-200 text-red-500"
+                  : "border-emerald-200/60 text-gray-500 hover:border-emerald-400 hover:text-emerald-700"
+              }`}
               style={!muted ? { background: "rgba(236,253,245,0.7)" } : {}}>
               {muted ? (
                 <VolumeX className="w-3.5 h-3.5" />
@@ -580,10 +886,15 @@ function ChatAssistantPage() {
             </button>
             {!selectedSessionId && (
               <button
+                suppressHydrationWarning
                 onClick={handleOpenReport}
                 disabled={messages.length <= 1}
                 title="Generate Report"
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium border transition-all ${messages.length > 1 ? "border-emerald-300 text-emerald-700 hover:border-emerald-500" : "border-gray-200 text-gray-300 cursor-not-allowed"}`}
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium border transition-all ${
+                  messages.length > 1
+                    ? "border-emerald-300 text-emerald-700 hover:border-emerald-500"
+                    : "border-gray-200 text-gray-300 cursor-not-allowed"
+                }`}
                 style={
                   messages.length > 1
                     ? { background: "rgba(236,253,245,0.7)" }
@@ -611,6 +922,7 @@ function ChatAssistantPage() {
                 "0 24px 80px rgba(16,185,129,0.12), 0 8px 24px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.9)",
               border: "1px solid rgba(209,250,229,0.8)",
             }}>
+            {/* Chat header */}
             <div
               className="px-5 py-4 flex items-center gap-3 relative overflow-hidden"
               style={{
@@ -648,6 +960,75 @@ function ChatAssistantPage() {
               </div>
             </div>
 
+            {/* Consulting Mode and Chronic Conditions Bar */}
+            {!selectedSessionId && (
+              <div className="px-5 py-3 bg-emerald-50/50 border-b border-emerald-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 relative z-20">
+                {/* Toggle Pill Selector */}
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    {language === "en" ? "Advice For:" : "सलाह किसके लिए:"}
+                  </span>
+                  <div className="inline-flex rounded-xl p-0.5 bg-gray-100 border border-gray-200">
+                    <button
+                      onClick={() => setConsultingFor("myself")}
+                      className={`px-3 py-1 rounded-lg text-xs font-medium transition-all ${
+                        consultingFor === "myself"
+                          ? "bg-white text-emerald-800 shadow-sm border border-emerald-100/50"
+                          : "text-gray-500 hover:text-gray-950"
+                      }`}
+                    >
+                      {language === "en" ? "Myself" : "स्वयं"}
+                    </button>
+                    <button
+                      onClick={() => setConsultingFor("family")}
+                      className={`px-3 py-1 rounded-lg text-xs font-medium transition-all ${
+                        consultingFor === "family"
+                          ? "bg-white text-emerald-800 shadow-sm border border-emerald-100/50"
+                          : "text-gray-500 hover:text-gray-950"
+                      }`}
+                    >
+                      {language === "en" ? "Family Member" : "परिवार के सदस्य"}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Status indicator */}
+                <div className="flex flex-wrap items-center gap-1.5 min-h-[28px]">
+                  {consultingFor === "family" ? (
+                    <span className="text-xs font-medium text-amber-700 bg-amber-50 border border-amber-200/50 px-2.5 py-1 rounded-full flex items-center gap-1 animate-fadeIn">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                      {language === "en"
+                        ? "Family member consultation (Profile alerts paused)"
+                        : "परिवार सदस्य परामर्श (प्रोफ़ाइल अलर्ट रोके गए)"}
+                    </span>
+                  ) : chronicConditions.length > 0 ? (
+                    <>
+                      <span className="text-xs font-semibold text-emerald-800 mr-1 flex items-center gap-1">
+                        {language === "en" ? "Active Conditions:" : "सक्रिय बीमारियां:"}
+                      </span>
+                      {chronicConditions.map((cond, idx) => (
+                        <span
+                          key={idx}
+                          className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-white border border-emerald-200 text-emerald-700 shadow-xs capitalize"
+                        >
+                          {language === "en"
+                            ? cond
+                            : (CONDITION_TRANSLATIONS[cond.toLowerCase().trim()] || cond)}
+                        </span>
+                      ))}
+                    </>
+                  ) : (
+                    <span className="text-xs text-gray-400 italic">
+                      {language === "en"
+                        ? "No chronic illnesses recorded in profile"
+                        : "प्रोफ़ाइल में कोई पुरानी बीमारी दर्ज नहीं है"}
+                    </span>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Messages */}
             <div
               className="flex-1 overflow-y-auto px-5 py-5 space-y-4 chat-scrollbar"
               style={{
@@ -672,7 +1053,9 @@ function ChatAssistantPage() {
                     initial={{ opacity: 0, y: 12, scale: 0.96 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.25, ease: "easeOut" }}
-                    className={`flex items-end gap-2.5 ${msg.sender === "user" ? "justify-end" : "justify-start"}`}>
+                    className={`flex items-end gap-2.5 ${
+                      msg.sender === "user" ? "justify-end" : "justify-start"
+                    }`}>
                     {msg.sender === "bot" && (
                       <div
                         className="w-8 h-8 rounded-2xl flex items-center justify-center flex-shrink-0 mb-0.5"
@@ -684,7 +1067,11 @@ function ChatAssistantPage() {
                       </div>
                     )}
                     <div
-                      className={`max-w-[76%] px-4 py-3 text-sm leading-relaxed font-light ${msg.sender === "user" ? "text-white rounded-3xl rounded-br-lg" : "text-gray-700 rounded-3xl rounded-bl-lg border border-emerald-100/80"}`}
+                      className={`max-w-[76%] px-4 py-3 text-sm leading-relaxed font-light ${
+                        msg.sender === "user"
+                          ? "text-white rounded-3xl rounded-br-lg"
+                          : "text-gray-700 rounded-3xl rounded-bl-lg border border-emerald-100/80"
+                      }`}
                       style={
                         msg.sender === "user"
                           ? {
@@ -698,7 +1085,94 @@ function ChatAssistantPage() {
                                 "0 2px 12px rgba(16,185,129,0.07), 0 1px 3px rgba(0,0,0,0.04)",
                             }
                       }>
-                      {msg.text}
+                      <div>{renderMessageText(msg)}</div>
+                      {msg.ddiAlerts && msg.ddiAlerts.length > 0 && (
+                        <div className="mt-3 space-y-2">
+                          {msg.ddiAlerts.map((alert, aIdx) => (
+                            <div
+                              key={aIdx}
+                              className={`flex items-start gap-2.5 p-3 rounded-2xl border text-xs leading-normal font-normal ${
+                                alert.severity === "HIGH"
+                                  ? "bg-red-50 border-red-200 text-red-800"
+                                  : "bg-amber-50 border-amber-200 text-amber-800"
+                              }`}
+                            >
+                              <span
+                                className={`font-bold text-[9px] uppercase px-1.5 py-0.5 rounded border self-start ${
+                                  alert.severity === "HIGH"
+                                    ? "bg-white border-red-300 text-red-700"
+                                    : "bg-white border-amber-300 text-amber-700"
+                                }`}
+                              >
+                                {alert.severity}
+                              </span>
+                              <div className="flex-1">
+                                <span className="font-semibold capitalize text-gray-900">{alert.drug_a}</span>
+                                <span className="text-gray-500 font-light mx-1">and</span>
+                                <span className="font-semibold capitalize text-gray-900">{alert.drug_b}</span>
+                                <span className="text-gray-600"> have a potential interaction risk.</span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {msg.contraindicationAlerts && msg.contraindicationAlerts.length > 0 && (
+                        <div className="mt-3 space-y-2">
+                          {msg.contraindicationAlerts.map((alert, cIdx) => (
+                            <div
+                              key={cIdx}
+                              className="flex items-start gap-2.5 p-3 rounded-2xl border text-xs leading-normal font-normal bg-red-50 border-red-200 text-red-800"
+                            >
+                              <span className="font-bold text-[9px] uppercase px-1.5 py-0.5 rounded border self-start bg-white border-red-300 text-red-700">
+                                Contraindication
+                              </span>
+                              <div className="flex-1">
+                                <span className="font-semibold capitalize text-gray-900">{alert.medicine}</span>
+                                <span className="text-gray-650"> is contraindicated for patients with </span>
+                                <span className="font-semibold capitalize text-gray-900">{alert.chronic_condition}</span>.
+                                <span className="text-gray-550 font-light block mt-1">
+                                  Reason: {alert.contraindication}
+                                </span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {msg.suggestedMedicines && msg.suggestedMedicines.length > 0 && (
+                        <div className="mt-3 space-y-2">
+                          {msg.suggestedMedicines
+                            .filter(med => {
+                              // Filter out medicines that have a contraindication alert in this message
+                              const hasContra = msg.contraindicationAlerts?.some(
+                                alert => alert.medicine.toLowerCase() === med.toLowerCase()
+                              );
+                              return !hasContra;
+                            })
+                            .map((med, sIdx) => {
+                              const tag = SUGGESTED_TAGS[language] || SUGGESTED_TAGS["en"];
+                              const text = SUGGESTED_TEXTS[language] || SUGGESTED_TEXTS["en"];
+                              return (
+                                <div
+                                  key={sIdx}
+                                  className="flex items-start gap-2.5 p-3 rounded-2xl border text-xs leading-normal font-normal bg-emerald-50 border-emerald-200 text-emerald-800"
+                                  style={{
+                                    animation: "fadeIn 0.3s ease-out"
+                                  }}
+                                >
+                                  <span className="font-bold text-[9px] uppercase px-1.5 py-0.5 rounded border self-start bg-white border-emerald-300 text-emerald-700">
+                                    {tag}
+                                  </span>
+                                  <div className="flex-1">
+                                    <span className="font-semibold capitalize text-gray-900">{med}</span>{" "}
+                                    <span className="text-gray-650">{text}</span>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                        </div>
+                      )}
                     </div>
                     {msg.sender === "user" && (
                       <div className="w-8 h-8 rounded-2xl flex-shrink-0 mb-0.5 flex items-center justify-center bg-emerald-100 border border-emerald-200">
@@ -749,10 +1223,23 @@ function ChatAssistantPage() {
                   style={{ background: "rgba(236,253,245,0.5)" }}>
                   <button
                     onClick={startListening}
-                    disabled={loading}
-                    className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-all ${listening ? "bg-red-500 text-white listening-ring" : "text-emerald-500 hover:bg-emerald-100 hover:text-emerald-700"}`}>
+                    disabled={loading || transcribing}
+                    suppressHydrationWarning
+                    title={listening ? "Stop recording" : transcribing ? "Transcribing..." : "Start recording"}
+                    className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-all ${
+                      listening
+                        ? "bg-red-500 text-white listening-ring"
+                        : transcribing
+                        ? "bg-amber-100 text-amber-600 cursor-not-allowed"
+                        : "text-emerald-500 hover:bg-emerald-100 hover:text-emerald-700"
+                    }`}>
                     {listening ? (
                       <MicOff className="w-4 h-4" />
+                    ) : transcribing ? (
+                      <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                      </svg>
                     ) : (
                       <Mic className="w-4 h-4" />
                     )}
@@ -760,17 +1247,25 @@ function ChatAssistantPage() {
                   <input
                     type="text"
                     value={input}
-                    placeholder={PLACEHOLDERS[language]}
+                    placeholder={transcribing ? "Transcribing your voice..." : PLACEHOLDERS[language]}
                     onChange={(e) => setInput(e.target.value)}
                     onKeyDown={handleKeyPress}
-                    disabled={loading}
-                    className="flex-1 bg-transparent text-gray-700 text-sm outline-none placeholder-gray-400 font-light min-w-0"
+                    disabled={loading || transcribing}
+                    suppressHydrationWarning
+                    className={`flex-1 bg-transparent text-sm outline-none font-light min-w-0 ${
+                      transcribing ? "text-amber-500 placeholder-amber-400 italic" : "text-gray-700 placeholder-gray-400"
+                    }`}
                   />
                   <motion.button
+                    suppressHydrationWarning
                     onClick={handleSend}
                     disabled={loading || !input.trim()}
                     whileTap={input.trim() && !loading ? { scale: 0.9 } : {}}
-                    className={`w-9 h-9 rounded-xl flex-shrink-0 flex items-center justify-center transition-all ${input.trim() && !loading ? "text-white shadow-lg shadow-emerald-200/60 hover:opacity-90" : "bg-gray-100 text-gray-300 cursor-not-allowed"}`}
+                    className={`w-9 h-9 rounded-xl flex-shrink-0 flex items-center justify-center transition-all ${
+                      input.trim() && !loading
+                        ? "text-white shadow-lg shadow-emerald-200/60 hover:opacity-90"
+                        : "bg-gray-100 text-gray-300 cursor-not-allowed"
+                    }`}
                     style={
                       input.trim() && !loading
                         ? {

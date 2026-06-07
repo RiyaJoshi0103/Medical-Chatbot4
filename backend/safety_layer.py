@@ -15,8 +15,8 @@ EMERGENCY_SYMPTOMS = [
     "chest pain", "heart attack", "can't breathe", "cannot breathe",
     "difficulty breathing", "seizure", "unconscious", "not breathing",
     "stroke", "severe bleeding", "coughing blood", "vomiting blood",
-    "stiff neck", "neck stiff",                    # ← ADD THESE
-    "high fever stiff", "fever stiff neck",         # ← ADD THESE
+    "stiff neck", "neck stiff",
+    "high fever stiff", "fever stiff neck",
     "paralysis", "face drooping",
     "arm weakness", "sudden confusion", "slurred speech",
 ]
@@ -24,13 +24,15 @@ EMERGENCY_SYMPTOMS = [
 EMERGENCY_RESPONSES = {
     "en": "⚠️ EMERGENCY: Your symptoms may indicate a life-threatening condition. Please call 112 immediately or go to the nearest hospital. Do not wait.",
     "hi": "⚠️ आपातकाल: आपके लक्षण गंभीर हो सकते हैं। तुरंत 112 पर कॉल करें या नजदीकी अस्पताल जाएं। देरी मत करें।",
-    "pahadi": "⚠️ जरूरी: तुमारा हाल बौत गंभीर लगद। अभी 112 मा फोन करो या नजदीकी अस्पताल जाओ।"
+    "pahadi": "⚠️ जरूरी: तुमारा हाल बौत गंभीर लगद। अभी 112 मा फोन करो या नजदीकी अस्पताल जाओ。",
+    "garhwali": "⚠️ जरूरी: तुमरू हाल बौत गंभीर लगदू छ। अभी 112 मा फोन करा या नजदीकी अस्पताल जावा。"
 }
 
 BLOCKED_RESPONSE = {
     "en": "I'm sorry, I can't help with that. If you are feeling overwhelmed, please call iCall: 9152987821. Help is available.",
     "hi": "मैं इसमें मदद नहीं कर सकता। अगर आप मुश्किल में हैं, कृपया iCall पर कॉल करें: 9152987821।",
-    "pahadi": "म इसमा मदद नि कर सकदु। iCall मा फोन करो: 9152987821।"
+    "pahadi": "म इसमा मदद नि कर सकदु। iCall मा फोन करो: 9152987821。",
+    "garhwali": "म इसमा मदद नि कर सकदु। iCall मा फोन करा: 9152987821。"
 }
 
 
@@ -87,18 +89,5 @@ def check_output_safety(reply: str, lang: str = "en") -> str:
     # Soften overconfident phrases
     for pattern, replacement in OVERCONFIDENT_PHRASES:
         reply = re.sub(pattern, replacement, reply, flags=re.IGNORECASE)
-
-    # Add disclaimer in correct language
-    disclaimer = DISCLAIMER.get(lang, DISCLAIMER["en"])
-    
-    # Check for existing disclaimer in any language
-    already_has_disclaimer = (
-        "consult a doctor" in reply.lower() or
-        "डॉक्टर" in reply or
-        "⚕️" in reply
-    )
-    
-    if not already_has_disclaimer:
-        reply += disclaimer
 
     return reply

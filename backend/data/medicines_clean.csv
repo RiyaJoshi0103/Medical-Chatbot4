@@ -1,0 +1,616 @@
+medicine_name,indication,contraindications,pregnancy_category,source,pregnancy_risk
+acarbose,diabetes (type 2),"renal failure, severe hepatic impairment, hypersensitivity to acarbose, concurrent alpha-glucosidase inhibitors, concurrent warfarin, pregnancy",B,drugsdotcom,LOW
+acebutolol,hypertension,"hepatic impairment, severe bradycardia, heart block, asthma, severe chronic obstructive pulmonary disease, hypersensitivity, severe renal failure, pregnancy (category C), concurrent beta-blockers, concurrent calcium channel blockers, concurrent MAOIs, concurrent clonidine.",B,drugsdotcom,LOW
+acetaminophen,pain,"hepatic impairment, severe renal failure, hypersensitivity, concurrent warfarin, concurrent isoniazid, concurrent phenobarbital, concurrent carbamazepine, concurrent rifampicin, concurrent zidovudine, concurrent valproic acid, concurrent NSAIDs, severe dehydration, pregnancy (third trimester), severe alcohol use.",C,drugsdotcom,MEDIUM
+acetaminophen (injection),pain,"hepatic impairment, severe renal failure, hypersensitivity, concurrent warfarin, concurrent isoniazid, concurrent phenobarbital, concurrent carbamazepine, concurrent rifampicin, concurrent zidovudine, concurrent valproic acid, concurrent NSAIDs, severe dehydration, pregnancy (third trimester), severe alcohol use.",C,drugsdotcom,MEDIUM
+"acetaminophen (oral route, rectal route)",pain,"hepatic impairment, severe renal failure, hypersensitivity, concurrent warfarin, concurrent isoniazid, concurrent phenobarbital, concurrent carbamazepine, concurrent rifampicin, concurrent zidovudine, concurrent valproic acid, concurrent NSAIDs, severe dehydration, pregnancy (third trimester), severe alcohol use.",C,drugsdotcom,MEDIUM
+acetaminophen (oral),pain,"hepatic impairment, severe renal failure, hypersensitivity, concurrent warfarin, concurrent isoniazid, concurrent phenobarbital, concurrent carbamazepine, concurrent rifampicin, concurrent zidovudine, concurrent valproic acid, concurrent NSAIDs, severe dehydration, pregnancy (third trimester), severe alcohol use.",C,drugsdotcom,MEDIUM
+acetaminophen (rectal),pain,"hepatic impairment, severe renal failure, hypersensitivity, concurrent warfarin, concurrent isoniazid, concurrent phenobarbital, concurrent carbamazepine, concurrent rifampicin, concurrent zidovudine, concurrent valproic acid, concurrent NSAIDs, severe dehydration, pregnancy (third trimester), severe alcohol use.",C,drugsdotcom,MEDIUM
+acetaminophen and benzhydrocodone,pain,"hepatic impairment, severe respiratory depression, acute respiratory depression, severe renal impairment, hypersensitivity to codeine or acetaminophen, concurrent MAOIs, concurrent CYP3A4 inhibitors, pregnancy, concurrent opioids, concurrent sedatives, concurrent CNS depressants, concurrent alcohol use.",N,drugsdotcom,UNKNOWN
+acetaminophen and hydrocodone,pain,"hepatic impairment, renal failure, severe respiratory depression, acute respiratory depression, severe respiratory disease, severe asthma, severe COPD, hypersensitivity to hydrocodone or acetaminophen, concurrent MAOIs, concurrent CYP3A4 inhibitors, pregnancy, breastfeeding, concurrent benzodiazepines, concurrent opioids, concurrent sedatives, concurrent CNS depressants.",C,drugsdotcom,MEDIUM
+acetaminophen and ibuprofen,pain,"hepatic impairment, severe renal failure, hypersensitivity to NSAIDs or acetaminophen, concurrent warfarin, aspirin, or corticosteroids, pregnancy (third trimester), severe hypertension, bleeding disorders, asthma, severe kidney disease, severe liver disease, severe heart failure, severe dehydration, severe electrolyte imbalance, severe bleeding disorders, severe kidney disease, severe liver disease,",N,drugsdotcom,UNKNOWN
+acetaminophen and oxycodone,pain,"hepatic impairment, severe renal impairment, respiratory depression, severe hypotension, hypersensitivity to acetaminophen or oxycodone, concurrent MAOIs, concurrent CYP3A4 inhibitors, pregnancy, concurrent benzodiazepines, concurrent other opioids, concurrent sedatives.",C,drugsdotcom,MEDIUM
+acetaminophen and tramadol,pain,"hepatic impairment, renal failure, hypersensitivity to tramadol or acetaminophen, concurrent MAOIs, concurrent SSRIs, concurrent warfarin, pregnancy, severe kidney disease, severe liver disease, severe respiratory depression, concurrent opioids, concurrent sedatives, concurrent alcohol use.",C,drugsdotcom,MEDIUM
+acetaminophen capsules and tablets,pain,"hepatic impairment, severe renal failure, hypersensitivity to acetaminophen, concurrent warfarin, concurrent isoniazid, concurrent zidovudine, concurrent phenobarbital, concurrent phenytoin, concurrent carbamazepine, concurrent rifampin, concurrent rifabutin, concurrent St. John's Wort, severe alcoholism, pregnancy with severe liver disease,",C,drugsdotcom,MEDIUM
+acetaminophen controlled-release tablets,pain,"hepatic impairment, severe renal failure, hypersensitivity to acetaminophen, concurrent warfarin, concurrent isoniazid, concurrent zidovudine, concurrent phenobarbital, concurrent phenytoin, concurrent carbamazepine, concurrent rifampicin, concurrent rifabutin, concurrent St. John's Wort, concurrent estrogen-containing oral contraceptives, severe",C,drugsdotcom,MEDIUM
+acetaminophen dispersible tablets,pain,"hepatic impairment, severe renal failure, hypersensitivity to acetaminophen, concurrent warfarin, concurrent isoniazid, concurrent zidovudine, concurrent phenobarbital, concurrent phenytoin, concurrent carbamazepine, concurrent rifampicin, concurrent rifabutin, concurrent St. John's Wort, severe pregnancy-induced hypertension, severe preecl",C,drugsdotcom,MEDIUM
+acetaminophen liquid,pain,"hepatic impairment, severe renal failure, hypersensitivity to acetaminophen, concurrent warfarin, concurrent isoniazid, concurrent zidovudine, concurrent phenobarbital, concurrent phenytoin, concurrent carbamazepine, concurrent rifampin, concurrent rifabutin, concurrent St. John's Wort, severe dehydration, severe malnutrition, pregnancy with severe",C,drugsdotcom,MEDIUM
+acetaminophen suspension drops,pain,"hepatic impairment, severe renal failure, hypersensitivity to acetaminophen, concurrent warfarin, concurrent isoniazid, concurrent zidovudine, concurrent phenobarbital, concurrent phenytoin, concurrent carbamazepine, concurrent rifampin, concurrent rifabutin, concurrent St. John's Wort, severe dehydration, severe malnutrition, pregnancy with severe",C,drugsdotcom,MEDIUM
+"acetaminophen, caffeine, and dihydrocodeine",pain,"hepatic impairment, renal failure, hypersensitivity, concurrent MAOIs, concurrent SSRIs, concurrent warfarin, pregnancy, concurrent carbamazepine, concurrent phenobarbital, concurrent rifampicin, concurrent erythromycin, concurrent cimetidine, concurrent protease inhibitors, concurrent atazanavir, concurrent clarithromycin, concurrent grapefruit juice.",C,drugsdotcom,MEDIUM
+"acetaminophen, salicylamide, and phenyltoloxamine",pain,"hepatic impairment, severe renal failure, hypersensitivity to NSAIDs or salicylates, concurrent warfarin, pregnancy in third trimester, severe asthma.",C,drugsdotcom,MEDIUM
+acrivastine / pseudoephedrine,hayfever,"hepatic impairment, renal failure, severe hypertension, coronary artery disease, concurrent MAOIs, concurrent SSRIs, concurrent TCAs, concurrent beta blockers, pregnancy, breastfeeding, hypersensitivity to pseudoephedrine or acrivastine.",B,drugsdotcom,LOW
+acrivastine and pseudoephedrine (oral route),hayfever,"hepatic impairment, renal failure, hypersensitivity to acrivastine or pseudoephedrine, concurrent MAOIs, pregnancy, severe hypertension, coronary artery disease, cardiac arrhythmias, thyroid disease, severe kidney disease, severe liver disease, severe heart disease, severe high blood pressure.",B,drugsdotcom,LOW
+albiglutide,diabetes (type 2),pancreatitis,C,drugsdotcom,MEDIUM
+albuterol,asthma,"renal impairment, hypersensitivity to albuterol or other beta-agonists, concurrent MAOIs, concurrent non-potassium-sparing diuretics, severe heart failure, pregnancy (use only if benefits outweigh risks).",C,drugdata,MEDIUM
+alfentanil,pain,"renal failure, respiratory depression, biliary obstruction, hypersensitivity, concurrent MAOIs, pregnancy, severe respiratory disease, head injury, intracranial hypertension, concurrent CNS depressants",C,drugsdotcom,MEDIUM
+aliskiren,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+alogliptin,diabetes (type 2),"autoimmune disease, pancreatitis",B,drugsdotcom,LOW
+alogliptin and metformin,diabetes (type 2),heart failure,B,drugsdotcom,LOW
+alogliptin and pioglitazone,diabetes (type 2),"heart failure, autoimmune disease",C,drugsdotcom,MEDIUM
+aluminum hydroxide,gerd (heartburn),"renal failure, severe hepatic impairment, hypersensitivity to aluminum salts, concurrent phosphate binders, concurrent antacids containing magnesium.",N,drugsdotcom,UNKNOWN
+aluminum hydroxide and magnesium carbonate,gerd (heartburn),"renal failure, severe kidney disease, severe liver disease, hypersensitivity to aluminum or magnesium, concurrent antacids containing calcium, concurrent medications that may affect magnesium levels (e.g. loop diuretics), pregnancy (use in pregnancy only if benefits outweigh risks)",N,drugsdotcom,UNKNOWN
+aluminum hydroxide and magnesium hydroxide chewable tablets,gerd (heartburn),"renal failure, severe kidney disease, severe liver disease, hypersensitivity to aluminum or magnesium, concurrent antacids or acid-reducing medications, concurrent medications that may interact with aluminum or magnesium (e.g. tetracyclines, quinolones), pregnancy (use with caution and under medical supervision)",N,drugsdotcom,UNKNOWN
+"aluminum hydroxide, magnesium hydroxide, and simethicone",gerd (heartburn),"renal failure, severe kidney disease, severe liver disease, hypersensitivity to aluminum or magnesium, concurrent antacids containing calcium, concurrent medications that may affect magnesium levels (e.g. digoxin, certain antibiotics), pregnancy risks if severe (aluminum toxicity risk).",N,drugsdotcom,UNKNOWN
+"aluminum hydroxide, magnesium hydroxide, and simethicone chewable tablets",gerd (heartburn),"renal failure, severe kidney disease, severe liver disease, hypersensitivity to aluminum or magnesium, concurrent antacids or aluminum-containing medications, concurrent medications that may interact with magnesium (e.g. certain antibiotics, blood thinners), pregnancy risks if severe (aluminum toxicity risk).",N,drugsdotcom,UNKNOWN
+"aluminum hydroxide, magnesium hydroxide, and simethicone suspension",gerd (heartburn),"renal failure, severe hepatic impairment, hypersensitivity to aluminum or magnesium, concurrent antacids or aluminum-containing products, concurrent ketoconazole or captopril.",N,drugsdotcom,UNKNOWN
+amiloride,hypertension,hyperkalemia,B,drugsdotcom,LOW
+amlodipine,angina | hypertension,"angina, heart attack",C,drugsdotcom + drugdata,MEDIUM
+amlodipine (oral route),angina,depression,C,drugsdotcom,MEDIUM
+amlodipine and atorvastatin,angina,kidney failure,X,drugsdotcom,NEVER
+amlodipine and benazepril,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+amlodipine and celecoxib,hypertension,"heart failure, angina, heart attack, kidney failure, liver failure, anemia, hyperkalemia",N,drugsdotcom,UNKNOWN
+amlodipine and olmesartan,hypertension,"angina, heart attack, hyperkalemia",D,drugsdotcom,HIGH
+amlodipine and perindopril,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+amlodipine and telmisartan,hypertension,"kidney failure, hyperkalemia",D,drugsdotcom,HIGH
+amlodipine and valsartan,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+"amlodipine, hydrochlorothiazide, and olmesartan",hypertension,"renal failure, severe hepatic impairment, hypersensitivity to any component, concurrent potassium-sparing diuretics, lithium, pregnancy (especially in the second and third trimesters).",D,drugsdotcom,HIGH
+"amlodipine, hydrochlorothiazide, and valsartan",hypertension,"renal failure, severe hepatic impairment, hypersensitivity to any component, concurrent potassium-sparing diuretics, lithium, pregnancy (especially in the second and third trimesters).",D,drugsdotcom,HIGH
+amoxicillin,bronchitis | bacterial infections,"hepatic impairment, renal failure, hypersensitivity to penicillins, concurrent MAOIs, concurrent allopurinol, concurrent probenecid, pregnancy category B but caution in severe cases, history of Clostridioides difficile infection.",C,drugsdotcom + drugdata,MEDIUM
+amoxicillin / clavulanate,bacterial infections,"renal impairment, hepatic impairment, hypersensitivity to penicillins, concurrent MAOIs, concurrent allopurinol, pregnancy category C (use with caution), history of cholestatic jaundice with previous penicillin or cephalosporin use",C,drugdata,MEDIUM
+amoxicillin-clavulanate,bacterial infections,"renal impairment, hepatic impairment, hypersensitivity to penicillins, concurrent warfarin, pregnancy category B but caution in severe cases, history of cholestatic jaundice with previous penicillin or cephalosporin use",C,drugdata,MEDIUM
+amyl nitrite,angina,"hepatic impairment, renal failure, severe hypotension, concurrent beta-blockers, concurrent nitrates, pregnancy, severe anemia, severe hypovolemia, concurrent phosphodiesterase inhibitors, concurrent sildenafil, concurrent tadalafil, concurrent vardenafil, concurrent riociguat, concurrent soluble guanylate cyclase stimulators.",C,drugsdotcom,MEDIUM
+aspirin (oral route),angina,"hepatic impairment, renal failure, hypersensitivity, concurrent anticoagulants, concurrent NSAIDs, pregnancy (especially in third trimester), bleeding disorders.",N,drugsdotcom,UNKNOWN
+aspirin (oral),angina,"hepatic impairment, renal failure, hypersensitivity, concurrent anticoagulants, concurrent NSAIDs, pregnancy (especially in third trimester), bleeding disorders.",N,drugsdotcom,UNKNOWN
+aspirin / caffeine / dihydrocodeine,pain,depression,N,drugsdotcom,UNKNOWN
+aspirin / oxycodone,pain,depression,B,drugsdotcom,LOW
+aspirin and caffeine,pain,"hepatic impairment, renal failure, hypersensitivity to NSAIDs, concurrent MAOIs, pregnancy (third trimester), bleeding disorders (e.g. hemophilia), recent CVA or stroke, peptic ulcer disease.",N,drugsdotcom,UNKNOWN
+aspirin and caffeine powder,pain,hyperkalemia,N,drugsdotcom,UNKNOWN
+aspirin and caffeine tablets,pain,hyperkalemia,N,drugsdotcom,UNKNOWN
+aspirin and oxycodone,pain,"renal failure, hepatic impairment, severe respiratory depression, hypersensitivity to NSAIDs or opioids, concurrent MAOIs, pregnancy (especially in third trimester), concurrent sedatives or other central nervous system depressants.",B,drugsdotcom,LOW
+aspirin enteric-coated and buffered tablets,angina,hyperkalemia,N,drugsdotcom,UNKNOWN
+aspirin tablets,angina,hyperkalemia,N,drugsdotcom,UNKNOWN
+"aspirin, carisoprodol, and codeine",pain,"renal failure, hepatic impairment, respiratory depression, severe asthma, hypersensitivity to codeine or carisoprodol, pregnancy, concurrent MAOIs, concurrent SSRIs, concurrent warfarin, concurrent NSAIDs.",C,drugsdotcom,MEDIUM
+atenolol,angina | hypertension,low blood pressure,D,drugsdotcom + drugdata,HIGH
+atenolol and chlorthalidone,hypertension,"depression, pancreatitis",D,drugsdotcom,HIGH
+atropine / difenoxin,diarrhea,"renal failure, hepatic impairment, severe ulcerative colitis, toxic megacolon, pyloric stenosis, severe hyperthyroidism, glaucoma, prostatic hypertrophy, urinary retention, hypersensitivity to atropine or difenoxin, concurrent MAOIs, concurrent tricyclic antidepressants, concurrent anticholinergics, pregnancy, breastfeeding.",C,drugsdotcom,MEDIUM
+atropine and diphenoxylate,diarrhea,depression,C,drugsdotcom,MEDIUM
+azelastine and fluticasone nasal,hayfever,"renal impairment, severe liver disease, hypersensitivity to azelastine or fluticasone, concurrent MAOIs, concurrent beta-blockers, concurrent tricyclic antidepressants, concurrent sedatives, pregnancy, breastfeeding.",C,drugsdotcom,MEDIUM
+azelastine hydrochloride,hayfever,"renal impairment, severe hepatic impairment, hypersensitivity to azelastine hydrochloride, concurrent MAOIs, pregnancy and breastfeeding (use with caution)",C,drugsdotcom,MEDIUM
+azelastine nasal,hayfever,"renal impairment, severe hepatic impairment, hypersensitivity to azelastine, concurrent MAOIs, pregnancy and breastfeeding (use with caution)",C,drugsdotcom,MEDIUM
+azilsartan,hypertension,"renal impairment, hypersensitivity to azilsartan or other ARBs, concurrent potassium-sparing diuretics, pregnancy (if severe hypertension is not controlled).",D,drugsdotcom,HIGH
+azilsartan and chlorthalidone,hypertension,"renal failure, severe hepatic impairment, hypersensitivity to azilsartan or chlorthalidone, anuria, pregnancy (especially in the second and third trimesters), concurrent lithium therapy, concurrent potassium-sparing diuretics.",D,drugsdotcom,HIGH
+azilsartan medoxomil,hypertension,"renal failure, severe hepatic impairment, hypersensitivity to azilsartan or other ARBs, concurrent potassium-sparing diuretics, pregnancy (if severe hypertension is not controlled).",D,drugsdotcom,HIGH
+beclomethasone nasal,hayfever,"renal impairment, hepatic impairment, hypersensitivity to beclomethasone, concurrent systemic corticosteroids, concurrent potassium-depleting agents, concurrent NSAIDs, pregnancy (use only if benefits outweigh risks)",C,drugsdotcom,MEDIUM
+belladonna,gerd (heartburn),none documented,C,drugsdotcom,MEDIUM
+benazepril,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+bendroflumethiazide,hypertension,pancreatitis,C,drugsdotcom,MEDIUM
+bendroflumethiazide and nadolol,hypertension,"hepatic impairment, renal failure, hypersensitivity, heart block, severe bradycardia, asthma, COPD, severe peripheral arterial disease, pregnancy (especially in the 2nd and 3rd trimesters), concurrent beta-blockers, concurrent calcium channel blockers, concurrent NSAIDs, concurrent SSRIs.",C,drugsdotcom,MEDIUM
+benralizumab,asthma,asthma,N,drugsdotcom,UNKNOWN
+benralizumab brand name: fasenra,asthma,"low blood pressure, hypersensitivity",N,drugsdotcom,UNKNOWN
+benzocaine,pain,"renal failure, hepatic impairment, hypersensitivity to esters of local anesthetics, concurrent MAOIs, pregnancy (use with caution), concurrent warfarin.",C,drugsdotcom,MEDIUM
+benzocaine (topical application route),pain,"renal failure, hepatic impairment, hypersensitivity to esters of local anesthetics, concurrent MAOIs, pregnancy (use with caution), concurrent warfarin.",C,drugsdotcom,MEDIUM
+benzocaine lozenges,pain,"renal failure, severe hepatic impairment, hypersensitivity to benzocaine, concurrent MAOIs, pregnancy (use with caution, but no severe risks documented)",C,drugsdotcom,MEDIUM
+benzocaine orally disintegrating tablets,pain,"renal impairment, severe hepatic impairment, hypersensitivity to benzocaine, concurrent MAOIs, pregnancy (use only if benefits outweigh risks)",C,drugsdotcom,MEDIUM
+benzocaine topical,pain,"renal failure, severe hepatic impairment, hypersensitivity to benzocaine, concurrent MAOIs, pregnancy (use with caution, but no severe risks documented)",C,drugsdotcom,MEDIUM
+betaxolol,hypertension,lupus,C,drugsdotcom,MEDIUM
+bethanechol,gerd (heartburn),"hepatic impairment, renal failure, hypersensitivity, concurrent MAOIs, severe asthma, severe COPD, peptic ulcer, pyloric stenosis, bladder neck obstruction, prostate enlargement, urinary retention, pregnancy.",C,drugsdotcom,MEDIUM
+bismuth subsalicylate,diarrhea,"hepatic impairment, renal failure, severe kidney disease, severe colitis, hypersensitivity to salicylates, concurrent anticoagulants, concurrent NSAIDs, pregnancy (third trimester), concurrent methotrexate",N,drugsdotcom,UNKNOWN
+bisoprolol,hypertension,bronchospasm,C,drugsdotcom,MEDIUM
+bivalirudin,angina,"renal failure, hepatic impairment, hypersensitivity to bivalirudin, thrombocytopenia, severe bleeding, concurrent anticoagulants, low platelet count, pregnancy, concurrent fibrinolytics",B,drugsdotcom,LOW
+brivaracetam (oral/injection),seizures,"renal impairment, severe hepatic impairment, hypersensitivity to brivaracetam or its components, concurrent carbamazepine, concurrent phenobarbital, concurrent phenytoin, concurrent primidone, concurrent rifampin, concurrent St. John's Wort, pregnancy, breastfeeding.",C,drugsdotcom,MEDIUM
+bromocriptine,diabetes (type 2) | parkinson's disease,"renal failure, hepatic impairment, hypersensitivity, concurrent ergot alkaloids, concurrent MAOIs, pregnancy, concurrent warfarin, concurrent ketoconazole, concurrent itraconazole, concurrent erythromycin, concurrent clarithromycin, concurrent ritonavir, concurrent atazanavir, concurrent indinavir, concurrent saquinavir, concurrent nefazodone, concurrent cimet",C,drugsdotcom + drugdata,MEDIUM
+bromocriptine (parlodel),diabetes (type 2),"renal failure, hepatic impairment, hypersensitivity, concurrent ergot alkaloids, concurrent MAOIs, pregnancy, concurrent warfarin, concurrent ketoconazole, concurrent itraconazole, concurrent erythromycin, concurrent clarithromycin, concurrent ritonavir, concurrent atazanavir, concurrent indinavir, concurrent saquinavir, concurrent nefazodone, concurrent cobic",B,drugsdotcom,LOW
+brompheniramine and phenylephrine,hayfever,"renal impairment, severe hypertension, coronary heart disease, narrow-angle glaucoma, prostatic hypertrophy, urinary retention, severe asthma, hypersensitivity to sympathomimetics, concurrent MAOIs, pregnancy (use in 1st trimester may increase risk of cleft palate), concurrent tricyclic antidepressants",C,drugsdotcom,MEDIUM
+brompheniramine and phenylephrine liquid,hayfever,"renal impairment, severe hepatic impairment, hypersensitivity to sympathomimetics, concurrent MAOIs, pregnancy (use in pregnancy only if benefits outweigh risks)",C,drugsdotcom,MEDIUM
+brompheniramine and pseudoephedrine,hayfever,"renal impairment, hepatic impairment, hypersensitivity to pseudoephedrine or other sympathomimetics, concurrent MAOIs, pregnancy (use in pregnancy only if benefits outweigh risks), concurrent beta blockers, concurrent SSRIs.",C,drugsdotcom,MEDIUM
+budesonide nasal,hayfever,tuberculosis,B,drugsdotcom,LOW
+bupivacaine liposome,pain,"renal failure, severe hepatic impairment, hypersensitivity to bupivacaine or any component of the liposome formulation, concurrent MAOIs, pregnancy, concurrent use with other local anesthetics, concurrent use with class I antiarrhythmics.",C,drugsdotcom,MEDIUM
+buprenorphine (oral/buccal),pain,"renal failure, severe hepatic impairment, hypersensitivity to buprenorphine or naloxone, concurrent MAOIs, pregnancy (especially in the 1st trimester), concurrent benzodiazepines or other central nervous system depressants.",C,drugsdotcom,MEDIUM
+buprenorphine (oral/sublingual),pain,"renal failure, severe hepatic impairment, hypersensitivity to buprenorphine or naloxone, concurrent MAOIs, pregnancy (especially in the 1st trimester), concurrent benzodiazepines or other central nervous system depressants.",C,drugsdotcom,MEDIUM
+buprenorphine injection,pain,"renal failure, severe respiratory depression, acute intoxication with alcohol, opioids, or sedatives, hypersensitivity to buprenorphine or naloxone, concurrent MAOIs, pregnancy, acute liver failure, severe liver impairment, concurrent benzodiazepines",C,drugsdotcom,MEDIUM
+buprenorphine transdermal (skin patch),pain,"renal failure, severe hepatic impairment, hypersensitivity to buprenorphine or naloxone, concurrent MAOIs, concurrent benzodiazepines, concurrent CYP3A4 inhibitors, pregnancy (especially in opioid-dependent individuals), concurrent mixed agonist/antagonist opioids",C,drugsdotcom,MEDIUM
+butorphanol (injection),pain,"renal failure, hepatic impairment, respiratory depression in patients with chronic obstructive pulmonary disease (COPD), severe respiratory depression in patients with sleep apnea, severe respiratory depression in patients with asthma, severe respiratory depression in patients with cor pulmonale, severe respiratory depression in patients with severe acute bronchial asthma, severe respiratory depression in patients with severe chronic bronchitis, severe respiratory depression in",C,drugsdotcom,MEDIUM
+"caffeine brand names: nodoz , vivarin , revive, stay awake , enerjets, lucidex",asthma,"renal failure, hepatic impairment, hypersensitivity to xanthines, concurrent MAOIs, pregnancy, concurrent beta blockers, concurrent certain antidepressants, concurrent certain stimulants, concurrent certain medications for high blood pressure.",C,drugsdotcom,MEDIUM
+calcium carbonate,gerd (heartburn),"renal impairment, severe kidney disease, hypersensitivity to calcium or milk proteins, concurrent thiazide diuretics, concurrent digoxin, severe hypercalcemia, pregnancy (high doses may cause fetal harm).",N,drugsdotcom,UNKNOWN
+calcium carbonate and simethicone,gerd (heartburn),"renal failure, severe kidney disease, hypersensitivity to calcium or simethicone, concurrent antacids or calcium supplements, concurrent medications that interact with calcium (e.g. tetracyclines, levothyroxine), pregnancy risks if severe (calcium may increase risk of calcium deposits in fetus).",C,drugsdotcom,MEDIUM
+calcium carbonate chewable tablets,gerd (heartburn),"renal failure, severe kidney disease, hypersensitivity to calcium or any excipients, concurrent thiazide diuretics, concurrent digoxin, concurrent quinolone antibiotics, pregnancy or breastfeeding (use with caution).",N,drugsdotcom,UNKNOWN
+calcium carbonate chewable tablets (antacid),gerd (heartburn),"renal failure, severe kidney disease, hypersensitivity to calcium or any excipients, concurrent thiazide diuretics, concurrent digoxin, concurrent quinolone antibiotics, pregnancy or breastfeeding (use with caution).",N,drugsdotcom,UNKNOWN
+"calcium carbonate, famotidine, and magnesium hydroxide",gerd (heartburn),"renal failure, severe hepatic impairment, hypersensitivity to famotidine or magnesium hydroxide, concurrent antacids containing aluminum or calcium, pregnancy (fetal risk due to magnesium hydroxide)",N,drugsdotcom,UNKNOWN
+"calcium carbonate, magnesium hydroxide, and simethicone",gerd (heartburn),"renal failure, severe kidney disease, severe liver disease, hypersensitivity to any component, concurrent antacids or medications that interfere with calcium absorption, pregnancy risks if severe magnesium toxicity is a concern.",C,drugsdotcom,MEDIUM
+"camphor and menthol cream, lotion, and ointment",pain,"renal failure, hepatic impairment, hypersensitivity to camphor or menthol, concurrent MAOIs, pregnancy (use with caution, but no severe risks documented)",N,drugsdotcom,UNKNOWN
+camphor and menthol gel,pain,"renal failure, hepatic impairment, hypersensitivity to camphor or menthol, concurrent MAOIs, pregnancy (use with caution, but no severe risks documented)",N,drugsdotcom,UNKNOWN
+camphor and menthol patch,pain,"renal failure, hepatic impairment, hypersensitivity to camphor or menthol, concurrent MAOIs, pregnancy (use with caution, but no severe risks documented)",N,drugsdotcom,UNKNOWN
+camphor and menthol topical,colds & flu | pain,"renal failure, hepatic impairment, hypersensitivity to camphor or menthol, concurrent MAOIs, pregnancy (use with caution, no severe risks documented)",N,drugsdotcom,UNKNOWN
+canagliflozin,diabetes (type 2),hyperkalemia,C,drugsdotcom,MEDIUM
+canagliflozin and metformin,diabetes (type 2),hyperkalemia,C,drugsdotcom,MEDIUM
+candesartan,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+capsaicin and diclofenac (topical),pain,anemia,N,drugsdotcom,UNKNOWN
+"capsaicin cream, gel, liquid, and lotion",osteoarthritis | pain,"renal failure, severe liver disease, hypersensitivity to capsaicin or other vanilloid receptor agonists, concurrent use of beta-blockers, pregnancy (use with caution, but no severe risks documented)",B,drugsdotcom,LOW
+capsaicin patch,pain,"renal failure, severe hepatic impairment, hypersensitivity to capsaicin or other vanilloid receptor agonists, concurrent MAOIs, pregnancy, breastfeeding.",B,drugsdotcom,LOW
+capsaicin topical,osteoarthritis | pain,"renal failure, severe liver disease, hypersensitivity to capsaicin or other ingredients, concurrent use of blood thinners, pregnancy, breastfeeding.",B,drugsdotcom,LOW
+"capsaicin, lidocaine, menthol, and methyl salicylate (topical)",pain,"renal failure, hepatic impairment, hypersensitivity to lidocaine, concurrent MAOIs, pregnancy (lidocaine and methyl salicylate have potential risks), concurrent anticoagulants (methyl salicylate)",N,drugsdotcom,UNKNOWN
+captopril,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+carbinoxamine,hayfever,"renal impairment, severe hepatic impairment, hypersensitivity to carbinoxamine or other antihistamines, concurrent MAOIs, pregnancy (use in pregnancy only if benefits outweigh risks)",C,drugsdotcom,MEDIUM
+carbinoxamine (oral route),hayfever,"renal impairment, severe hepatic impairment, hypersensitivity to carbinoxamine or other antihistamines, concurrent MAOIs, pregnancy (use in pregnancy only if benefits outweigh risks)",C,drugsdotcom,MEDIUM
+carbohydrate and electrolyte combination (oral route),diarrhea,"renal impairment, severe dehydration, electrolyte imbalance, hypersensitivity to specific ingredients, concurrent use of certain medications that affect electrolyte levels or hydration.",C,drugsdotcom,MEDIUM
+carvedilol,angina | hypertension,low blood pressure,C,drugsdotcom + drugdata,MEDIUM
+ceftriaxone,bacterial infections,"hepatic impairment, renal failure, hypersensitivity to ceftriaxone, concurrent aminoglycosides, pregnancy (third trimester), porphyria.",C,drugdata,MEDIUM
+cefuroxime,bacterial infections,"renal impairment, hepatic impairment, hypersensitivity to cephalosporins, concurrent probenecid, pregnancy category B but caution in severe cases",C,drugdata,MEDIUM
+celecoxib and tramadol,pain,"heart attack, stroke, anemia",N,drugsdotcom,UNKNOWN
+celecoxib and tramadol hydrochloride,pain,"heart failure, heart attack, kidney failure, liver failure, anemia",N,drugsdotcom,UNKNOWN
+cenobamate,seizures,"hepatic impairment, renal failure, hypersensitivity to cenobamate, concurrent MAOIs, pregnancy, concurrent carbamazepine, concurrent phenobarbital, concurrent phenytoin, concurrent primidone, concurrent rifampin",N,drugsdotcom,UNKNOWN
+cephalexin,acne | bacterial infections,"renal impairment, hypersensitivity to cephalosporins, concurrent warfarin, pregnancy category B but caution in severe cases",C,drugsdotcom + drugdata,MEDIUM
+cetirizine,hayfever | allergies,"renal impairment, severe hepatic impairment, hypersensitivity to hydroxyzine, concurrent MAOIs, pregnancy (use in pregnancy only if benefits outweigh risks)",C,drugsdotcom + drugdata,MEDIUM
+cetirizine and pseudoephedrine,hayfever,"renal impairment, hepatic impairment, severe hypertension, coronary artery disease, concurrent MAOIs, concurrent SSRIs, pregnancy (use in 2nd and 3rd trimesters), hypersensitivity to pseudoephedrine or cetirizine",C,drugsdotcom,MEDIUM
+cetirizine hydrochloride,hayfever,"renal impairment, severe hepatic impairment, hypersensitivity to hydroxyzine, concurrent MAOIs, pregnancy (use in pregnancy only if benefits outweigh risks)",B,drugsdotcom,LOW
+cetirizine hydrochloride and pseudoephedrine hydrochloride,hayfever,"renal impairment, severe hepatic impairment, hypersensitivity to cetirizine or pseudoephedrine, concurrent MAOIs, concurrent SSRIs, concurrent TCAs, concurrent beta blockers, pregnancy (use in pregnancy only if benefits outweigh risks)",C,drugsdotcom,MEDIUM
+chlorothiazide (intravenous route),hypertension,"renal failure, severe hepatic impairment, hypersensitivity, concurrent lithium therapy, severe electrolyte imbalances, pregnancy (especially in the first trimester), concurrent NSAIDs or ACE inhibitors.",C,drugsdotcom,MEDIUM
+chlorothiazide (oral/injection),hypertension,"renal failure, severe hepatic impairment, hypersensitivity, concurrent lithium therapy, severe electrolyte imbalances, pregnancy (especially in the first trimester), concurrent NSAIDs or ACE inhibitors.",C,drugsdotcom,MEDIUM
+chlorpheniramine and pseudoephedrine,hayfever,"hepatic impairment, renal failure, severe hypertension, coronary artery disease, concurrent MAOIs, concurrent SSRIs, pregnancy (especially in the first trimester), hypersensitivity to sympathomimetics, concurrent beta blockers, concurrent guanethidine.",C,drugsdotcom,MEDIUM
+chlorpheniramine and pseudoephedrine liquid,hayfever,"hepatic impairment, renal failure, severe hypertension, coronary artery disease, concurrent MAOIs, concurrent SSRIs, pregnancy (especially in the first trimester), hypersensitivity to sympathomimetics.",C,drugsdotcom,MEDIUM
+chlorthalidone,hypertension,low blood pressure,C,drugsdotcom + drugdata,MEDIUM
+chromium picolinate,diabetes (type 2),"renal failure, hepatic impairment, hypersensitivity, concurrent insulin or oral hypoglycemic medications, pregnancy",N,drugsdotcom,UNKNOWN
+ciclesonide (inhalation),asthma,"asthma, bronchospasm",C,drugsdotcom,MEDIUM
+ciclesonide nasal,hayfever,depression,C,drugsdotcom,MEDIUM
+cimetidine,gerd (heartburn),"renal impairment, severe hepatic impairment, hypersensitivity to cimetidine, concurrent warfarin, concurrent theophylline, pregnancy (especially in the first trimester), concurrent MAOIs, concurrent pimozide",B,drugsdotcom,LOW
+ciprofloxacin,bronchitis | bacterial infections,"hepatic impairment, renal failure, hypersensitivity to ciprofloxacin or other fluoroquinolones, concurrent antacids or multivitamins containing calcium, magnesium, or iron, pregnancy (especially during the first trimester), concurrent warfarin, concurrent theophylline.",C,drugsdotcom + drugdata,MEDIUM
+clemastine,hayfever,"hepatic impairment, renal failure, severe hypertension, hypersensitivity to other antihistamines, concurrent MAOIs, pregnancy (use only if benefits outweigh risks)",B,drugsdotcom,LOW
+clevidipine,hypertension,"hepatic impairment, severe aortic stenosis, hypersensitivity to clevidipine, concurrent beta-blockers, pregnancy, severe renal impairment",C,drugsdotcom,MEDIUM
+clonidine (injection),pain,"renal impairment, hepatic impairment, hypersensitivity to clonidine, concurrent MAOIs, pregnancy (especially in the 2nd and 3rd trimesters), concurrent SSRIs or other antidepressants, concurrent beta-blockers.",C,drugsdotcom,MEDIUM
+clonidine (oral route),hypertension,depression,C,drugsdotcom,MEDIUM
+clonidine (oral),adhd | hypertension,"renal impairment, hepatic impairment, hypersensitivity to clonidine, concurrent MAOIs, pregnancy (especially in the 2nd and 3rd trimesters), concurrent SSRIs or other antidepressants, concurrent beta-blockers.",C,drugsdotcom,MEDIUM
+clonidine (transdermal),hypertension,"renal impairment, hepatic impairment, hypersensitivity to clonidine, concurrent MAOIs, pregnancy (especially in the 2nd and 3rd trimesters), concurrent SSRIs or TCAs, severe heart failure, orthostatic hypotension.",C,drugsdotcom,MEDIUM
+codeine,diarrhea,"renal impairment, respiratory depression, severe hepatic impairment, hypersensitivity, concurrent MAOIs, pregnancy, concurrent opioids, concurrent sedatives, concurrent benzodiazepines, concurrent CYP3A4 inhibitors",C,drugsdotcom,MEDIUM
+cough and cold combinations (oral route),bronchitis | hayfever,"hepatic impairment, renal failure, hypersensitivity to certain ingredients, concurrent MAOIs, pregnancy, concurrent warfarin, concurrent theophylline, concurrent beta blockers, concurrent SSRIs, concurrent sedatives, concurrent opioids, concurrent antihistamines, concurrent asthma medications, concurrent thyroid medications, concurrent diabetes medications, concurrent blood thinners, concurrent stimulants, concurrent certain antidepressants,",C,drugsdotcom,MEDIUM
+crofelemer,diarrhea,"hepatic impairment, renal failure, hypersensitivity to crofelemer, concurrent warfarin, pregnancy",C,drugsdotcom,MEDIUM
+cromolyn sodium (nasal),hayfever,"renal impairment, severe asthma, hypersensitivity to cromolyn sodium or other mast cell stabilizers, concurrent beta-blockers, pregnancy and breastfeeding (use with caution)",B,drugsdotcom,LOW
+cyproheptadine,hayfever,"hepatic impairment, renal failure, hypersensitivity to cyproheptadine, concurrent MAOIs, pregnancy, severe asthma, narrow-angle glaucoma, prostatic hypertrophy, pyloric stenosis, urinary retention, concurrent SSRIs, concurrent TCAs.",B,drugsdotcom,LOW
+dalteparin,angina,"hepatic impairment, renal failure, hypersensitivity, thrombocytopenia, concurrent anticoagulants, pregnancy, severe hypertension",B,drugsdotcom,LOW
+dapagliflozin,diabetes (type 2),"renal impairment, severe kidney disease, hypersensitivity, pregnancy (category C), concurrent diuretics, concurrent ACE inhibitors or ARBs.",C,drugsdotcom,MEDIUM
+dapagliflozin and metformin,diabetes (type 2),"renal impairment, severe liver impairment, hypersensitivity to dapagliflozin or metformin, concurrent use of strong CYP3A4 inhibitors, pregnancy or breastfeeding, concurrent use of loop diuretics or other diuretics.",C,drugsdotcom,MEDIUM
+dapagliflozin and saxagliptin,diabetes (type 2),pancreatitis,N,drugsdotcom,UNKNOWN
+dapagliflozin brand name: farxiga,diabetes (type 2),"diabetes, type 1 diabetes, type 2 diabetes, hypoglycemia",C,drugsdotcom,MEDIUM
+desloratadine,hayfever,"hepatic impairment, renal failure, hypersensitivity to desloratadine, concurrent MAOIs, pregnancy category C, severe liver disease, severe kidney disease, concurrent warfarin, concurrent ketoconazole, concurrent erythromycin",C,drugsdotcom,MEDIUM
+desloratadine (oral route),hayfever,tachycardia,C,drugsdotcom,MEDIUM
+desloratadine and pseudoephedrine,hayfever,"hepatic impairment, renal failure, hypersensitivity to desloratadine or pseudoephedrine, concurrent MAOIs, pregnancy, severe hypertension, coronary artery disease, heart failure, severe cardiovascular disease, thyroid disease, narrow-angle glaucoma, urinary retention, prostatic hypertrophy, severe asthma, severe COPD, concurrent SSRIs, concurrent TCAs, concurrent warfarin,",C,drugsdotcom,MEDIUM
+dexamethasone,asthma | eczema,"renal failure, hepatic impairment, hypersensitivity, concurrent live vaccines, concurrent warfarin, pregnancy (high doses), concurrent potassium-depleting agents, concurrent non-potassium-sparing diuretics.",C,drugsdotcom,MEDIUM
+dexamethasone (injection),asthma,pancreatitis,C,drugsdotcom,MEDIUM
+dexamethasone (oral route),asthma,depression,C,drugsdotcom,MEDIUM
+dexamethasone (oral),asthma,"depression, pancreatitis",C,drugsdotcom,MEDIUM
+dexamethasone tablets,hayfever,"depression, pancreatitis",C,drugsdotcom,MEDIUM
+dexchlorpheniramine,hayfever,enlarged prostate,B,drugsdotcom,LOW
+dexchlorpheniramine and phenylephrine,hayfever,"renal impairment, severe hypertension, coronary heart disease, narrow-angle glaucoma, prostatic hypertrophy, urinary retention, severe asthma, hypersensitivity to sympathomimetics, concurrent MAOIs, pregnancy (use in pregnancy only if benefits outweigh risks)",C,drugsdotcom,MEDIUM
+dexchlorpheniramine maleate,hayfever,"hepatic impairment, renal failure, hypersensitivity to other antihistamines, concurrent MAOIs, pregnancy (use in pregnancy only if benefits outweigh risks)",B,drugsdotcom,LOW
+dexlansoprazole,gerd (heartburn),lupus,B,drugsdotcom,LOW
+diazepam (rectal route),seizures,"dementia, depression",D,drugsdotcom,HIGH
+"diazepam brand names: diastat , diastat acudial",seizures,"asthma, depression",D,drugsdotcom,HIGH
+diazepam nasal,seizures,depression,D,drugsdotcom,HIGH
+diazepam rectal,seizures,depression,D,drugsdotcom,HIGH
+diclofenac,migraine | osteoarthritis | pain,"hepatic impairment, renal failure, hypersensitivity to diclofenac, concurrent anticoagulants, concurrent aspirin at high doses, pregnancy (third trimester), severe heart failure.",D,drugsdotcom,HIGH
+diclofenac sodium and capsaicin,pain,"hepatic impairment, renal failure, severe heart failure, hypersensitivity to diclofenac or capsaicin, concurrent anticoagulants, pregnancy (third trimester), concurrent ACE inhibitors or NSAIDs in patients with heart failure or renal disease.",N,drugsdotcom,UNKNOWN
+diclofenac sodium and capsaicin oleoresin,pain,"hepatic impairment, renal failure, severe heart failure, hypersensitivity to NSAIDs, concurrent anticoagulants, pregnancy (third trimester), severe kidney disease.",N,drugsdotcom,UNKNOWN
+"diclofenac sodium, capsaicin",pain,"hepatic impairment, renal failure, severe heart failure, hypersensitivity to diclofenac or capsaicin, concurrent anticoagulants, pregnancy (third trimester), severe kidney disease.",N,drugsdotcom,UNKNOWN
+diclofenac topical system (patch),pain,anemia,C,drugsdotcom,MEDIUM
+difenoxin and atropine (oral route),diarrhea,"hepatic impairment, renal failure, severe electrolyte disturbances, severe ulcerative colitis, pyloric stenosis, glaucoma, prostatic hypertrophy, urinary retention, hypersensitivity to anticholinergics, concurrent MAOIs, pregnancy, severe cardiovascular disease.",C,drugsdotcom,MEDIUM
+diltiazem,hypertension,"hepatic impairment, severe renal impairment, hypersensitivity to diltiazem, concurrent beta-blockers, concurrent verapamil, pregnancy (especially in severe hypertension), severe aortic stenosis.",C,drugsdotcom,MEDIUM
+diltiazem (oral route),hypertension,"hepatic impairment, severe renal impairment, hypersensitivity to diltiazem, concurrent beta-blockers, concurrent verapamil, pregnancy (especially in severe hypertension), severe aortic stenosis.",C,drugsdotcom,MEDIUM
+diltiazem hydrochloride,hypertension,"hepatic impairment, severe renal impairment, hypersensitivity to diltiazem, concurrent beta-blockers, concurrent verapamil, pregnancy (especially in the first trimester), severe aortic stenosis.",C,drugsdotcom,MEDIUM
+diphenhydramine (topical),pain,"hepatic impairment, renal failure, severe cardiovascular disease, narrow-angle glaucoma, prostatic hypertrophy, urinary retention, hypersensitivity to diphenhydramine or other antihistamines, concurrent MAOIs, concurrent tricyclic antidepressants, pregnancy (especially in the first trimester), severe hypertension.",B,drugsdotcom,LOW
+doxazosin,hypertension,low blood pressure,C,drugsdotcom,MEDIUM
+dulaglutide,diabetes (type 2),"kidney failure, pancreatitis",C,drugsdotcom,MEDIUM
+dyclonine,pain,"hepatic impairment, renal failure, hypersensitivity, concurrent MAOIs, pregnancy",C,drugsdotcom,MEDIUM
+dyphylline and guaifenesin,asthma,"renal failure, severe hepatic impairment, hypersensitivity to dyphylline or guaifenesin, concurrent MAOIs, pregnancy, concurrent beta-blockers, concurrent theophylline.",C,drugsdotcom,MEDIUM
+"electrolyte oral solution, freezer-pops, and jell cups",diarrhea,"renal failure, hepatic impairment, severe electrolyte imbalance, severe dehydration, hypersensitivity to electrolytes, concurrent diuretics, pregnancy risks if severe electrolyte imbalance or dehydration.",C,drugsdotcom,MEDIUM
+electrolyte replacement solutions,diarrhea,"renal failure, severe cardiac arrhythmias, severe electrolyte imbalances, severe dehydration, severe heart failure, severe kidney disease, severe liver disease, severe respiratory failure, hypersensitivity to certain medications, concurrent potassium-sparing diuretics, concurrent ACE inhibitors, concurrent NSAIDs, pregnancy risks if severe electrolyte imbalances or dehydration.",C,drugsdotcom,MEDIUM
+electrolyte tablets,diarrhea,"renal failure, severe dehydration, electrolyte imbalance, severe heart conditions, hypersensitivity to certain ingredients, concurrent diuretics, pregnancy risks if severe electrolyte imbalance.",C,drugsdotcom,MEDIUM
+empagliflozin,diabetes (type 2),"renal impairment, severe kidney disease, hypersensitivity, pregnancy, concurrent diuretics, concurrent ACE inhibitors or ARBs, concurrent NSAIDs, concurrent potassium-sparing diuretics.",C,drugsdotcom,MEDIUM
+empagliflozin and linagliptin,diabetes (type 2),pancreatitis,C,drugsdotcom,MEDIUM
+empagliflozin and metformin,diabetes (type 2),"renal impairment, severe kidney disease, hypersensitivity to empagliflozin or metformin, concurrent use of loop diuretics, pregnancy (category D), severe liver disease, acute kidney injury, heart failure with reduced ejection fraction.",C,drugsdotcom,MEDIUM
+"empagliflozin, linagliptin, and metformin",diabetes (type 2),"heart failure, pancreatitis",N,drugsdotcom,UNKNOWN
+enalapril,hypertension,"low blood pressure, hyperkalemia",D,drugsdotcom + drugdata,HIGH
+enalapril (oral route),hypertension,"renal failure, severe hepatic impairment, hypersensitivity to ACE inhibitors, concurrent potassium-sparing diuretics, lithium, pregnancy (especially in second and third trimesters)",D,drugsdotcom,HIGH
+enoxaparin,angina,anemia,B,drugsdotcom,LOW
+eplerenone,hypertension,hyperkalemia,B,drugsdotcom,LOW
+eprosartan,hypertension,"renal failure, severe hepatic impairment, hypersensitivity to other angiotensin II receptor antagonists, concurrent potassium-sparing diuretics, pregnancy (if severe hypertension is not controlled)",D,drugsdotcom,HIGH
+eptifibatide,angina,"renal failure, hepatic impairment, hypersensitivity to eptifibatide, thrombocytopenia, bleeding disorders, recent stroke or MI, concurrent anticoagulants, pregnancy, severe hypertension",B,drugsdotcom,LOW
+ertugliflozin,diabetes (type 2),"renal impairment, severe kidney disease, hypersensitivity, pregnancy, concurrent diuretics, concurrent ACE inhibitors or ARBs",N,drugsdotcom,UNKNOWN
+ertugliflozin and metformin,diabetes (type 2),"renal impairment, severe kidney disease, hypersensitivity to ertugliflozin or metformin, concurrent use of strong CYP3A4 inhibitors, pregnancy or breastfeeding, severe liver disease, acute kidney injury, heart failure with reduced ejection fraction.",N,drugsdotcom,UNKNOWN
+ertugliflozin and sitagliptin,diabetes (type 2),"heart failure, autoimmune disease, pancreatitis",N,drugsdotcom,UNKNOWN
+eslicarbazepine,seizures,depression,C,drugsdotcom,MEDIUM
+esmolol,hypertension,"low blood pressure, hyperkalemia",C,drugsdotcom,MEDIUM
+esomeprazole (intravenous route),gerd (heartburn),"hepatic impairment, severe renal impairment, hypersensitivity to esomeprazole or other proton pump inhibitors, concurrent clopidogrel, concurrent atazanavir, concurrent nelfinavir, pregnancy (especially in the 1st trimester), concurrent rilpivirine, concurrent cilostazol, concurrent tacrolimus, concurrent mycophenolate mofetil",C,drugsdotcom,MEDIUM
+esomeprazole (oral),gerd (heartburn),lupus,C,drugsdotcom,MEDIUM
+esomeprazole delayed-release tablets,gerd (heartburn),"hepatic impairment, severe renal impairment, hypersensitivity to esomeprazole or other proton pump inhibitors, concurrent clopidogrel, concurrent atazanavir, concurrent nelfinavir, pregnancy (especially in the 1st trimester), severe bone or mineral density disorders.",C,drugsdotcom,MEDIUM
+esomeprazole magnesium (oral),gerd (heartburn),lupus,C,drugsdotcom,MEDIUM
+ethosuximide,seizures,lupus,N,drugsdotcom,UNKNOWN
+exenatide,diabetes (type 2),"renal impairment, severe gastrointestinal disease, hypersensitivity to exenatide or its excipients, concurrent use of strong cytochrome P450 3A4 inhibitors, pregnancy",C,drugsdotcom,MEDIUM
+exenatide (bydureon),diabetes (type 2),"renal impairment, severe gastrointestinal disease, hypersensitivity to exenatide or its excipients, concurrent use of strong cytochrome P450 3A4 inhibitors, pregnancy",C,drugsdotcom,MEDIUM
+exenatide (byetta),diabetes (type 2),"renal impairment, severe gastrointestinal disease, hypersensitivity to exenatide or its excipients, concurrent use of strong cytochrome P450 3A4 inhibitors, pregnancy",C,drugsdotcom,MEDIUM
+famotidine,gerd (heartburn),kidney disease,B,drugsdotcom,LOW
+famotidine (oral route),gerd (heartburn),"renal impairment, severe hepatic impairment, hypersensitivity to famotidine or other H2-receptor antagonists, concurrent warfarin, pregnancy (use only if benefits outweigh risks).",B,drugsdotcom,LOW
+famotidine chewable tablets,gerd (heartburn),"renal impairment, severe hepatic impairment, hypersensitivity to famotidine, concurrent warfarin, pregnancy (category C), concurrent MAOIs, concurrent ketoconazole, concurrent itraconazole",B,drugsdotcom,LOW
+famotidine oral suspension,gerd (heartburn),"renal impairment, severe hepatic impairment, hypersensitivity to famotidine, concurrent warfarin, pregnancy category C (use with caution), concurrent MAOIs, concurrent ketoconazole, concurrent atazanavir",B,drugsdotcom,LOW
+felodipine,hypertension,"hepatic impairment, severe renal impairment, hypersensitivity to dihydropyridines, concurrent beta-blockers, concurrent calcium channel blockers, pregnancy (category C), severe aortic stenosis.",C,drugsdotcom,MEDIUM
+fentanyl,severe pain,"renal failure, respiratory depression, respiratory disease, sleep apnea, severe obesity, head injury, intracranial hypertension, concurrent benzodiazepines, concurrent CNS depressants, pregnancy, breastfeeding, hypersensitivity to fentanyl or other opioids, concurrent MAOIs, concurrent SSRIs, concurrent TCAs, concurrent tramadol, concurrent pethidine.",C,drugdata,MEDIUM
+fentanyl (buccal/sublingual),pain,"renal failure, respiratory depression, respiratory disease, sleep apnea, severe obesity, head injury, intracranial hypertension, concurrent benzodiazepines, concurrent CNS depressants, pregnancy, breastfeeding, hypersensitivity to fentanyl or other opioids, concurrent MAOIs, concurrent pimozide, concurrent thioridazine.",C,drugsdotcom,MEDIUM
+"fentanyl brand names: actiq (lozenge), lazanda (nasal spray), fentora (sublingual tablet), subsys (sublingual spray)",pain,"renal failure, respiratory depression, respiratory disease, head injury, intracranial hypertension, concurrent benzodiazepines, concurrent CNS depressants, pregnancy, breastfeeding, hypersensitivity to fentanyl.",C,drugsdotcom,MEDIUM
+fentanyl citrate (oral transmucosal),pain,"renal impairment, respiratory depression, respiratory disease, hepatic impairment, hypersensitivity, concurrent MAOIs, pregnancy, concurrent benzodiazepines, concurrent CNS depressants, concurrent opioids.",C,drugsdotcom,MEDIUM
+fentanyl transdermal (skin patch),pain,"renal failure, severe respiratory depression, severe hepatic impairment, hypersensitivity to fentanyl, concurrent MAOIs, concurrent benzodiazepines, concurrent CNS depressants, pregnancy, concurrent pimozide, concurrent thioridazine, concurrent erythromycin, concurrent ketoconazole, concurrent itraconazole, concurrent ritonavir, concurrent clarithromycin, concurrent grapefruit juice",C,drugsdotcom,MEDIUM
+fentanyl transdermal system,pain,depression,C,drugsdotcom,MEDIUM
+fexofenadine,hayfever,"renal impairment, severe hepatic impairment, hypersensitivity to fexofenadine or other antihistamines, concurrent ketoconazole or erythromycin.",C,drugsdotcom,MEDIUM
+fexofenadine (oral route),hayfever,"renal impairment, severe hepatic impairment, hypersensitivity to fexofenadine or other antihistamines, concurrent ketoconazole or erythromycin.",C,drugsdotcom,MEDIUM
+fexofenadine and pseudoephedrine,hayfever,"renal impairment, severe hepatic impairment, hypersensitivity to fexofenadine or pseudoephedrine, concurrent MAOIs, concurrent SSRIs, concurrent TCAs, concurrent beta blockers, concurrent certain antacids, pregnancy, breastfeeding, severe hypertension, coronary artery disease, heart failure, arrhythmias, thyroid disease, pheochromocytoma, narrow-angle glaucoma",C,drugsdotcom,MEDIUM
+flunisolide nasal,hayfever,"renal impairment, hypersensitivity to flunisolide, concurrent systemic corticosteroids, pregnancy (use with caution)",C,drugsdotcom,MEDIUM
+fluticasone and vilanterol,asthma,"renal impairment, hypersensitivity to fluticasone or vilanterol, concurrent beta-blockers, concurrent MAOIs, concurrent non-potassium-sparing diuretics, concurrent potassium-sparing diuretics, concurrent other long-acting beta-agonists, severe hepatic impairment, pregnancy, labor",C,drugsdotcom,MEDIUM
+fluticasone nasal,hayfever,"renal impairment, hypersensitivity to fluticasone or other corticosteroids, concurrent systemic corticosteroids, concurrent potassium-sparing diuretics, concurrent NSAIDs, pregnancy (use only if benefits outweigh risks)",C,drugsdotcom,MEDIUM
+fluticasone nasal spray,hayfever,"renal impairment, hepatic impairment, hypersensitivity to fluticasone, concurrent systemic corticosteroids, concurrent immunosuppressants, pregnancy (use in pregnancy only if benefits outweigh risks)",C,drugsdotcom,MEDIUM
+fluticasone propionate,hayfever | asthma,"renal impairment, hepatic impairment, hypersensitivity to fluticasone propionate, concurrent systemic corticosteroids, concurrent potassium-sparing diuretics, concurrent NSAIDs, concurrent potassium supplements, concurrent ACE inhibitors, concurrent beta-blockers, concurrent potassium-wasting diuretics, concurrent potassium-depleting diuretics, concurrent digoxin, concurrent live vaccines, pregnancy (use only if",C,drugsdotcom + drugdata,MEDIUM
+fluticasone propionate / salmeterol,asthma,"renal impairment, hypersensitivity to fluticasone or salmeterol, concurrent beta-blockers, concurrent MAOIs, concurrent non-potassium-sparing diuretics, concurrent potassium-depleting drugs, concurrent corticosteroids, concurrent strong CYP3A4 inhibitors, concurrent strong CYP2D6 inhibitors, concurrent strong CYP2C9 inhibitors, concurrent strong CYP",C,drugdata,MEDIUM
+"fluticasone, umeclidinium, and vilanterol",asthma,"renal impairment, hypersensitivity to any component, concurrent MAOIs, concurrent beta-blockers, concurrent non-potassium-sparing diuretics, concurrent potassium-sparing diuretics, concurrent other anticholinergics, concurrent strong CYP3A4 inhibitors, concurrent strong CYP2D6 inhibitors, concurrent strong CYP2C19 inhibitors, concurrent strong CYP2C9",N,drugsdotcom,UNKNOWN
+formoterol and mometasone,asthma,asthma,C,drugsdotcom,MEDIUM
+fosinopril,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+furosemide,hypertension | edema,"renal failure, hepatic impairment, severe hypokalemia, hypersensitivity, hypovolemia, severe dehydration, severe electrolyte imbalance, concurrent lithium therapy, pregnancy (especially in severe cases or with pre-existing conditions), concurrent NSAIDs or ACE inhibitors.",C,drugsdotcom + drugdata,MEDIUM
+furosemide (oral/injection),hypertension,"renal failure, hepatic impairment, severe hypovolemia, hypersensitivity, severe electrolyte imbalance, concurrent lithium therapy, pregnancy (especially in severe cases or with pre-existing conditions), concurrent NSAIDs.",C,drugsdotcom,MEDIUM
+ganaxolone,seizures,depression,N,drugsdotcom,UNKNOWN
+glimepiride,diabetes (type 2),"renal failure, severe hepatic impairment, hypersensitivity to sulfonylureas, concurrent warfarin, concurrent beta-blockers, concurrent NSAIDs, pregnancy in the first trimester, concurrent pioglitazone.",C,drugsdotcom,MEDIUM
+glimepiride and pioglitazone,diabetes (type 2),heart failure,C,drugsdotcom,MEDIUM
+glipizide,diabetes (type 2),"renal impairment, severe liver disease, hypersensitivity to sulfonylureas, concurrent beta-blockers, concurrent warfarin, pregnancy in the first trimester, concurrent MAOIs, concurrent chloramphenicol",C,drugsdotcom,MEDIUM
+glipizide (oral route),diabetes (type 2),depression,C,drugsdotcom,MEDIUM
+glipizide and metformin,diabetes (type 2),hypoglycemia,C,drugsdotcom,MEDIUM
+glipizide xl,diabetes (type 2),"renal impairment, severe liver disease, hypersensitivity to sulfonylureas, concurrent beta-blockers, concurrent warfarin, pregnancy in the first trimester, concurrent CYP2C9 inhibitors",C,drugsdotcom,MEDIUM
+glyburide,diabetes (type 2),diabetes,C,drugsdotcom,MEDIUM
+glyburide (oral route),diabetes (type 2),depression,C,drugsdotcom,MEDIUM
+glyburide and metformin,diabetes (type 2),hypoglycemia,B,drugsdotcom,LOW
+guanabenz,hypertension,"hepatic impairment, renal failure, hypersensitivity, concurrent MAOIs, pregnancy, severe bradycardia, heart block, severe heart failure, severe hypotension, severe asthma, severe COPD.",C,drugsdotcom,MEDIUM
+heparin (injection),angina,"renal failure, severe thrombocytopenia, hypersensitivity, concurrent aspirin, concurrent NSAIDs, pregnancy (especially during third trimester), concurrent warfarin",C,drugsdotcom,MEDIUM
+house dust mite allergen extract,hayfever,"renal failure, severe hepatic impairment, hypersensitivity to the extract, concurrent beta-blockers, concurrent MAOIs, pregnancy",N,drugsdotcom,UNKNOWN
+house dust mite allergen extract brand name: odactra,hayfever,"renal impairment, severe asthma, hypersensitivity to any component of the product, concurrent beta-blockers, concurrent MAOIs, concurrent tricyclic antidepressants, concurrent sympathomimetics, concurrent theophylline, concurrent non-selective NSAIDs, concurrent corticosteroids, concurrent immunosuppressants, concurrent immunomodulators, concurrent live vaccines, concurrent immunoglobulins",N,drugsdotcom,UNKNOWN
+hydralazine,hypertension,lupus,C,drugsdotcom,MEDIUM
+hydrochlorothiazide,hypertension,"renal failure, severe hepatic impairment, hypersensitivity to thiazides, concurrent lithium, concurrent NSAIDs, pregnancy (especially in the 2nd and 3rd trimesters), severe electrolyte disturbances.",C,drugsdotcom + drugdata,MEDIUM
+hydrochlorothiazide (oral route),hypertension,"renal failure, severe hepatic impairment, hypersensitivity to thiazides, concurrent lithium, concurrent NSAIDs, pregnancy (especially in the 2nd and 3rd trimesters), severe electrolyte disturbances.",B,drugsdotcom,LOW
+hydrochlorothiazide / lisinopril,hypertension,low blood pressure,C,drugdata,MEDIUM
+hydrochlorothiazide / moexipril,hypertension,"renal failure, severe hepatic impairment, hypersensitivity to moexipril or hydrochlorothiazide, anuria, acute angle-closure glaucoma, concomitant use of potassium-sparing diuretics, lithium, or NSAIDs.",D,drugsdotcom,HIGH
+hydrochlorothiazide and aliskiren,hypertension,"hyperkalemia, lupus",D,drugsdotcom,HIGH
+hydrochlorothiazide and amiloride,hypertension,hyperkalemia,B,drugsdotcom,LOW
+hydrochlorothiazide and benazepril,hypertension,lupus,D,drugsdotcom,HIGH
+hydrochlorothiazide and bisoprolol,hypertension,"renal failure, severe hepatic impairment, hypersensitivity to sulfonamides or other thiazides, severe bradycardia, heart block, severe asthma or COPD, pregnancy (especially in the second and third trimesters), concurrent beta-blockers with certain other medications (e.g. verapamil, diltiazem)",C,drugsdotcom,MEDIUM
+hydrochlorothiazide and candesartan,hypertension,kidney failure,D,drugsdotcom,HIGH
+hydrochlorothiazide and captopril,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+hydrochlorothiazide and enalapril,hypertension,lupus,D,drugsdotcom,HIGH
+hydrochlorothiazide and fosinopril,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+hydrochlorothiazide and irbesartan,hypertension,kidney failure,D,drugsdotcom,HIGH
+hydrochlorothiazide and lisinopril,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+hydrochlorothiazide and losartan,hypertension,lupus,D,drugsdotcom,HIGH
+hydrochlorothiazide and methyldopa,hypertension,"renal failure, hepatic impairment, hypersensitivity to methyldopa, severe electrolyte imbalances, concurrent MAOIs, pregnancy (especially in the second and third trimesters), severe bradycardia, heart block, anuria, severe hypotension.",C,drugsdotcom,MEDIUM
+hydrochlorothiazide and metoprolol,hypertension,bronchospasm,C,drugsdotcom,MEDIUM
+hydrochlorothiazide and olmesartan,hypertension,"kidney failure, hyperkalemia",D,drugsdotcom,HIGH
+hydrochlorothiazide and quinapril,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+hydrochlorothiazide and spironolactone,hypertension,hyperkalemia,C,drugsdotcom,MEDIUM
+hydrochlorothiazide and telmisartan,hypertension,kidney failure,D,drugsdotcom,HIGH
+hydrochlorothiazide and triamterene,hypertension,"hyperkalemia, lupus, pancreatitis",C,drugsdotcom,MEDIUM
+hydrochlorothiazide and valsartan,hypertension,kidney failure,D,drugsdotcom,HIGH
+hydrocodone (oral),pain,"renal failure, hepatic impairment, respiratory depression, severe respiratory disease, severe obesity, hypersensitivity to codeine or other opioids, concurrent MAOIs, pregnancy, concurrent benzodiazepines or other CNS depressants.",C,drugsdotcom,MEDIUM
+hydrocodone and acetaminophen liquid,pain,"hepatic impairment, severe renal impairment, hypersensitivity to hydrocodone or acetaminophen, concurrent MAOIs, concurrent mixed agonist/antagonist opioids, concurrent CYP3A4 inhibitors, pregnancy, severe respiratory depression, acute pancreatitis, severe asthma, severe chronic obstructive pulmonary disease (COPD).",C,drugsdotcom,MEDIUM
+hydrocodone and ibuprofen,pain,"renal failure, severe hepatic impairment, hypersensitivity to codeine or other opioids, concurrent MAOIs, pregnancy (especially in third trimester), concurrent aspirin or other NSAIDs, severe respiratory depression, severe asthma, severe chronic obstructive pulmonary disease (COPD)",C,drugsdotcom,MEDIUM
+hydromorphone (oral),pain,"renal failure, respiratory depression, biliary obstruction, severe hepatic impairment, hypersensitivity, concurrent MAOIs, pregnancy, concurrent CYP3A4 inhibitors, concurrent CYP2D6 inhibitors",C,drugsdotcom,MEDIUM
+ibuprofen,osteoarthritis | pain | pain and inflammation,"anemia, severe kidney disease, renal failure, kidney failure",C,drugsdotcom + drugdata,MEDIUM
+ibuprofen (oral route),osteoarthritis | pain,"depression, severe kidney disease, renal failure, kidney failure",C,drugsdotcom,MEDIUM
+ibuprofen chewable tablets,pain,"hyperkalemia, severe kidney disease, renal failure, kidney failure",C,drugsdotcom,MEDIUM
+ibuprofen injection,pain,"heart attack, stroke, anemia, hyperkalemia, severe kidney disease, renal failure, kidney failure",C,drugsdotcom,MEDIUM
+indapamide,hypertension,"renal failure, severe hepatic impairment, hypersensitivity to thiazide-like diuretics, concurrent lithium, pregnancy (especially in the first trimester), concurrent potassium-sparing diuretics.",B,drugsdotcom,LOW
+indomethacin (oral route),osteoarthritis | pain,depression,C,drugsdotcom,MEDIUM
+insulin (inhalation),diabetes (type 1),bronchospasm,C,drugsdotcom,MEDIUM
+insulin aspart,diabetes (type 1),"renal impairment, hypersensitivity to insulin aspart or other insulin products, concurrent beta-blockers, concurrent NSAIDs, concurrent fibrates, concurrent oral hypoglycemic agents, pregnancy in severe insulin resistance or ketoacidosis.",B,drugsdotcom,LOW
+insulin aspart and insulin aspart protamine,diabetes (type 1),"renal impairment, hypersensitivity to insulin aspart or protamine, concurrent beta-blockers, concurrent NSAIDs, concurrent fibrates, concurrent oral hypoglycemics, concurrent warfarin, pregnancy in severe insulin resistance or ketoacidosis.",B,drugsdotcom,LOW
+insulin degludec,diabetes (type 1),"renal impairment, hypersensitivity reactions, concurrent beta-blockers, concurrent ACE inhibitors, concurrent NSAIDs, concurrent fibrates, concurrent warfarin, concurrent sulfonylureas, concurrent thiazides, concurrent potassium-sparing diuretics, concurrent calcium channel blockers, concurrent sympathomimetics, concurrent thyroid medications, concurrent corticosteroids, concurrent estrogens, concurrent progestins,",C,drugsdotcom,MEDIUM
+insulin degludec and liraglutide,diabetes (type 2),pancreatitis,N,drugsdotcom,UNKNOWN
+insulin degludec brand name: tresiba,diabetes (type 1),"diabetes, hypoglycemia, heart failure",C,drugsdotcom,MEDIUM
+insulin detemir,diabetes (type 1),"renal impairment, hypersensitivity to insulin detemir or any excipients, concurrent beta-blockers, concurrent ACE inhibitors or ARBs, concurrent NSAIDs, concurrent fibrates, concurrent thiazide diuretics, concurrent corticosteroids, concurrent sympathomimetics, pregnancy in women with a history of diabetic retinopathy",B,drugsdotcom,LOW
+insulin glargine,diabetes (type 1) | diabetes,hypoglycemia,C,drugsdotcom + drugdata,MEDIUM
+insulin glargine (u-300) pens,diabetes (type 1),depression,C,drugsdotcom,MEDIUM
+insulin glargine and lixisenatide,diabetes (type 2),pancreatitis,N,drugsdotcom,UNKNOWN
+"insulin glargine-aglr, recombinant (subcutaneous route)",diabetes (type 1),depression,C,drugsdotcom,MEDIUM
+insulin glulisine,diabetes (type 1),"renal impairment, hypersensitivity to insulin glulisine or any of its excipients, concurrent beta-blockers, concurrent NSAIDs, concurrent fibrates, concurrent thiazides, concurrent corticosteroids, concurrent sympathomimetics, pregnancy in women with a history of diabetic retinopathy",C,drugsdotcom,MEDIUM
+insulin human,diabetes (type 1),"diabetes, hypoglycemia, heart failure",C,drugsdotcom,MEDIUM
+insulin isophane,diabetes (type 1),"renal impairment, hypersensitivity to insulin isophane, concurrent beta-blockers, concurrent NSAIDs, concurrent ACE inhibitors, concurrent thiazide diuretics, concurrent corticosteroids, concurrent sympathomimetics, pregnancy in severe cases",B,drugsdotcom,LOW
+insulin isophane and insulin regular,diabetes (type 1),"renal failure, hepatic impairment, hypersensitivity to insulin isophane and insulin regular, concurrent beta-blockers, concurrent NSAIDs, concurrent fibrates, concurrent thiazide diuretics, concurrent corticosteroids, concurrent estrogens, concurrent growth hormone, concurrent thyroid hormones, concurrent sympathomimetics, concurrent MAOIs, concurrent tricyclic antidepressants, concurrent salicy",B,drugsdotcom,LOW
+insulin lispro,diabetes (type 1),hypoglycemia,B,drugsdotcom,LOW
+insulin lispro (u-200) pens,diabetes (type 1),"renal impairment, hypersensitivity to insulin lispro or any of its excipients, concurrent beta-blockers, concurrent NSAIDs, concurrent fibrates, concurrent warfarin, pregnancy in women with a history of diabetic retinopathy",B,drugsdotcom,LOW
+insulin lispro and insulin lispro protamine,diabetes (type 1),"renal impairment, hypersensitivity to insulin lispro or any component, concurrent beta-blockers, concurrent NSAIDs, concurrent fibrates, concurrent thiazide diuretics, concurrent ACE inhibitors, concurrent ARBs, concurrent potassium-sparing diuretics, concurrent potassium supplements, concurrent potassium-containing medications, concurrent other insulin products, pregnancy in severe insulin resistance or ketoacidosis.",B,drugsdotcom,LOW
+insulin nph and regular (subcutaneous route),diabetes (type 1),depression,B,drugsdotcom,LOW
+insulin regular,diabetes (type 1),"renal failure, hepatic impairment, hypersensitivity to insulin, concurrent beta-blockers, concurrent MAOIs, concurrent NSAIDs, concurrent warfarin, pregnancy in severe cases of preeclampsia or diabetic ketoacidosis.",B,drugsdotcom,LOW
+"insulin regular, concentrated (u-500)",diabetes (type 1),"renal failure, hepatic impairment, hypersensitivity to insulin, concurrent beta-blockers, concurrent MAOIs, concurrent NSAIDs, concurrent tricyclic antidepressants, concurrent salicylates, concurrent corticosteroids, concurrent thyroid medications, concurrent estrogen-containing medications, concurrent warfarin, concurrent oral hypoglycemic agents, concurrent anabolic steroids, concurrent growth hormone, concurrent thyroid hormone",B,drugsdotcom,LOW
+ipratropium (inhalation route),asthma,"renal failure, hepatic impairment, hypersensitivity to atropine or other anticholinergic medications, concurrent beta-blockers, pregnancy",B,drugsdotcom,LOW
+ipratropium inhalation,asthma,"renal failure, severe bladder outflow obstruction, narrow-angle glaucoma, hypersensitivity to ipratropium or atropine, concurrent MAOIs, pregnancy",B,drugsdotcom,LOW
+ipratropium inhalation aerosol,asthma,"renal failure, hypersensitivity to ipratropium or atropine, narrow-angle glaucoma, prostatic hyperplasia or bladder neck obstruction, concurrent beta-blockers, pregnancy",B,drugsdotcom,LOW
+ipratropium inhalation solution,asthma,"renal failure, hypersensitivity to ipratropium or atropine, severe bladder outflow obstruction, narrow-angle glaucoma, prostatic hypertrophy, pregnancy (use only if benefits outweigh risks).",B,drugsdotcom,LOW
+irbesartan,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+isosorbide dinitrate,angina,angina,C,drugsdotcom,MEDIUM
+"isosorbide dinitrate (oral route, sublingual route)",angina,"hepatic impairment, severe anemia, severe hypotension, concurrent phosphodiesterase inhibitors, concurrent PDE5 inhibitors, severe left ventricular failure, hypersensitivity, pregnancy, concurrent sildenafil, concurrent tadalafil, concurrent vardenafil, concurrent riociguat",C,drugsdotcom,MEDIUM
+isosorbide mononitrate,angina,angina,C,drugsdotcom + drugdata,MEDIUM
+isradipine,hypertension,"hepatic impairment, severe renal impairment, hypersensitivity to dihydropyridines, concurrent beta-blockers, concurrent verapamil, pregnancy, severe aortic stenosis",C,drugsdotcom,MEDIUM
+ketorolac (nasal),pain,anemia,C,drugsdotcom,MEDIUM
+labetalol (oral/injection),hypertension,"hepatic impairment, severe renal impairment, hypersensitivity to labetalol, concurrent MAOIs, pheochromocytoma, severe heart failure, pregnancy (especially in the second and third trimesters), concurrent beta-blockers with certain calcium channel blockers.",C,drugsdotcom,MEDIUM
+lacosamide (oral/injection),seizures,depression,C,drugsdotcom,MEDIUM
+lansoprazole,gerd (heartburn),lupus,B,drugsdotcom,LOW
+levalbuterol inhalation,asthma,asthma,C,drugsdotcom,MEDIUM
+levamlodipine,hypertension,"angina, heart attack",N,drugsdotcom,UNKNOWN
+levetiracetam,seizures | epilepsy,depression,C,drugsdotcom + drugdata,MEDIUM
+levetiracetam (oral route),seizures,depression,C,drugsdotcom,MEDIUM
+levetiracetam (oral/injection),bipolar disorder | seizures,depression,C,drugsdotcom,MEDIUM
+levetiracetam extended-release tablets,seizures,"depression, anemia",C,drugsdotcom,MEDIUM
+levetiracetam tablets,seizures,"depression, anemia",C,drugsdotcom,MEDIUM
+levofloxacin,bacterial infections,"hepatic impairment, renal failure, hypersensitivity to levofloxacin or other fluoroquinolones, concurrent warfarin, pregnancy (especially in the 1st trimester), concurrent antacids or multivitamins containing calcium, magnesium, or aluminum.",C,drugdata,MEDIUM
+levorphanol (oral),pain,"renal failure, severe hepatic impairment, respiratory depression in patients with sleep apnea, severe respiratory disease, severe head injury, severe acute asthma, severe chronic obstructive pulmonary disease (COPD), concurrent MAOIs, concurrent other opioids, concurrent sedatives, concurrent CNS depressants, hypersensitivity to other opioids, pregnancy, severe hypothyroidism, severe adrenal insufficiency, severe hyp",C,drugsdotcom,MEDIUM
+levothyroxine,hypothyroidism | thyroid disorder,"hepatic impairment, renal failure, hypersensitivity to levothyroxine, adrenal insufficiency, untreated thyrotoxicosis, untreated pituitary thyroid axis disorders, concurrent sympathomimetics, concurrent beta-agonists, concurrent amiodarone, pregnancy with severe hyperthyroidism, severe uncontrolled hypertension.",C,drugsdotcom + drugdata,MEDIUM
+levothyroxine (oral route),hypothyroidism,"pregnancy, depression",A,drugsdotcom,SAFE
+levothyroxine (oral/injection),hypothyroidism,"hepatic impairment, renal failure, hypersensitivity, concurrent warfarin, concurrent amiodarone, concurrent beta-blockers, severe uncontrolled hypertension, untreated adrenal insufficiency, untreated pheochromocytoma, severe cardiovascular disease, severe angina, severe arrhythmias, severe heart failure, pregnancy (high doses), concurrent sympathomimetics.",A,drugsdotcom,SAFE
+levothyroxine sodium,hypothyroidism,"hepatic impairment, renal failure, hypersensitivity to levothyroxine sodium, concurrent warfarin, concurrent amiodarone, concurrent beta-blockers, uncorrected adrenal insufficiency, untreated thyrotoxicosis, severe cardiovascular disease, severe angina, severe hypertension, severe hyperthyroidism, pregnancy with severe heart disease, pregnancy with untreated pheochromoc",A,drugsdotcom,SAFE
+lidocaine,pain,"hepatic impairment, renal failure, severe heart block, hypersensitivity to amide-type local anesthetics, concurrent MAOIs, pregnancy (especially in third trimester), severe hypovolemia.",B,drugsdotcom,LOW
+lidocaine (topical application route),pain,"hepatic impairment, renal failure, severe heart block, hypersensitivity to amide-type local anesthetics, concurrent MAOIs, pregnancy (especially in third trimester), severe hypovolemia.",B,drugsdotcom,LOW
+lidocaine aerosol,pain,"hepatic impairment, renal failure, hypersensitivity to local anesthetics, concurrent MAOIs, pregnancy, severe heart block, Wolff-Parkinson-White syndrome",B,drugsdotcom,LOW
+lidocaine hydrochloride,pain,"hepatic impairment, renal failure, severe heart block, hypersensitivity to amide-type local anesthetics, concurrent MAOIs, pregnancy (especially in third trimester), severe hypovolemia.",B,drugsdotcom,LOW
+lidocaine topical,gastrointestinal | pain,"hepatic impairment, renal failure, hypersensitivity to lidocaine, concurrent MAOIs, pregnancy, concurrent beta-blockers, concurrent anti-arrhythmics.",B,drugsdotcom,LOW
+linagliptin,diabetes (type 2),"heart failure, autoimmune disease, pancreatitis",B,drugsdotcom,LOW
+linagliptin and metformin,diabetes (type 2),"heart failure, autoimmune disease, pancreatitis",B,drugsdotcom,LOW
+liothyronine,hypothyroidism,"hepatic impairment, renal failure, hypersensitivity, concurrent MAOIs, pregnancy, concurrent warfarin, concurrent beta blockers, concurrent sympathomimetics, concurrent stimulants, concurrent SSRIs, concurrent TCAs, concurrent other thyroid hormones.",A,drugsdotcom,SAFE
+liothyronine (intravenous route),hypothyroidism,"hepatic impairment, renal failure, hypersensitivity, concurrent MAOIs, pregnancy, concurrent warfarin, concurrent beta blockers, concurrent sympathomimetics, concurrent stimulants, concurrent SSRIs, concurrent TCAs, concurrent other thyroid hormones.",A,drugsdotcom,SAFE
+liraglutide,diabetes (type 2) | weight loss,pancreatitis,C,drugsdotcom,MEDIUM
+lisinopril,hypertension,hyperkalemia,D,drugsdotcom + drugdata,HIGH
+lixisenatide,diabetes (type 2),pancreatitis,N,drugsdotcom,UNKNOWN
+loperamide,diarrhea,"hepatic impairment, renal failure, severe constipation, ileus, toxic megacolon, hypersensitivity, concurrent MAOIs, pregnancy, concurrent opioids, concurrent anticholinergics.",C,drugsdotcom,MEDIUM
+loperamide (oral route),diarrhea,"hepatic impairment, renal failure, severe constipation, ileus, toxic megacolon, hypersensitivity, concurrent MAOIs, pregnancy, concurrent opioids, concurrent anticholinergics.",C,drugsdotcom,MEDIUM
+loperamide hydrochloride,diarrhea,"renal failure, severe hepatic impairment, severe electrolyte disturbances, concurrent MAOIs, hypersensitivity to loperamide, pregnancy (use only if benefits outweigh risks), concurrent QT prolonging medications.",C,drugsdotcom,MEDIUM
+loratadine,allergies | hayfever,"renal impairment, severe hepatic impairment, hypersensitivity to loratadine or other azoles, concurrent ketoconazole, concurrent erythromycin, pregnancy (use in pregnancy only if benefits outweigh risks)",C,drugsdotcom + drugdata,MEDIUM
+loratadine and pseudoephedrine,hayfever,"hepatic impairment, renal failure, hypersensitivity to loratadine or pseudoephedrine, concurrent MAOIs, pregnancy, severe hypertension, coronary artery disease, thyroid disease, concurrent SSRIs, concurrent beta blockers, concurrent guanethidine.",B,drugsdotcom,LOW
+loratadine and pseudoephedrine (oral route),hayfever,"hepatic impairment, renal failure, hypersensitivity to loratadine or pseudoephedrine, concurrent MAOIs, pregnancy, severe hypertension, coronary artery disease, thyroid disease, concurrent SSRIs, concurrent beta blockers, concurrent guanethidine.",B,drugsdotcom,LOW
+loratadine chewable tablets,hayfever,"hepatic impairment, renal failure, hypersensitivity to loratadine, concurrent MAOIs, pregnancy category C (use with caution), severe kidney disease, severe liver disease.",B,drugsdotcom,LOW
+losartan,hypertension,"low blood pressure, kidney failure, hyperkalemia",D,drugsdotcom + drugdata,HIGH
+magnesium salicylate,pain,"renal failure, severe hepatic impairment, hypersensitivity to salicylates, concurrent anticoagulants, concurrent NSAIDs, pregnancy (third trimester), bleeding disorders.",C,drugsdotcom,MEDIUM
+mecamylamine,hypertension,"hepatic impairment, renal failure, hypersensitivity, concurrent MAOIs, severe heart failure, severe coronary artery disease, pregnancy, concurrent beta-blockers.",C,drugsdotcom,MEDIUM
+mefenamic acid,pain,anemia,C,drugsdotcom,MEDIUM
+meloxicam (intravenous route),pain,"renal failure, severe hepatic impairment, hypersensitivity to meloxicam or NSAIDs, concurrent anticoagulants, pregnancy (third trimester), concurrent ACE inhibitors or diuretics.",C,drugsdotcom,MEDIUM
+"menthol gel, liquid, and solution",pain,"renal failure, hepatic impairment, hypersensitivity to menthol, concurrent MAOIs, pregnancy, concurrent warfarin",N,drugsdotcom,UNKNOWN
+menthol patch,pain,"renal failure, hepatic impairment, hypersensitivity to menthol or other ingredients, concurrent MAOIs, pregnancy (use with caution, but no severe risks documented)",N,drugsdotcom,UNKNOWN
+menthol topical,pain,"renal failure, hepatic impairment, hypersensitivity to menthol, concurrent MAOIs, concurrent beta blockers, concurrent certain anticholinergics, pregnancy, breastfeeding.",N,drugsdotcom,UNKNOWN
+meperidine,pain,"renal failure, severe respiratory depression, severe head injury, acute alcoholism, hypersensitivity, concurrent MAOIs, pregnancy, concurrent SSRIs, concurrent TCAs, concurrent opioids, severe liver disease, Addison's disease, hypothyroidism, hypovolemia, concurrent CYP3A4 inhibitors.",C,drugsdotcom,MEDIUM
+meperidine (oral route),pain,depression,C,drugsdotcom,MEDIUM
+meperidine (oral/injection),pain,"renal failure, severe respiratory depression, severe head injury, acute alcoholism, hypersensitivity, concurrent MAOIs, pregnancy, concurrent SSRIs, concurrent TCAs, concurrent opioids, concurrent sedatives, severe liver disease, Addison's disease, hypothyroidism, prostatic hypertrophy, severe cardiac disease, concurrent CYP3A4 inhibitors.",C,drugsdotcom,MEDIUM
+mepolizumab,asthma,"renal impairment, hypersensitivity reactions, concurrent live vaccines, pregnancy category C, concurrent immunosuppressants",N,drugsdotcom,UNKNOWN
+metformin,diabetes (type 2) | type 2 diabetes,"renal impairment, hepatic impairment, severe infection or sepsis, acute heart failure, severe respiratory failure, hypersensitivity to metformin, concurrent iodinated contrast agents, pregnancy with severe kidney disease or heart failure, concurrent NSAIDs or salicylates.",C,drugsdotcom + drugdata,MEDIUM
+metformin and pioglitazone,diabetes (type 2),anemia,C,drugsdotcom,MEDIUM
+metformin and saxagliptin,diabetes (type 2),"heart failure, autoimmune disease, pancreatitis",B,drugsdotcom,LOW
+metformin and sitagliptin,diabetes (type 2),"diabetes, heart failure, autoimmune disease, pancreatitis",B,drugsdotcom,LOW
+methadone (oral route),pain,depression,C,drugsdotcom,MEDIUM
+methadone (oral/injection),pain,"renal failure, hepatic impairment, respiratory depression, hypotension, hypovolemia, concurrent MAOIs, benzodiazepines, SSRIs, pregnancy, severe respiratory disease, severe cardiac disease, severe electrolyte imbalance.",C,drugsdotcom,MEDIUM
+methsuximide,seizures,lupus,N,drugsdotcom,UNKNOWN
+"methyl salicylate, menthol, and capsaicin cream and ointment",pain,"renal failure, hepatic impairment, hypersensitivity to salicylates, concurrent anticoagulants, pregnancy (use with caution, but no severe risks documented)",N,drugsdotcom,UNKNOWN
+"methyl salicylate, menthol, and capsaicin lotion",pain,"renal failure, hepatic impairment, hypersensitivity to salicylates, concurrent anticoagulants, pregnancy (use with caution, but no severe risks documented)",N,drugsdotcom,UNKNOWN
+"methyl salicylate, menthol, capsaicin",pain,"renal failure, hepatic impairment, hypersensitivity to salicylates, concurrent anticoagulants, pregnancy (use with caution, but no severe risks documented)",N,drugsdotcom,UNKNOWN
+methyldopa,hypertension,"hepatic impairment, renal failure, hypersensitivity, concurrent MAOIs, pregnancy at term, severe bradycardia, heart block, sick sinus syndrome, hypotension, dehydration, volume depletion, severe dehydration, severe hypovolemia, severe hypotension, severe heart failure, severe cardiac disease, severe renal disease, severe hepatic disease, severe electrolyte imbalance, severe",C,drugsdotcom,MEDIUM
+methyldopa and hydrochlorothiazide (oral route),hypertension,depression,C,drugsdotcom,MEDIUM
+methylprednisolone (injection),asthma,depression,C,drugsdotcom,MEDIUM
+methylprednisolone (oral),asthma,depression,C,drugsdotcom,MEDIUM
+metoclopramide,gerd (heartburn),depression,B,drugsdotcom,LOW
+metoclopramide (oral/injection),gerd (heartburn),depression,B,drugsdotcom,LOW
+metolazone,hypertension,"renal failure, severe hepatic impairment, hypersensitivity to thiazides, concurrent lithium, pregnancy (especially in severe hypertension), concurrent NSAIDs.",B,drugsdotcom,LOW
+metoprolol,angina | hypertension,"low blood pressure, depression",C,drugsdotcom + drugdata,MEDIUM
+metoprolol (oral route),angina,"hepatic impairment, severe heart failure, hypersensitivity to metoprolol or other beta-blockers, severe bradycardia, heart block, asthma, COPD, concurrent MAOIs, pheochromocytoma, pregnancy (especially in the 2nd and 3rd trimesters), severe peripheral artery disease.",C,drugsdotcom,MEDIUM
+metoprolol and hydrochlorothiazide (oral route),hypertension,"hepatic impairment, severe renal impairment, hypersensitivity to metoprolol or hydrochlorothiazide, concurrent beta-blockers, concurrent NSAIDs, pregnancy (especially in the second and third trimesters), severe bradycardia, heart block, asthma, chronic obstructive pulmonary disease (COPD).",C,drugsdotcom,MEDIUM
+metoprolol and hydrochlorothiazide extended-release tablets,hypertension,depression,C,drugsdotcom,MEDIUM
+metoprolol extended-release capsules,angina,depression,C,drugsdotcom,MEDIUM
+"metoprolol succinate tablet, extended release",angina,depression,C,drugsdotcom,MEDIUM
+metronidazole,pneumonia | bacterial infections,"hepatic impairment, renal failure, severe immunodeficiency, hypersensitivity to metronidazole or nitroimidazoles, concurrent warfarin, disulfiram, or alcohol consumption, pregnancy (especially during first trimester), concurrent lithium.",C,drugsdotcom + drugdata,MEDIUM
+midazolam (nasal),seizures,depression,D,drugsdotcom,HIGH
+midazolam (oral),seizures,"Hepatic impairment, renal failure, severe respiratory depression, acute narrow-angle glaucoma, severe cardiovascular disease, severe respiratory disease, severe head injury, acute angle-closure glaucoma, pregnancy, concurrent opioids, benzodiazepines, or other CNS depressants.",D,drugsdotcom,HIGH
+miglitol,diabetes (type 2),"renal failure, severe hepatic impairment, hypersensitivity to miglitol, concurrent use of ACE inhibitors or ARBs, pregnancy",B,drugsdotcom,LOW
+minoxidil,hair loss | hypertension,"hepatic impairment, renal failure, hypersensitivity, concurrent beta-blockers, concurrent calcium channel blockers, pregnancy, concurrent warfarin, concurrent NSAIDs, concurrent diuretics, concurrent MAOIs, concurrent sympathomimetics.",C,drugsdotcom,MEDIUM
+mixed grass pollens allergen extract,hayfever,"renal failure, severe hepatic impairment, hypersensitivity to the extract, concurrent beta-blockers, concurrent MAOIs, pregnancy or breastfeeding.",B,drugsdotcom,LOW
+mixed grass pollens allergen extract brand name: oralair,hayfever,"renal impairment, severe asthma, severe chronic obstructive pulmonary disease (COPD), severe cardiovascular disease, severe hypertension, severe liver disease, hypersensitivity to grass pollen, concurrent beta-blockers, concurrent MAOIs, concurrent tricyclic antidepressants, concurrent sympathomimetics, pregnancy and breastfeeding",B,drugsdotcom,LOW
+moexipril,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+mometasone,hayfever,depression,C,drugsdotcom,MEDIUM
+mometasone / olopatadine,hayfever,depression,N,drugsdotcom,UNKNOWN
+mometasone nasal,hayfever,depression,C,drugsdotcom,MEDIUM
+montelukast,asthma,depression,B,drugsdotcom,LOW
+morphine,severe pain,"renal failure, respiratory depression, severe hepatic impairment, biliary obstruction, head injury, intracranial hypertension, hypotension, hypovolemia, respiratory disease, concurrent MAOIs, concurrent SSRIs, pregnancy, hypersensitivity, concurrent benzodiazepines, concurrent sedatives, concurrent other opioids.",C,drugdata,MEDIUM
+morphine (injection route),pain,low blood pressure,C,drugsdotcom,MEDIUM
+morphine (injection),pain,"renal failure, respiratory depression, severe hepatic impairment, biliary obstruction, severe head injury, acute intoxication with alcohol, benzodiazepines, or other central nervous system depressants, hypersensitivity, pregnancy, concurrent MAOIs, concurrent SSRIs, concurrent TCAs, concurrent tramadol, concurrent pethidine.",C,drugsdotcom,MEDIUM
+morphine (oral),pain,"renal failure, respiratory depression, severe hepatic impairment, biliary obstruction, head injury, intracranial hypertension, hypothyroidism, hypovolemia, concurrent MAOIs, pregnancy, respiratory disease, severe sleep apnea, severe asthma, severe COPD, concurrent benzodiazepines, concurrent sedatives, concurrent antidepressants, concurrent antihistamines, concurrent antich",C,drugsdotcom,MEDIUM
+nadolol,angina,bronchospasm,C,drugsdotcom,MEDIUM
+nadolol and bendroflumethiazide (oral route),hypertension,low blood pressure,C,drugsdotcom,MEDIUM
+nalbuphine,pain,"renal failure, severe respiratory depression, severe hepatic impairment, biliary obstruction, hypersensitivity to nalbuphine or other opioids, concurrent MAOIs, pregnancy, concurrent benzodiazepines or other central nervous system depressants.",B,drugsdotcom,LOW
+naloxone and pentazocine (oral),pain,"renal failure, hepatic impairment, respiratory depression, concurrent MAOIs, hypersensitivity to naloxone or pentazocine, pregnancy, concurrent benzodiazepines, concurrent opioids.",C,drugsdotcom,MEDIUM
+naproxen,osteoarthritis | pain and inflammation,anemia,C,drugsdotcom + drugdata,MEDIUM
+nateglinide (oral),diabetes (type 2),"renal failure, severe hepatic impairment, hypersensitivity to nateglinide, concurrent use of beta-blockers, pregnancy",C,drugsdotcom,MEDIUM
+nebivolol,hypertension,"hepatic impairment, severe renal impairment, hypersensitivity to beta-blockers, concurrent MAOIs, severe bradycardia, heart block, pregnancy (especially in the second and third trimesters), severe asthma or COPD.",C,drugsdotcom,MEDIUM
+nebivolol and valsartan,hypertension,hyperkalemia,N,drugsdotcom,UNKNOWN
+neomycin,diarrhea,"renal impairment, severe kidney disease, ototoxicity in patients with pre-existing hearing loss, severe allergy to aminoglycosides, pregnancy, concurrent loop diuretics, concurrent other nephrotoxic agents",D,drugsdotcom,HIGH
+nicardipine (intravenous route),hypertension,"renal failure, severe hepatic impairment, hypersensitivity to nicardipine, concurrent beta-blockers, concurrent cyclosporine, pregnancy (especially in severe hypertension), severe aortic stenosis",C,drugsdotcom,MEDIUM
+nicardipine (oral/injection),hypertension,"renal failure, severe hepatic impairment, hypersensitivity to nicardipine, concurrent beta-blockers, concurrent cyclosporine, pregnancy (especially in severe hypertension), severe aortic stenosis",C,drugsdotcom,MEDIUM
+nifedipine,hypertension,angina,C,drugsdotcom,MEDIUM
+nifedipine (oral route),hypertension,"hepatic impairment, severe aortic stenosis, hypersensitivity, concurrent beta-blockers, pregnancy (especially in the third trimester), severe left ventricular dysfunction, severe hypotension.",C,drugsdotcom,MEDIUM
+nisoldipine,hypertension,"hepatic impairment, severe renal impairment, hypersensitivity to nisoldipine, concurrent beta-blockers, concurrent cyclosporine, pregnancy, severe aortic stenosis",C,drugsdotcom,MEDIUM
+nitroglycerin,angina,heart attack,C,drugsdotcom,MEDIUM
+"nitroglycerin (oral route, sublingual route)",angina,"hepatic impairment, severe hypotension, severe anemia, severe heart failure, hypersensitivity to nitroglycerin, concurrent sildenafil, concurrent phosphodiesterase inhibitors, pregnancy, concurrent alpha-blockers, concurrent beta-blockers, concurrent calcium channel blockers, concurrent nitrates.",C,drugsdotcom,MEDIUM
+nitroglycerin (oral/sublingual),angina,heart attack,C,drugsdotcom,MEDIUM
+nitroglycerin (sublingual),angina,heart attack,C,drugsdotcom,MEDIUM
+nitroglycerin (topical),angina,heart attack,C,drugsdotcom,MEDIUM
+nitroglycerin (transdermal),angina,heart attack,C,drugsdotcom,MEDIUM
+nizatidine,gerd (heartburn),"renal failure, severe hepatic impairment, hypersensitivity to nizatidine, concurrent MAOIs, pregnancy",B,drugsdotcom,LOW
+octreotide (oral/injection),diabetes (type 1),"hepatic impairment, renal failure, severe hypothyroidism, severe heart failure, severe hypertension, severe bradycardia, hypersensitivity to octreotide, concurrent beta-blockers, concurrent calcium channel blockers, concurrent nitrates, pregnancy, severe kidney disease",B,drugsdotcom,LOW
+oliceridine,pain,anemia,N,drugsdotcom,UNKNOWN
+olmesartan,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+olopatadine (nasal),hayfever,"hepatic impairment, renal failure, hypersensitivity to olopatadine, concurrent MAOIs, pregnancy, concurrent beta-blockers, concurrent warfarin, concurrent theophylline, concurrent erythromycin, concurrent ketoconazole, concurrent cimetidine, concurrent SSRIs, concurrent TCAs, concurrent tricyclic antidepressants.",C,drugsdotcom,MEDIUM
+olopatadine hydrochloride and mometasone furoate monohydrate,hayfever,"low blood pressure, tuberculosis, glaucoma",N,drugsdotcom,UNKNOWN
+omeprazole,gerd (heartburn) | acid reflux,lupus,C,drugsdotcom + drugdata,MEDIUM
+omeprazole and sodium bicarbonate,gerd (heartburn),lupus,C,drugsdotcom,MEDIUM
+"omeprazole, sodium bicarbonate and magnesium hydroxide approval date: march 27, 2006 company: santarus, inc. treatment for: heartburn/gerd, erosive esophagitis, duodenal & gastric ulcers",gerd (heartburn),"hepatic impairment, severe renal impairment, hypersensitivity to omeprazole, concurrent warfarin, magnesium hydroxide, and sodium bicarbonate may increase risk of magnesium toxicity in patients with severe renal impairment, pregnancy",C,drugsdotcom,MEDIUM
+ondansetron,nausea and vomiting,"renal impairment, severe hepatic impairment, hypersensitivity to ondansetron, concurrent MAOIs, concurrent SSRIs, concurrent ketoconazole, concurrent erythromycin, pregnancy (first trimester), concurrent pimozide",C,drugdata,MEDIUM
+opium preparation,diarrhea,"renal failure, hepatic impairment, respiratory depression, severe respiratory disease, severe cardiovascular disease, severe head injury, acute abdomen, severe constipation, pregnancy, concurrent MAOIs, concurrent benzodiazepines, concurrent other central nervous system depressants.",C,drugsdotcom,MEDIUM
+oxcarbazepine,anxiety | seizures,depression,C,drugsdotcom,MEDIUM
+oxycodone,pain,"renal failure, hepatic impairment, respiratory depression, severe respiratory disease, severe pulmonary disease, severe asthma, severe COPD, head injury, intracranial hypertension, hypersensitivity, concurrent MAOIs, concurrent SSRIs, concurrent TCAs, concurrent benzodiazepines, concurrent other opioids, pregnancy, severe pregnancy, severe pregnancy-induced hypertension, severe hypotension, severe hypovolem",N,drugsdotcom,UNKNOWN
+oxycodone (oral route),pain,depression,N,drugsdotcom,UNKNOWN
+oxycodone and acetaminophen (oral route),pain,"low blood pressure, depression",C,drugsdotcom,MEDIUM
+oxycodone and aspirin (oral route),pain,depression,B,drugsdotcom,LOW
+oxycodone hydrochloride and acetaminophen,pain,"hepatic impairment, severe renal impairment, hypersensitivity to oxycodone or acetaminophen, concurrent MAOIs, concurrent mixed agonist/antagonist opioids, concurrent CYP3A4 inhibitors, pregnancy, severe respiratory depression in patients with chronic pulmonary disease, acute or severe bronchial asthma in an unmonitored setting, head injury, intracranial hypertension,",C,drugsdotcom,MEDIUM
+oxymorphone,pain,"renal failure, respiratory depression, biliary obstruction, severe hepatic impairment, hypersensitivity, concurrent MAOIs, pregnancy, concurrent CYP3A4 inhibitors, concurrent CYP2D6 inhibitors, concurrent benzodiazepines, concurrent opioids, concurrent sedatives.",C,drugsdotcom,MEDIUM
+pantoprazole (intravenous route),gerd (heartburn),"hepatic impairment, severe renal impairment, hypersensitivity to proton pump inhibitors, concurrent clopidogrel, concurrent atazanavir, concurrent rilpivirine, pregnancy (category C), concurrent warfarin, concurrent tacrolimus, concurrent mycophenolate mofetil",B,drugsdotcom,LOW
+pantoprazole (oral/injection),gerd (heartburn),lupus,B,drugsdotcom,LOW
+paracetamol,pain and fever,"hepatic impairment, severe renal failure, severe hypersensitivity, concurrent warfarin, concurrent MAOIs, severe asthma, severe bleeding disorders, pregnancy with severe liver disease, pregnancy with severe asthma, pregnancy with bleeding disorders.",C,drugdata,MEDIUM
+"paracetamol brand names: panadol, calpol, tylenol , alvedon",pain,"hepatic impairment, severe renal failure, hypersensitivity, concurrent MAOIs, concurrent warfarin, severe alcohol dependence, severe liver disease, severe kidney disease, severe heart failure, severe asthma, severe bleeding disorders, severe porphyria, severe hypothyroidism, severe hypoglycemia, severe adrenal insufficiency, severe kidney disease, severe liver cirrhosis, severe",C,drugsdotcom,MEDIUM
+pentafluoropropane and tetrafluoroethane,pain,"hepatic impairment, renal failure, severe respiratory disease, concurrent sedatives or opioids, pregnancy, hypersensitivity to local anesthetics, concurrent MAOIs, severe cardiovascular disease.",N,drugsdotcom,UNKNOWN
+perampanel,seizures,"renal impairment, severe hepatic impairment, hypersensitivity to perampanel, concurrent carbamazepine, concurrent phenobarbital, concurrent phenytoin, concurrent rifampicin, pregnancy, concurrent estrogen-containing contraceptives",C,drugsdotcom,MEDIUM
+perindopril,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+phenytoin (oral),anxiety | seizures,"hepatic impairment, renal failure, hypersensitivity to phenytoin or other hydantoins, concurrent MAOIs, pregnancy (especially during first trimester), concurrent warfarin, concurrent valproic acid.",D,drugsdotcom,HIGH
+phenytoin sodium,seizures,"hepatic impairment, renal failure, hypersensitivity to phenytoin, concurrent MAOIs, pregnancy (especially during first trimester), concurrent warfarin, concurrent valproic acid, severe respiratory depression, severe cardiac disease, severe heart block, sinus bradycardia, Stokes-Adams syndrome, and concurrent isoniazid.",D,drugsdotcom,HIGH
+pindolol,hypertension,"hepatic impairment, severe heart failure, hypersensitivity, concurrent beta-blockers, concurrent calcium channel blockers, pregnancy, renal failure",B,drugsdotcom,LOW
+pioglitazone,type 2 diabetes,"hepatic impairment, severe heart failure, hypersensitivity to pioglitazone, concurrent insulin secretagogues, pregnancy, concurrent warfarin, concurrent NSAIDs, concurrent thiazolidinediones, severe renal impairment, concurrent fibrates.",C,drugdata,MEDIUM
+pioglitazone (oral),diabetes (type 2),"hepatic impairment, congestive heart failure, hypersensitivity to pioglitazone, concurrent insulin secretagogues, pregnancy (category C), concurrent thiazolidinediones, severe renal impairment, concurrent PPARγ agonists.",C,drugsdotcom,MEDIUM
+pramlintide,diabetes (type 1),hypoglycemia,C,drugsdotcom,MEDIUM
+pramlintide (subcutaneous route),diabetes (type 1),depression,C,drugsdotcom,MEDIUM
+pramoxine gel,pain,"renal impairment, hypersensitivity to pramoxine, concurrent use with other anesthetics or analgesics, pregnancy",N,drugsdotcom,UNKNOWN
+pramoxine lotion,pain,"renal impairment, severe hepatic impairment, hypersensitivity to pramoxine, concurrent use of other local anesthetics, pregnancy",N,drugsdotcom,UNKNOWN
+pramoxine topical,pain,"renal failure, severe hepatic impairment, hypersensitivity to pramoxine, concurrent use of other local anesthetics, pregnancy",N,drugsdotcom,UNKNOWN
+prazosin,hypertension,"hepatic impairment, renal failure, hypersensitivity, concurrent alpha-blockers, concurrent phosphodiesterase-5 inhibitors, severe heart failure, pregnancy (especially in the 2nd and 3rd trimesters)",C,drugsdotcom,MEDIUM
+prednisone,asthma | inflammatory conditions,"depression, pancreatitis",C,drugsdotcom + drugdata,MEDIUM
+pregabalin,pain | neuropathic pain,"diabetes, copd, depression",C,drugsdotcom + drugdata,MEDIUM
+primidone,seizures,depression,N,drugsdotcom,UNKNOWN
+progesterone,seizures,"heart attack, stroke, depression",B,drugsdotcom,LOW
+"promethazine (injection route, intravenous route)",hayfever,low blood pressure,C,drugsdotcom,MEDIUM
+promethazine (oral),hayfever,"hepatic impairment, renal failure, severe respiratory depression, severe CNS depression, hypersensitivity to phenothiazines, concurrent MAOIs, pregnancy (especially in the first trimester), concurrent with other antihistamines or sedatives.",C,drugsdotcom,MEDIUM
+promethazine (rectal),hayfever,"hepatic impairment, renal failure, severe respiratory depression with opioids, severe CNS depression with other sedatives, hypersensitivity to phenothiazines, pregnancy category C, concurrent MAOIs, concurrent tricyclic antidepressants",C,drugsdotcom,MEDIUM
+propranolol,angina | hypertension,"low blood pressure, depression, asthma, bronchospasm",C,drugsdotcom + drugdata,MEDIUM
+propranolol (oral route),angina | hypertension,"depression, asthma, bronchospasm",C,drugsdotcom,MEDIUM
+"pyridoxine (oral route, injection route)",seizures,"renal failure, hepatic impairment, hypersensitivity, concurrent isoniazid, concurrent phenytoin, concurrent valproic acid, pregnancy (high doses may cause fetal harm)",C,drugsdotcom,MEDIUM
+pyridoxine (vitamin b6),seizures,"renal failure, hepatic impairment, hypersensitivity, concurrent isoniazid, concurrent phenytoin, concurrent valproic acid, pregnancy (high doses may cause fetal harm)",C,drugsdotcom,MEDIUM
+quinapril,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+rabeprazole,gerd (heartburn),lupus,B,drugsdotcom,LOW
+ragweed pollen allergen extract,hayfever,"renal failure, severe hepatic impairment, hypersensitivity to ragweed pollen allergen extract, concurrent beta-blockers, concurrent MAOIs, pregnancy",C,drugsdotcom,MEDIUM
+ramipril,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+ranolazine,angina,"hepatic impairment, severe renal impairment, hypersensitivity to ranolazine, concurrent P-glycoprotein inhibitors (e.g. ketoconazole, itraconazole), concurrent CYP3A inhibitors (e.g. erythromycin, clarithromycin), pregnancy category C, concurrent beta-blockers",C,drugsdotcom,MEDIUM
+ranolazine (oral route),angina,depression,C,drugsdotcom,MEDIUM
+repaglinide (oral),diabetes (type 2),pancreatitis,C,drugsdotcom,MEDIUM
+reslizumab,asthma,"hepatic impairment, renal failure, hypersensitivity reactions, concurrent immunosuppressants, pregnancy, concurrent live vaccines",N,drugsdotcom,UNKNOWN
+rifaximin,diarrhea,"hepatic impairment, severe renal impairment, hypersensitivity to rifamycin antibiotics, concurrent warfarin, pregnancy category C, concurrent cyclosporine.",C,drugsdotcom,MEDIUM
+rosiglitazone,diabetes (type 2) | type 2 diabetes,depression,C,drugsdotcom + drugdata,MEDIUM
+saccharomyces boulardii lyo,diarrhea,"renal failure, hepatic impairment, severe immunodeficiency, hypersensitivity to yeast, concurrent immunosuppressants",N,drugsdotcom,UNKNOWN
+"salbutamol brand names: ventolin, airomir, asthalin, asmatol, azmasol, ... show all 8 brands salair, salamol, respigen and more",asthma,"arrhythmia, angina, low blood pressure, pregnancy, breastfeeding, asthma, depression",N,drugsdotcom,UNKNOWN
+saxagliptin,diabetes (type 2),pancreatitis,B,drugsdotcom,LOW
+semaglutide,diabetes (type 2) | weight loss,"diabetes, type 2 diabetes, hypoglycemia, kidney failure, depression, pancreatitis",N,drugsdotcom,UNKNOWN
+"semaglutide brand names: ozempic , wegovy , rybelsus",diabetes (type 2),"diabetes, type 2 diabetes, pancreatitis",N,drugsdotcom,UNKNOWN
+semaglutide injection,diabetes (type 2),"diabetes, type 2 diabetes, pancreatitis",N,drugsdotcom,UNKNOWN
+sitagliptin,diabetes (type 2),"heart failure, autoimmune disease",B,drugsdotcom,LOW
+spironolactone,acne | hypertension,hyperkalemia,C,drugsdotcom,MEDIUM
+sucralfate (oral),gerd (heartburn),"renal failure, severe hepatic impairment, hypersensitivity to sucralfate, concurrent antacids, concurrent aluminum-containing products, severe kidney disease, severe liver disease, pregnancy (limited data, use with caution)",B,drugsdotcom,LOW
+sufentanil,pain,depression,C,drugsdotcom,MEDIUM
+sufentanil (sublingual route),pain,depression,C,drugsdotcom,MEDIUM
+tapentadol,pain,"renal impairment, severe respiratory depression, severe liver impairment, hypersensitivity, concurrent MAOIs, concurrent tramadol, pregnancy, concurrent opioids, concurrent CNS depressants",C,drugsdotcom,MEDIUM
+telmisartan,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+teplizumab-mzwv,diabetes (type 1),"diabetes, type 1 diabetes",N,drugsdotcom,UNKNOWN
+terazosin,hypertension,"hepatic impairment, severe renal impairment, hypersensitivity to terazosin, concurrent alpha-blockers, concurrent phosphodiesterase-5 inhibitors, pregnancy, severe aortic stenosis",C,drugsdotcom,MEDIUM
+tezepelumab,asthma,"hepatic impairment, renal failure, hypersensitivity to tezepelumab or any component of the formulation, concurrent immunosuppressive therapy, pregnancy, lactation.",N,drugsdotcom,UNKNOWN
+tezepelumab-ekko,asthma,"hepatic impairment, renal failure, hypersensitivity to latex, concurrent immunosuppressants, pregnancy",N,drugsdotcom,UNKNOWN
+thyroid desiccated,hypothyroidism,"renal failure, severe cardiovascular disease, hypersensitivity to iodine, concurrent warfarin, pregnancy in severe cases, adrenal insufficiency",A,drugsdotcom,SAFE
+tiagabine,bipolar disorder | seizures,"hepatic impairment, renal failure, hypersensitivity, concurrent MAOIs, concurrent SSRIs, concurrent TCAs, pregnancy, concurrent carbamazepine, concurrent phenobarbital, concurrent phenytoin, concurrent valproic acid.",C,drugsdotcom,MEDIUM
+timolol,angina,"hepatic impairment, renal failure, hypersensitivity to timolol, concurrent beta-blockers, severe heart failure, pregnancy (especially in the 2nd and 3rd trimesters), asthma, COPD, peripheral artery disease.",C,drugsdotcom,MEDIUM
+timothy grass pollen allergen extract,hayfever,"renal failure, severe hepatic impairment, hypersensitivity to the extract, concurrent beta-blockers, concurrent MAOIs, concurrent tricyclic antidepressants, concurrent sympathomimetics, concurrent systemic corticosteroids",B,drugsdotcom,LOW
+tirzepatide,diabetes (type 2),pancreatitis,N,drugsdotcom,UNKNOWN
+tirzepatide (mown-jahr-oh),diabetes (type 2),"hypoglycemia, kidney failure, pancreatitis",N,drugsdotcom,UNKNOWN
+topiramate,bipolar disorder | seizures,depression,D,drugsdotcom,HIGH
+torsemide (oral/injection),hypertension,"renal failure, severe hepatic impairment, hypersensitivity to torsemide, concurrent lithium therapy, pregnancy (especially in severe hypertension), concurrent NSAIDs.",B,drugsdotcom,LOW
+tramadol,anxiety | pain | moderate to severe pain,"renal impairment, hepatic impairment, severe respiratory depression, concurrent MAOIs, concurrent SSRIs, concurrent TCAs, concurrent opioids, hypersensitivity, pregnancy, epilepsy, head injury, acute alcoholism, concurrent CYP2D6 inhibitors, concurrent CYP3A4 inhibitors",C,drugsdotcom + drugdata,MEDIUM
+tramadol hydrochloride,pain,"renal failure, severe hepatic impairment, hypersensitivity to tramadol or other opioids, concurrent MAOIs, concurrent SSRIs or other serotonergic agents, concurrent pimozide, concurrent carbamazepine, pregnancy (especially in third trimester), concurrent warfarin.",C,drugsdotcom,MEDIUM
+trandolapril,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+trandolapril and verapamil,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+triamcinolone (injection route),hair loss | hayfever,depression,C,drugsdotcom,MEDIUM
+triamcinolone (injection),asthma,depression,C,drugsdotcom,MEDIUM
+triamcinolone (nasal),hayfever,"renal impairment, severe hypertension, hypersensitivity to corticosteroids, concurrent NSAIDs, live vaccines, pregnancy (especially during 1st and 3rd trimesters), concurrent potassium-sparing diuretics.",C,drugsdotcom,MEDIUM
+triamcinolone (oral),asthma,"depression, pancreatitis",C,drugsdotcom,MEDIUM
+trisodium citrate dihydrate,gerd (heartburn),"renal impairment, severe hepatic impairment, hypersensitivity to trisodium citrate dihydrate, concurrent antacids or calcium supplements, pregnancy risks if severe (limited data available)",C,drugsdotcom,MEDIUM
+trolamine cream and lotion,osteoarthritis | pain,"renal failure, hepatic impairment, hypersensitivity to trolamine, concurrent antacids, pregnancy risks if severe, concurrent warfarin",N,drugsdotcom,UNKNOWN
+valacyclovir,herpes | herpes infections,"renal impairment, hypersensitivity to valacyclovir or acyclovir, concurrent probenecid, pregnancy (category B, use with caution), lactation.",C,drugsdotcom + drugdata,MEDIUM
+valsartan,hypertension,hyperkalemia,D,drugsdotcom,HIGH
+verapamil (oral route),angina,"hepatic impairment, renal failure, hypersensitivity to verapamil, concurrent beta blockers, concurrent digoxin, severe left ventricular dysfunction, pregnancy (especially in the first trimester), severe hypotension.",C,drugsdotcom,MEDIUM
+verapamil (oral/injection),angina,low blood pressure,C,drugsdotcom,MEDIUM
+vigabatrin,seizures,anemia,C,drugsdotcom,MEDIUM
+"vigabatrin brand names: sabril , vigadrone",seizures,anemia,C,drugsdotcom,MEDIUM
+ziconotide,pain,depression,C,drugsdotcom,MEDIUM
+zonisamide,seizures,"renal impairment, severe hepatic impairment, hypersensitivity to zonisamide, concurrent carbamazepine, concurrent valproic acid, pregnancy, concurrent MAOIs, concurrent tramadol",C,drugsdotcom,MEDIUM
+pantoprazole,gerd (heartburn),"hypersensitivity, concurrent-rilpivirine, severe hepatic impairment",B,regional_enrichment_cdsco,LOW
+azithromycin,bacterial infections,"hypersensitivity to macrolides, hepatic impairment, severe renal failure, concurrent ergotamine",B,regional_enrichment_cdsco,LOW
+gliclazide,diabetes (type 2),"type 1 diabetes, severe renal impairment, severe hepatic impairment, pregnancy, breastfeeding, hypersensitivity to sulfonylureas",C,regional_enrichment_cdsco,MEDIUM
+domperidone,vomiting,"prolactinoma, gastrointestinal hemorrhage, mechanical obstruction, hepatic impairment, concurrent strong CYP3A4 inhibitors, concurrent QT-prolonging drugs",C,regional_enrichment_cdsco,MEDIUM
+berberine,diarrhea,"pregnancy, breastfeeding, neonates, hypersensitivity",X,regional_enrichment_moh_vietnam,NEVER
+artesunate,malaria,"hypersensitivity, pregnancy, severe renal failure",C,regional_enrichment_moh_vietnam,MEDIUM
+co-amoxiclav,bacterial infections,"hypersensitivity to penicillins, history of cholestatic jaundice or hepatic impairment with penicillin, severe renal impairment",B,regional_enrichment_fda_philippines,LOW
+mebendazole,parasite,"pregnancy (first trimester), hypersensitivity, concurrent metronidazole, severe hepatic impairment",C,regional_enrichment_moh_cambodia,MEDIUM
+butylscopolamine,pain,"glaucoma, megacolon, myasthenia gravis, mechanical stenosis of GI tract, tachycardia, hypersensitivity",C,regional_enrichment_latin_america_who,MEDIUM
+phloroglucinol,pain,"hypersensitivity, breastfeeding",B,regional_enrichment_french_who,LOW
+methotrexate,rheumatoid arthritis | cancer | psoriasis,"pregnancy, breastfeeding, renal failure, liver disease, hepatic impairment, severe anemia, thrombocytopenia, immunodeficiency, concurrent nsaids, concurrent aspirin, concurrent penicillins",X,clinical_pharmacology,NEVER
+warfarin,anticoagulation,"pregnancy, bleeding disorders, severe hypertension, renal failure, hepatic impairment, concurrent aspirin, concurrent nsaids, concurrent antibiotics",X,clinical_pharmacology,NEVER
+isotretinoin,acne,"pregnancy, breastfeeding, hypersensitivity, concurrent tetracyclines, concurrent vitamin a supplements",X,clinical_pharmacology,NEVER
+thalidomide,multiple myeloma,"pregnancy, breastfeeding, peripheral neuropathy",X,clinical_pharmacology,NEVER
+misoprostol,gastric ulcer,"pregnancy, breastfeeding, hypersensitivity to prostaglandins",X,clinical_pharmacology,NEVER
+lithium,bipolar disorder,"renal failure, cardiac disease, pregnancy, breastfeeding, dehydration, concurrent nsaids, concurrent ace inhibitors, concurrent diuretics",D,clinical_pharmacology,HIGH
+digoxin,heart failure | atrial fibrillation,"renal failure, hypokalemia, hypomagnesemia, bradycardia, heart block, concurrent calcium channel blockers, concurrent amiodarone, pregnancy",C,clinical_pharmacology,MEDIUM
+valproate,seizures | bipolar disorder,"pregnancy, liver disease, hepatic impairment, urea cycle disorders, concurrent lamotrigine, concurrent carbamazepine",X,clinical_pharmacology,NEVER
+valproic acid,seizures | bipolar disorder,"pregnancy, liver disease, hepatic impairment, urea cycle disorders, pancreatitis",X,clinical_pharmacology,NEVER
+carbamazepine,seizures | bipolar disorder,"pregnancy, bone marrow suppression, hepatic impairment, concurrent maois, concurrent oral contraceptives, concurrent warfarin",D,clinical_pharmacology,HIGH
+phenobarbital,seizures,"pregnancy, hepatic impairment, respiratory depression, concurrent alcohol, concurrent cns depressants",D,clinical_pharmacology,HIGH
+gentamicin,bacterial infections,"renal failure, pregnancy, breastfeeding, myasthenia gravis, concurrent nephrotoxic agents, concurrent loop diuretics",D,clinical_pharmacology,HIGH
+vancomycin,bacterial infections,"renal failure, pregnancy, breastfeeding, concurrent nephrotoxic agents, concurrent loop diuretics, ototoxicity",C,clinical_pharmacology,MEDIUM
+chloramphenicol,bacterial infections,"pregnancy, breastfeeding, bone marrow suppression, g6pd deficiency, renal failure, hepatic impairment",D,clinical_pharmacology,HIGH
+tetracycline,bacterial infections,"pregnancy, breastfeeding, children under 8 years, renal failure, hepatic impairment, concurrent antacids",D,clinical_pharmacology,HIGH
+primaquine,malaria,"pregnancy, breastfeeding, g6pd deficiency, rheumatoid arthritis, lupus, concurrent hemolytic agents",C,clinical_pharmacology,MEDIUM
+quinine,malaria,"pregnancy, g6pd deficiency, cardiac arrhythmia, myasthenia gravis, optic neuritis, concurrent digoxin",D,clinical_pharmacology,HIGH
+ergotamine,migraine,"pregnancy, breastfeeding, peripheral vascular disease, coronary artery disease, hypertension, renal failure, hepatic impairment",X,clinical_pharmacology,NEVER
+propylthiouracil,hyperthyroidism,"pregnancy, hepatic impairment, breastfeeding, concurrent anticoagulants",D,clinical_pharmacology,HIGH
+spironolactone,hypertension | acne,"pregnancy, breastfeeding, hyperkalemia, renal failure, concurrent ace inhibitors, concurrent potassium supplements",C,clinical_pharmacology,MEDIUM
+dexamethasone,inflammation | asthma,"pregnancy high doses, diabetes, hypertension, peptic ulcer, concurrent nsaids, concurrent live vaccines, osteoporosis",C,clinical_pharmacology,MEDIUM
+ciprofloxacin,bacterial infections,"pregnancy, breastfeeding, children under 18, epilepsy, concurrent antacids, concurrent warfarin, concurrent theophylline, renal failure, hepatic impairment",C,clinical_pharmacology,MEDIUM
+fluconazole,fungal infections,"pregnancy, hepatic impairment, concurrent warfarin, concurrent statins, concurrent cisapride, renal failure",D,clinical_pharmacology,HIGH
+ketoconazole,fungal infections,"pregnancy, hepatic impairment, concurrent statins, concurrent cisapride, concurrent terfenadine",C,clinical_pharmacology,MEDIUM
+rifampicin,tuberculosis,"pregnancy, hepatic impairment, concurrent oral contraceptives, concurrent warfarin, concurrent protease inhibitors, hepatitis",C,clinical_pharmacology,MEDIUM
+isoniazid,tuberculosis,"hepatic impairment, pregnancy, concurrent alcohol, peripheral neuropathy, concurrent phenytoin",C,clinical_pharmacology,MEDIUM
+calcium carbonate,gerd (heartburn),"renal impairment, severe kidney disease, hypersensitivity to calcium, concurrent levothyroxine, concurrent thiazide diuretics, concurrent digoxin, concurrent tetracyclines, concurrent quinolones, hypercalcemia, pregnancy high doses",N,clinical_pharmacology,UNKNOWN
+azathioprine,autoimmune | rheumatoid arthritis,"pregnancy, breastfeeding, renal failure, hepatic impairment, concurrent allopurinol, bone marrow suppression, g6pd deficiency",D,clinical_pharmacology,HIGH
+cyclophosphamide,cancer | autoimmune,"pregnancy, breastfeeding, renal failure, hepatic impairment, bone marrow suppression, concurrent live vaccines",X,clinical_pharmacology,NEVER
+tacrolimus,organ transplant,"pregnancy, breastfeeding, renal failure, hepatic impairment, hyperkalemia, concurrent nephrotoxic agents, concurrent strong cyp3a4 inhibitors",C,clinical_pharmacology,MEDIUM
+cyclosporine,organ transplant | rheumatoid arthritis,"pregnancy, breastfeeding, renal failure, hepatic impairment, hyperkalemia, hypertension, concurrent nephrotoxic agents, concurrent statins",C,clinical_pharmacology,MEDIUM
+mycophenolate,organ transplant,"pregnancy, breastfeeding, renal failure, hepatic impairment, concurrent azathioprine, bone marrow suppression",D,clinical_pharmacology,HIGH
+colchicine,gout,"pregnancy, breastfeeding, renal failure, hepatic impairment, concurrent clarithromycin, concurrent cyclosporine, concurrent statins",C,clinical_pharmacology,MEDIUM
+allopurinol,gout,"pregnancy, breastfeeding, renal failure, hepatic impairment, hypersensitivity, concurrent azathioprine, concurrent mercaptopurine, concurrent warfarin",C,clinical_pharmacology,MEDIUM
+doxycycline,bacterial infections | malaria,"pregnancy, breastfeeding, children under 8 years, hepatic impairment, renal failure, concurrent antacids, concurrent iron supplements, concurrent warfarin",D,clinical_pharmacology,HIGH
+clindamycin,bacterial infections,"pregnancy, hepatic impairment, history of colitis, concurrent neuromuscular blocking agents, breastfeeding",B,clinical_pharmacology,LOW
+metronidazole,bacterial infections | parasites,"pregnancy first trimester, breastfeeding, hepatic impairment, concurrent alcohol, concurrent warfarin, concurrent lithium, seizure disorder",C,clinical_pharmacology,MEDIUM
+nitrofurantoin,urinary tract infection,"pregnancy at term, g6pd deficiency, renal failure, hepatic impairment, breastfeeding, peripheral neuropathy",B,clinical_pharmacology,LOW
+trimethoprim,urinary tract infection,"pregnancy, renal failure, hepatic impairment, hyperkalemia, folate deficiency, concurrent warfarin, concurrent methotrexate",C,clinical_pharmacology,MEDIUM
+sulfamethoxazole,bacterial infections,"pregnancy, g6pd deficiency, renal failure, hepatic impairment, hyperkalemia, concurrent warfarin, concurrent methotrexate",C,clinical_pharmacology,MEDIUM
+ampicillin,bacterial infections,"hypersensitivity to penicillins, renal failure, hepatic impairment, concurrent allopurinol, pregnancy category b caution in severe cases",C,clinical_pharmacology,MEDIUM
+ceftriaxone,bacterial infections,"hypersensitivity to cephalosporins, renal failure, hepatic impairment, neonatal hyperbilirubinemia, concurrent calcium infusions, pregnancy",C,clinical_pharmacology,MEDIUM
+amiodarone,arrhythmia,"pregnancy, breastfeeding, thyroid disease, hepatic impairment, pulmonary toxicity, concurrent warfarin, concurrent digoxin, concurrent statins, iodine hypersensitivity",D,clinical_pharmacology,HIGH
+simvastatin,hypercholesterolemia,"pregnancy, breastfeeding, hepatic impairment, concurrent cyclosporine, concurrent amiodarone, concurrent clarithromycin, concurrent itraconazole, myopathy",X,clinical_pharmacology,NEVER
+atorvastatin,hypercholesterolemia,"pregnancy, breastfeeding, hepatic impairment, concurrent cyclosporine, concurrent clarithromycin, concurrent itraconazole, myopathy, rhabdomyolysis",X,clinical_pharmacology,NEVER
+rosuvastatin,hypercholesterolemia,"pregnancy, breastfeeding, hepatic impairment, renal failure, concurrent cyclosporine, concurrent warfarin, myopathy",X,clinical_pharmacology,NEVER
+clopidogrel,anticoagulation | cardiac,"pregnancy, breastfeeding, active bleeding, peptic ulcer, concurrent omeprazole, concurrent nsaids, hepatic impairment",B,clinical_pharmacology,LOW
+insulin glargine,diabetes type 1 | diabetes type 2,"hypoglycemia, renal failure, hepatic impairment, concurrent beta blockers masking hypoglycemia",C,clinical_pharmacology,MEDIUM
+glibenclamide,diabetes type 2,"pregnancy, breastfeeding, renal failure, hepatic impairment, g6pd deficiency, hypoglycemia, concurrent alcohol, concurrent nsaids",C,clinical_pharmacology,MEDIUM
+gliclazide,diabetes type 2,"pregnancy, breastfeeding, renal failure, hepatic impairment, hypoglycemia, concurrent alcohol",C,clinical_pharmacology,MEDIUM
+haloperidol,psychosis | schizophrenia,"pregnancy, breastfeeding, parkinson disease, dementia, concurrent cns depressants, concurrent alcohol, cardiac arrhythmia, prolonged qt",C,clinical_pharmacology,MEDIUM
+chlorpromazine,psychosis | schizophrenia,"pregnancy, breastfeeding, hepatic impairment, cardiac arrhythmia, parkinson disease, concurrent alcohol, concurrent cns depressants",C,clinical_pharmacology,MEDIUM
+diazepam,anxiety | seizures,"pregnancy, breastfeeding, hepatic impairment, renal failure, respiratory depression, concurrent alcohol, concurrent opioids, myasthenia gravis, sleep apnea",D,clinical_pharmacology,HIGH
+lorazepam,anxiety | seizures,"pregnancy, breastfeeding, hepatic impairment, respiratory depression, concurrent alcohol, concurrent opioids, myasthenia gravis",D,clinical_pharmacology,HIGH
+sertraline,depression,"pregnancy third trimester, breastfeeding, concurrent maois, concurrent tramadol, concurrent lithium, seizure disorder, bleeding disorders",C,clinical_pharmacology,MEDIUM
+fluoxetine,depression,"pregnancy third trimester, breastfeeding, concurrent maois, concurrent tramadol, concurrent linezolid, hepatic impairment",C,clinical_pharmacology,MEDIUM
+amitriptyline,depression | neuropathic pain,"pregnancy, breastfeeding, cardiac arrhythmia, concurrent maois, concurrent ssris, glaucoma, urinary retention, hepatic impairment",C,clinical_pharmacology,MEDIUM
+oral contraceptive pill,contraception,"pregnancy, breastfeeding, hypertension, migraine with aura, smoking over 35 years, hepatic impairment, history of thromboembolism, concurrent rifampicin, concurrent carbamazepine, concurrent phenytoin",X,clinical_pharmacology,NEVER
+levonorgestrel,emergency contraception,"pregnancy, hepatic impairment, concurrent rifampicin, concurrent carbamazepine, concurrent phenytoin",B,clinical_pharmacology,LOW
+oxytocin,labour induction,"hypersensitivity, fetal distress, abnormal fetal position, placenta previa, uterine scarring, concurrent prostaglandins",C,clinical_pharmacology,MEDIUM
+progesterone,hormonal support,"hepatic impairment, undiagnosed vaginal bleeding, history of thromboembolism, breast cancer, concurrent anticoagulants",B,clinical_pharmacology,LOW
+morphine,severe pain,"respiratory depression, renal failure, hepatic impairment, pregnancy, breastfeeding, concurrent maois, concurrent benzodiazepines, concurrent alcohol, copd, asthma, head injury, raised intracranial pressure",C,clinical_pharmacology,MEDIUM
+codeine,pain | cough,"respiratory depression, renal failure, hepatic impairment, pregnancy, breastfeeding, concurrent maois, children under 12, g6pd deficiency, concurrent alcohol",C,clinical_pharmacology,MEDIUM
+tramadol,pain,"epilepsy, seizure disorder, pregnancy, breastfeeding, renal failure, hepatic impairment, concurrent maois, concurrent ssris, concurrent tricyclics",C,clinical_pharmacology,MEDIUM
+diclofenac,pain | inflammation,"renal failure, hepatic impairment, peptic ulcer, pregnancy third trimester, heart failure, concurrent anticoagulants, concurrent aspirin, asthma nsaid sensitive",D,clinical_pharmacology,HIGH
+theophylline,asthma | copd,"pregnancy, hepatic impairment, cardiac arrhythmia, seizure disorder, peptic ulcer, concurrent ciprofloxacin, concurrent erythromycin, concurrent rifampicin, concurrent phenytoin",C,clinical_pharmacology,MEDIUM
+prednisolone,asthma | inflammation,"pregnancy high doses, diabetes, hypertension, peptic ulcer, osteoporosis, concurrent nsaids, concurrent live vaccines, tuberculosis",C,clinical_pharmacology,MEDIUM
+salbutamol,asthma,"cardiac arrhythmia, hyperthyroidism, hypokalemia, concurrent beta blockers, concurrent maois, pregnancy caution",C,clinical_pharmacology,MEDIUM
+ferrous sulfate,anemia,"renal failure, hemochromatosis, concurrent tetracyclines, concurrent fluoroquinolones, concurrent levothyroxine, concurrent antacids",A,clinical_pharmacology,SAFE
+folic acid,anemia | pregnancy,"hypersensitivity, concurrent methotrexate, concurrent phenytoin, concurrent sulfamethoxazole",A,clinical_pharmacology,SAFE
+vitamin k,bleeding disorders,"concurrent warfarin, concurrent anticoagulants, hepatic impairment",A,clinical_pharmacology,SAFE
+zinc sulfate,deficiency,"renal failure, concurrent tetracyclines, concurrent fluoroquinolones, concurrent iron supplements",A,clinical_pharmacology,SAFE
+chloroquine,malaria | rheumatoid arthritis,"pregnancy caution, g6pd deficiency, retinal disease, hepatic impairment, epilepsy, concurrent amiodarone, concurrent digoxin",C,clinical_pharmacology,MEDIUM
+hydroxychloroquine,malaria | rheumatoid arthritis | lupus,"pregnancy caution, g6pd deficiency, retinal disease, hepatic impairment, epilepsy, cardiac arrhythmia",C,clinical_pharmacology,MEDIUM
+artemether,malaria,"pregnancy first trimester, breastfeeding, hepatic impairment, concurrent qt prolonging drugs",C,clinical_pharmacology,MEDIUM
+lumefantrine,malaria,"pregnancy first trimester, breastfeeding, cardiac arrhythmia, concurrent qt prolonging drugs, concurrent strong cyp3a4 inhibitors",C,clinical_pharmacology,MEDIUM
+SuperCure,cures any headache,kidney disease,B,,LOW
+Pioglitazone,Type 2 Diabetes Mellitus,"heart failure, congestive heart failure",C,,MEDIUM

@@ -4,3 +4,5 @@ groq
 python-dotenv
 pinecone 
 sentence-transformers
+google-generativeai
+spacy

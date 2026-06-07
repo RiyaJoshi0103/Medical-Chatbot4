@@ -22,6 +22,7 @@ const LANG_LABELS: Record<string, string> = {
   en: "English",
   hi: "Hindi",
   pahadi: "Pahadi",
+  garhwali: "Garhwali",
 };
 
 function HistoryPage() {
@@ -41,14 +42,23 @@ function HistoryPage() {
       .then((d) => {
         setSessions(d.sessions || []);
         setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch chat sessions:", err);
+        setLoading(false);
       });
   }, [email]);
 
   const loadSession = async (sessionId: string) => {
     setSelectedSession(sessionId);
-    const res = await fetch(`/api/chat-history?sessionId=${sessionId}`);
-    const data = await res.json();
-    setMessages(data.messages || []);
+    try {
+      const res = await fetch(`/api/chat-history?sessionId=${sessionId}`);
+      const data = await res.json();
+      setMessages(data.messages || []);
+    } catch (err) {
+      console.error("Failed to load session messages:", err);
+      setMessages([]);
+    }
   };
 
   if (!email) {

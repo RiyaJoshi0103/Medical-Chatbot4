@@ -23,7 +23,7 @@ export async function GET(req: NextRequest) {
     if (!email) return NextResponse.json({ sessions: [] });
 
     const result = await pool.query(
-      `SELECT s.id, s."startedAt" as started_at, s.language,
+      `SELECT s.id, s."startedAt"::timestamptz as started_at, s.language,
               COUNT(m.id)::int as message_count
        FROM "ChatSession" s
        LEFT JOIN "ChatMessage" m ON m."sessionId" = s.id

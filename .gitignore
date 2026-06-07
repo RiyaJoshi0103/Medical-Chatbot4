@@ -30,6 +30,7 @@ __pycache__/
 *.db
 *.sqlite3
 *.log
+backend/data/user_profiles.json
 
 # Virtual environments
 .venv/
