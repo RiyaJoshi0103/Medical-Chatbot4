@@ -18,16 +18,27 @@ import {
   Clock,
   Plus,
   Sparkles,
+  Paperclip,
+  Trash2,
 } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 type Message = {
   sender: "user" | "bot";
   text: string;
+  image?: string;
   ddiAlerts?: Array<{ drug_a: string; drug_b: string; severity: string }>;
   contraindicationAlerts?: Array<{ medicine: string; chronic_condition: string; contraindication: string }>;
   suggestedMedicines?: string[];
+  injuryData?: {
+    category: string;
+    injury_type?: string;
+    severity?: string;
+    first_aid_steps?: string[];
+    home_remedies?: string[];
+  };
 };
+
 type Session = {
   id: string;
   started_at: string;
@@ -187,6 +198,9 @@ function ChatAssistantPage() {
 
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
   const [listening, setListening] = useState(false);
   const [transcribing, setTranscribing] = useState(false);
@@ -479,31 +493,84 @@ function ChatAssistantPage() {
     }
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (!file.type.startsWith("image/")) {
+        alert("Please select an image file.");
+        return;
+      }
+      setSelectedFile(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const removeSelectedImage = () => {
+    setSelectedFile(null);
+    setImagePreview(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
+
   // ── Send message ──
   const handleSend = async () => {
-    if (!input.trim()) return;
+    if (!input.trim() && !selectedFile) return;
 
-    const userMessage: Message = { sender: "user", text: input.trim() };
-    setMessages((prev) => [...prev, userMessage]);
     const userInput = input.trim();
+    const userMessage: Message = {
+      sender: "user",
+      text: userInput || "[Uploaded Image]",
+      image: imagePreview || undefined,
+    };
+    
+    setMessages((prev) => [...prev, userMessage]);
     setInput("");
+    
+    const fileToSend = selectedFile;
+    setSelectedFile(null);
+    setImagePreview(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+    
     setLoading(true);
 
     // Save user message with current language
-    await saveMessage("user", userInput, globalLanguage);
+    await saveMessage("user", userInput || "[Uploaded Image]", globalLanguage);
 
     try {
-      const res = await fetch(`${BACKEND_URL}/chat`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          session_id: sessionIdRef.current,
-          message: userInput,
-          language: globalLanguage,
-          for_family: consultingFor === "family",
-          user_email: userEmail || null,
-        }),
-      });
+      let res;
+      if (fileToSend) {
+        const formData = new FormData();
+        formData.append("file", fileToSend);
+        formData.append("session_id", sessionIdRef.current);
+        formData.append("language", globalLanguage);
+        formData.append("for_family", String(consultingFor === "family"));
+        if (userEmail) {
+          formData.append("user_email", userEmail);
+        }
+        res = await fetch(`${BACKEND_URL}/chat/analyze-image`, {
+          method: "POST",
+          body: formData,
+        });
+      } else {
+        res = await fetch(`${BACKEND_URL}/chat`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            session_id: sessionIdRef.current,
+            message: userInput,
+            language: globalLanguage,
+            for_family: consultingFor === "family",
+            user_email: userEmail || null,
+          }),
+        });
+      }
 
       if (!res.ok) throw new Error(`Server error ${res.status}`);
 
@@ -514,6 +581,13 @@ function ChatAssistantPage() {
         ddiAlerts: data.entities?.ddi_alerts || [],
         contraindicationAlerts: data.entities?.contraindication_alerts || [],
         suggestedMedicines: data.entities?.suggested_medicines || [],
+        injuryData: data.entities?.category === "injury_skin" ? {
+          category: data.entities.category,
+          injury_type: data.entities.injury_type,
+          severity: data.entities.severity,
+          first_aid_steps: data.entities.first_aid_steps,
+          home_remedies: data.entities.home_remedies
+        } : undefined
       };
 
       if (data.entities?.chronic_conditions) {
@@ -525,7 +599,8 @@ function ChatAssistantPage() {
 
       // Save bot reply with same language
       await saveMessage("bot", botReply.text, globalLanguage);
-    } catch {
+    } catch (e) {
+      console.error(e);
       setMessages((prev) => [
         ...prev,
         {
@@ -540,7 +615,7 @@ function ChatAssistantPage() {
   };
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && !loading && input.trim()) {
+    if (e.key === "Enter" && !loading && (input.trim() || selectedFile)) {
       setLastInputWasVoice(false);
       handleSend();
     }
@@ -972,6 +1047,7 @@ function ChatAssistantPage() {
                   </span>
                   <div className="inline-flex rounded-xl p-0.5 bg-gray-100 border border-gray-200">
                     <button
+                      suppressHydrationWarning
                       onClick={() => setConsultingFor("myself")}
                       className={`px-3 py-1 rounded-lg text-xs font-medium transition-all ${
                         consultingFor === "myself"
@@ -982,6 +1058,7 @@ function ChatAssistantPage() {
                       {language === "en" ? "Myself" : "स्वयं"}
                     </button>
                     <button
+                      suppressHydrationWarning
                       onClick={() => setConsultingFor("family")}
                       className={`px-3 py-1 rounded-lg text-xs font-medium transition-all ${
                         consultingFor === "family"
@@ -1087,7 +1164,67 @@ function ChatAssistantPage() {
                                 "0 2px 12px rgba(16,185,129,0.07), 0 1px 3px rgba(0,0,0,0.04)",
                             }
                       }>
+                      {msg.image && (
+                        <div className="mb-2.5 max-w-sm rounded-xl overflow-hidden border border-emerald-100">
+                          <img src={msg.image} alt="Uploaded attachment" className="w-full max-h-60 object-cover" />
+                        </div>
+                      )}
                       <div>{renderMessageText(msg)}</div>
+
+                      {msg.injuryData && msg.injuryData.category === "injury_skin" && (
+                        <div className="mt-3 p-3.5 bg-gray-50 border border-gray-100 rounded-2xl space-y-3 text-left">
+                          <div className="flex items-center justify-between">
+                            <span className="text-[10px] uppercase font-bold text-gray-500 tracking-wider">
+                              First-Aid Assessment
+                            </span>
+                            {msg.injuryData.severity && (
+                              <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold border uppercase ${
+                                msg.injuryData.severity.toLowerCase() === "minor"
+                                  ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+                                  : msg.injuryData.severity.toLowerCase() === "moderate"
+                                  ? "bg-amber-50 text-amber-700 border-amber-200"
+                                  : "bg-red-50 text-red-700 border-red-200 animate-pulse"
+                              }`}>
+                                {msg.injuryData.severity} Severity
+                              </span>
+                            )}
+                          </div>
+                          
+                          {msg.injuryData.injury_type && (
+                            <p className="text-xs text-gray-805 font-medium capitalize">
+                              Detected Type: <span className="text-gray-900 font-semibold">{msg.injuryData.injury_type}</span>
+                            </p>
+                          )}
+                          
+                          {msg.injuryData.first_aid_steps && msg.injuryData.first_aid_steps.length > 0 && (
+                            <div className="space-y-1.5">
+                              <span className="text-[10px] uppercase font-bold text-gray-400 tracking-wider block">
+                                Action Checklist:
+                              </span>
+                              {msg.injuryData.first_aid_steps.map((step, sIdx) => (
+                                <div key={sIdx} className="flex items-start gap-2 text-xs text-gray-700">
+                                  <input type="checkbox" className="mt-0.5 rounded text-emerald-600 focus:ring-emerald-500 border-gray-300" />
+                                  <span>{step}</span>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+
+                          {msg.injuryData.home_remedies && msg.injuryData.home_remedies.length > 0 && (
+                            <div className="space-y-1.5 pt-1.5 border-t border-gray-200/50">
+                              <span className="text-[10px] uppercase font-bold text-gray-400 tracking-wider block">
+                                Safe Home Remedies:
+                              </span>
+                              <ul className="list-disc pl-4 text-xs text-gray-600 space-y-0.5">
+                                {msg.injuryData.home_remedies.map((remedy, rIdx) => (
+                                  <li key={rIdx}>{remedy}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
+                      )}
+
                       {msg.ddiAlerts && msg.ddiAlerts.length > 0 && (
                         <div className="mt-3 space-y-2">
                           {msg.ddiAlerts.map((alert, aIdx) => (
@@ -1220,9 +1357,41 @@ function ChatAssistantPage() {
             {/* ── INPUT AREA ── */}
             {!selectedSessionId && (
               <div className="px-4 py-4 bg-white/80 border-t border-emerald-50">
+                {imagePreview && (
+                  <div className="relative mb-3 flex items-center gap-3 p-2 bg-emerald-50/50 border border-emerald-100 rounded-xl max-w-max" style={{ animation: "fadeIn 0.2s ease-out" }}>
+                    <img src={imagePreview} alt="Upload preview" className="w-12 h-12 object-cover rounded-lg border border-emerald-250" />
+                    <div className="text-left pr-6">
+                      <p className="text-[10px] text-gray-400">Selected image</p>
+                      <p className="text-xs font-semibold text-gray-700 truncate max-w-[150px]">{selectedFile?.name}</p>
+                    </div>
+                    <button 
+                      suppressHydrationWarning
+                      onClick={removeSelectedImage}
+                      className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-red-500 hover:bg-red-600 text-white flex items-center justify-center shadow-md transition-all text-xs font-bold"
+                    >
+                      <X className="w-3 h-3" />
+                    </button>
+                  </div>
+                )}
                 <div
                   className="flex items-center gap-2 rounded-2xl px-3 py-2.5 border border-emerald-200/60 transition-all focus-within:border-emerald-400 focus-within:shadow-[0_0_0_3px_rgba(16,185,129,0.08)]"
                   style={{ background: "rgba(236,253,245,0.5)" }}>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    ref={fileInputRef}
+                    onChange={handleFileChange}
+                    className="hidden"
+                  />
+                  <button
+                    suppressHydrationWarning
+                    onClick={() => fileInputRef.current?.click()}
+                    disabled={loading || transcribing}
+                    title="Upload image"
+                    className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 text-emerald-500 hover:bg-emerald-100 hover:text-emerald-700 transition-all"
+                  >
+                    <Paperclip className="w-4 h-4" />
+                  </button>
                   <button
                     onClick={startListening}
                     disabled={loading || transcribing}
@@ -1261,15 +1430,15 @@ function ChatAssistantPage() {
                   <motion.button
                     suppressHydrationWarning
                     onClick={handleSend}
-                    disabled={loading || !input.trim()}
-                    whileTap={input.trim() && !loading ? { scale: 0.9 } : {}}
+                    disabled={loading || (!input.trim() && !selectedFile)}
+                    whileTap={(input.trim() || selectedFile) && !loading ? { scale: 0.9 } : {}}
                     className={`w-9 h-9 rounded-xl flex-shrink-0 flex items-center justify-center transition-all ${
-                      input.trim() && !loading
+                      (input.trim() || selectedFile) && !loading
                         ? "text-white shadow-lg shadow-emerald-200/60 hover:opacity-90"
                         : "bg-gray-100 text-gray-300 cursor-not-allowed"
                     }`}
                     style={
-                      input.trim() && !loading
+                      (input.trim() || selectedFile) && !loading
                         ? {
                             background:
                               "linear-gradient(135deg, #059669, #10b981)",

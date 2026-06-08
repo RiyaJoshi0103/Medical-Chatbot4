@@ -9,7 +9,7 @@ const poolOption = {
   allowExitOnIdle: true,
 };
 
-let pool: Pool;
+let pool: any;
 
 if (process.env.NODE_ENV === "production") {
   pool = new Pool(poolOption);
@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === "production") {
   pool = (global as any).pgPool;
 }
 
-pool.on("error", (err) => {
+pool.on("error", (err: any) => {
   console.error("Pool error:", err.message);
 });
 

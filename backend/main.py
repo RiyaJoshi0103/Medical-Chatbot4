@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, File
+from fastapi import FastAPI, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Dict, Any, Optional
@@ -406,6 +406,10 @@ INTENT values: greeting / symptom_check / advice / emergency / unclear
 @app.get("/")
 def root():
     return {"message": "Backend is live with RAG pipeline + HealthCareMagic + Safety Layer"}
+
+@app.get("/health")
+def health_check():
+    return {"status": "healthy"}
 
 @app.get("/profile")
 def get_profile(email: str):
@@ -867,6 +871,210 @@ entities must include: possible_diseases, symptoms, home_remedies
             entities={},
             reply="Something went wrong. Please try again."
         )
+
+@app.post("/chat/analyze-image", response_model=ChatResponse)
+async def analyze_image(
+    file: UploadFile = File(...),
+    session_id: str = Form(...),
+    language: str = Form("en"),
+    for_family: str = Form("false"),
+    user_email: Optional[str] = Form(None)
+):
+    if session_id not in session_memory:
+        session_memory[session_id] = {"turns": 0, "greeted": False, "chronic_conditions": []}
+
+    session = session_memory[session_id]
+
+    # Load persistent user profile chronic conditions if logged in
+    email = user_email.strip() if user_email else None
+    if email:
+        profile = load_user_profile(email)
+        profile_conditions = profile.get("chronic_conditions", [])
+        if "chronic_conditions" not in session:
+            session["chronic_conditions"] = []
+        for cond in profile_conditions:
+            cond_clean = cond.strip().lower()
+            if cond_clean and cond_clean not in session["chronic_conditions"]:
+                session["chronic_conditions"].append(cond_clean)
+
+    if session.get("turns", 0) >= 50:
+        del session_memory[session_id]
+        return ChatResponse(
+            session_id=session_id,
+            intent="session_end",
+            entities={"chronic_conditions": session.get("chronic_conditions", [])},
+            reply="Session ended. Please start a new chat."
+        )
+
+    session["turns"] = session.get("turns", 0) + 1
+    lang = language if language in LANG_INSTRUCTIONS else "en"
+    lang_instruction = LANG_INSTRUCTIONS[lang]
+
+    # Read image bytes
+    try:
+        image_bytes = await file.read()
+    except Exception as e:
+        return ChatResponse(
+            session_id=session_id,
+            intent="error",
+            entities={},
+            reply=f"Failed to read uploaded file: {str(e)}"
+        )
+
+    mime = file.content_type or "image/jpeg"
+    
+    if not GEMINI_API_KEY:
+        return ChatResponse(
+            session_id=session_id,
+            intent="error",
+            entities={},
+            reply="GEMINI_API_KEY is not configured in the backend. Cannot analyze medical images or prescriptions."
+        )
+
+    image_prompt = f"""
+    You are an expert medical AI vision assistant.
+    Analyze the uploaded image. It could be either:
+    1. A medical document (e.g. doctor's handwritten prescription, medical lab report, medicine strip/label).
+    2. A physical injury or skin condition (e.g. cut, burn, wound, insect bite, skin rash, scrape).
+    
+    Determine the category: "medical_document" or "injury_skin".
+    
+    If it is an "injury_skin":
+    - Identify the injury or skin condition type (e.g. "burn", "cut", "rash", "bite", "other").
+    - Classify the severity of the injury as one of: "Minor" (safe to handle with first aid), "Moderate" (should consult a doctor/clinic), or "Severe" (life-threatening, go to emergency room immediately).
+    - Provide step-by-step first-aid guidelines on what to do immediately.
+    - Suggest simple home remedies (e.g. ice, rest, wash with mild soap).
+    - Outline warnings or symptoms that would require a doctor visit.
+    
+    If it is a "medical_document":
+    - Detect the document type (e.g. "prescription", "lab_report", "medicine_label", "other").
+    - Perform OCR to extract details.
+    - Extract a list of all medicine names mentioned in the document in lowercase English (e.g., ["paracetamol", "ibuprofen"]). Only include standard active drug names, not brand names unless necessary.
+    - Provide a patient-friendly summary explaining the document contents, what the medicines are for, or explaining any laboratory test values.
+    
+    LANGUAGE RULE:
+    You must write the "reply" string in the user's selected language: {lang.upper()}.
+    {lang_instruction}
+    For Hindi, Pahadi, or Garhwali, use Devanagari script only and write conversational, easy-to-understand explanations.
+    
+    You MUST return your response ONLY as a JSON object matching this structure:
+    {{
+      "category": "injury_skin" or "medical_document",
+      "document_type": "prescription" | "lab_report" | "medicine_label" | "other" | null,
+      "injury_type": "burn" | "cut" | "rash" | "bite" | "other" | null,
+      "severity": "Minor" | "Moderate" | "Severe" | null,
+      "reply": "Your explanation/summary of the image in the target language.",
+      "first_aid_steps": ["step 1", "step 2", ...] | null,
+      "home_remedies": ["remedy 1", "remedy 2", ...] | null,
+      "detected_medicines": ["medicine1", "medicine2"] | null
+    }}
+    """
+
+    try:
+        model = genai.GenerativeModel("gemini-2.5-flash")
+        response = model.generate_content(
+            [
+                {
+                    "mime_type": mime,
+                    "data": image_bytes
+                },
+                image_prompt
+            ],
+            generation_config={"response_mime_type": "application/json"}
+        )
+        
+        result_text = response.text.strip()
+        data = json.loads(result_text)
+    except Exception as gemini_err:
+        print(f"[ERROR] Gemini image analysis failed: {gemini_err}")
+        return ChatResponse(
+            session_id=session_id,
+            intent="error",
+            entities={},
+            reply="Failed to analyze the image. Please make sure the image is clear and try again."
+        )
+
+    category = data.get("category", "injury_skin")
+    reply = data.get("reply", "Please see the analysis.")
+
+    # Safety Layer Check on output
+    reply = check_output_safety(reply, lang)
+
+    # ── Convert reply to Pahadi if language is Pahadi ──
+    if lang == "pahadi":
+        reply = convert_to_pahadi(reply)
+
+    # Extract medicines from both JSON and scanned reply
+    medicines = []
+    gemini_meds = data.get("detected_medicines", [])
+    if isinstance(gemini_meds, list):
+        for m in gemini_meds:
+            if isinstance(m, str) and m.strip():
+                medicines.append(m.strip().lower())
+                
+    scanned_meds = detect_drugs(reply, list(medicine_data.keys()))
+    for m in scanned_meds:
+        m_lower = m.lower()
+        if m_lower not in medicines:
+            medicines.append(m_lower)
+
+    # ── Drug-Drug Interaction (DDI) Detection ──
+    ddi_alerts = []
+    if len(medicines) >= 2:
+        for i in range(len(medicines)):
+            for j in range(i + 1, len(medicines)):
+                d1 = medicines[i]
+                d2 = medicines[j]
+                if d2 in ddi_data.get(d1, {}):
+                    severity = ddi_data[d1][d2]
+                    ddi_alerts.append({
+                        "drug_a": d1,
+                        "drug_b": d2,
+                        "severity": severity
+                    })
+
+    # ── Chronic Disease Contraindications check ──
+    for_family_bool = for_family.lower() == "true" if isinstance(for_family, str) else bool(for_family)
+    active_chronic = session.get("chronic_conditions", [])
+    
+    if for_family_bool:
+        contra_alerts = []
+    else:
+        contra_alerts = check_contraindications(active_chronic, medicines)
+
+    # Append to history
+    if "history" not in session:
+        session["history"] = []
+    session["history"].append({"role": "user", "content": f"[Uploaded Image: {file.filename}]"})
+    session["history"].append({"role": "assistant", "content": reply})
+    if len(session["history"]) > 10:
+        session["history"] = session["history"][-10:]
+
+    entities = {
+        "category": category,
+        "document_type": data.get("document_type"),
+        "injury_type": data.get("injury_type"),
+        "severity": data.get("severity"),
+        "first_aid_steps": data.get("first_aid_steps"),
+        "home_remedies": data.get("home_remedies"),
+        "suggested_medicines": medicines,
+        "chronic_conditions": active_chronic,
+        "contraindication_alerts": contra_alerts,
+        "ddi_alerts": ddi_alerts
+    }
+
+    # Save chronic conditions back to user profile if email is present
+    if email:
+        save_user_profile(email, {
+            "chronic_conditions": active_chronic
+        })
+
+    return ChatResponse(
+        session_id=session_id,
+        intent="symptom_check" if category == "injury_skin" else "advice",
+        entities=entities,
+        reply=reply
+    )
 
 @app.get("/debug/sessions")
 async def debug_sessions():
